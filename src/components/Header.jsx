@@ -35,7 +35,7 @@ export default function Header() {
                 <img 
                   src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68ceff2e17a02290721df37f/fd3f1a952_ARS360logo.png" 
                   alt="ARS360" 
-                  className="h-12 w-auto object-contain brightness-0"
+                  className={`h-12 w-auto object-contain brightness-0 ${isScrolled ? '' : 'invert'}`}
                 />
                 <span className={`text-[9px] -mt-1 tracking-tight opacity-80 ${isScrolled ? 'text-gray-600' : 'text-white'}`}>Associate Rewards System 360</span>
             </div>

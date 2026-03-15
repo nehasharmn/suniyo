@@ -9,7 +9,7 @@ export default function Layout({ children }) {
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400;500&display=swap');
 
         :root {
-          --background: #111827;
+          --background: #ffffff;
           --foreground: #F3F4F6;
           --card: #1F2937;
           --card-foreground: #F3F4F6;
