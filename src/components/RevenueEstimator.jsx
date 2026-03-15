@@ -56,13 +56,13 @@ export default function RevenueEstimator() {
   const overallIncreasePercent = currentRevenue && parseFloat(currentRevenue) !== 0 ? (revenueIncrease / parseFloat(currentRevenue)) * 100 : 0;
 
   return (
-    <Card className="max-w-4xl mx-auto shadow-2xl bg-slate-800/50 backdrop-blur-md border border-white/20">
+    <Card className="max-w-4xl mx-auto shadow-2xl bg-white border border-gray-200">
       <CardHeader className="text-center pb-6">
         <div className="w-16 h-16 bg-teal-400/10 rounded-2xl flex items-center justify-center mb-4 mx-auto">
           <TrendingUp className="w-8 h-8 text-teal-400" />
         </div>
-        <CardTitle className="text-3xl font-bold text-white">Revenue Growth Estimator</CardTitle>
-        <CardDescription className="text-slate-300 pt-2">
+        <CardTitle className="text-3xl font-bold text-gray-900">Revenue Growth Estimator</CardTitle>
+        <CardDescription className="text-gray-500 pt-2">
           Estimate the potential revenue lift from improving your guest satisfaction scores.
         </CardDescription>
       </CardHeader>
@@ -71,35 +71,35 @@ export default function RevenueEstimator() {
           {/* Input Fields */}
           <div className="space-y-6">
             <div className="space-y-2">
-              <Label htmlFor="email" className="font-medium text-gray-300">Email Address</Label>
+              <Label htmlFor="email" className="font-medium text-gray-700">Email Address</Label>
               <Input
                 id="email"
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="your@email.com"
-                className={`bg-slate-700 border-slate-600 text-white focus:border-teal-400 focus:ring-teal-400 ${emailError ? 'border-destructive' : ''}`}
+                className={`bg-white border-gray-300 text-gray-900 focus:border-teal-400 focus:ring-teal-400 ${emailError ? 'border-destructive' : ''}`}
                 required
               />
               {emailError && <p className="text-sm text-destructive mt-1">{emailError}</p>}
             </div>
              <div className="space-y-2">
-              <Label htmlFor="brand" className="font-medium text-gray-300">Hotel Brand</Label>
+              <Label htmlFor="brand" className="font-medium text-gray-700">Hotel Brand</Label>
               <Input
                 id="brand"
                 value={brand}
                 onChange={(e) => handleInputChange(setBrand)(e.target.value)}
                 placeholder="e.g., Marriott, Hilton, etc."
-                className="bg-slate-700 border-slate-600 text-white focus:border-teal-400 focus:ring-teal-400"
+                className="bg-white border-gray-300 text-gray-900 focus:border-teal-400 focus:ring-teal-400"
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="room-count" className="font-medium text-gray-300">Room Count</Label>
+              <Label htmlFor="room-count" className="font-medium text-gray-700">Room Count</Label>
               <Select value={roomCount} onValueChange={handleInputChange(setRoomCount)}>
-                <SelectTrigger id="room-count" className="bg-slate-700 border-slate-600 text-white focus:border-teal-400 focus:ring-teal-400">
+                <SelectTrigger id="room-count" className="bg-white border-gray-300 text-gray-900 focus:border-teal-400 focus:ring-teal-400">
                   <SelectValue placeholder="Select room count" />
                 </SelectTrigger>
-                <SelectContent className="bg-slate-700 border-slate-600 text-white">
+                <SelectContent className="bg-white border-gray-200 text-gray-900">
                   <SelectItem value="50-100">50 to 100</SelectItem>
                   <SelectItem value="101-125">101 to 125</SelectItem>
                   <SelectItem value="126+">126+</SelectItem>
@@ -107,12 +107,12 @@ export default function RevenueEstimator() {
               </Select>
             </div>
             <div className="space-y-2">
-              <Label htmlFor="current-revenue" className="font-medium text-gray-300">Current Annual Revenue</Label>
+              <Label htmlFor="current-revenue" className="font-medium text-gray-700">Current Annual Revenue</Label>
               <Select value={currentRevenue} onValueChange={handleInputChange(setCurrentRevenue)}>
-                <SelectTrigger id="current-revenue" className="bg-slate-700 border-slate-600 text-white focus:border-teal-400 focus:ring-teal-400">
+                <SelectTrigger id="current-revenue" className="bg-white border-gray-300 text-gray-900 focus:border-teal-400 focus:ring-teal-400">
                   <SelectValue placeholder="Select revenue" />
                 </SelectTrigger>
-                <SelectContent className="bg-slate-700 border-slate-600 text-white">
+                <SelectContent className="bg-white border-gray-200 text-gray-900">
                   {Array.from({ length: (10000000 - 1500000) / 500000 + 1 }, (_, i) => 1500000 + i * 500000).map((value) => (
                     <SelectItem key={value} value={String(value)}>
                       {formatCurrency(value)}
@@ -122,12 +122,12 @@ export default function RevenueEstimator() {
               </Select>
             </div>
             <div className="space-y-2">
-              <Label htmlFor="satisfaction-increase" className="font-medium text-gray-300">Customer Satisfaction Increase</Label>
+              <Label htmlFor="satisfaction-increase" className="font-medium text-gray-700">Customer Satisfaction Increase</Label>
               <Select value={satisfactionIncrease} onValueChange={handleInputChange(setSatisfactionIncrease)}>
-                <SelectTrigger id="satisfaction-increase" className="bg-slate-700 border-slate-600 text-white focus:border-teal-400 focus:ring-teal-400">
+                <SelectTrigger id="satisfaction-increase" className="bg-white border-gray-300 text-gray-900 focus:border-teal-400 focus:ring-teal-400">
                   <SelectValue />
                 </SelectTrigger>
-                <SelectContent className="bg-slate-700 border-slate-600 text-white">
+                <SelectContent className="bg-white border-gray-200 text-gray-900">
                   {[...Array(20)].map((_, i) => (
                     <SelectItem key={i + 1} value={String(i + 1)}>
                       {i + 1}%
@@ -138,24 +138,24 @@ export default function RevenueEstimator() {
             </div>
           </div>
           {/* Results */}
-          <div className="bg-black/20 rounded-2xl p-8 space-y-6 h-full flex flex-col justify-center border border-slate-600">
+          <div className="bg-gray-50 rounded-2xl p-8 space-y-6 h-full flex flex-col justify-center border border-gray-200">
             {showResults ? (
               <>
                 <div className="text-center">
-                  <Label className="text-sm font-medium text-slate-400">Estimated Annual Revenue Increase</Label>
+                  <Label className="text-sm font-medium text-gray-500">Estimated Annual Revenue Increase</Label>
                   <p className="text-4xl font-bold text-teal-400 mt-2">
                     {formatCurrency(revenueIncrease)}
                   </p>
                 </div>
                 <div className="text-center">
-                  <Label className="text-sm font-medium text-slate-400">Overall Increase in Revenue %</Label>
+                  <Label className="text-sm font-medium text-gray-500">Overall Increase in Revenue %</Label>
                   <p className="text-2xl font-semibold text-cyan-400 mt-2">
                     {overallIncreasePercent.toFixed(1)}%
                   </p>
                 </div>
                 <div className="text-center">
-                  <Label className="text-sm font-medium text-slate-400">New Estimated Total Revenue</Label>
-                  <p className="text-2xl font-semibold text-white mt-2">
+                  <Label className="text-sm font-medium text-gray-500">New Estimated Total Revenue</Label>
+                  <p className="text-2xl font-semibold text-gray-900 mt-2">
                     {formatCurrency(totalRevenue)}
                   </p>
                 </div>
@@ -166,8 +166,8 @@ export default function RevenueEstimator() {
                     <Calculator className="w-12 h-12 text-teal-400" />
                 </div>
                 <div className="text-slate-400">
-                  <p className="font-medium text-lg text-white">Your Growth Potential</p>
-                  <p className="text-sm mt-1">Fill out the form to estimate your revenue increase.</p>
+                  <p className="font-medium text-lg text-gray-900">Your Growth Potential</p>
+                  <p className="text-sm mt-1 text-gray-500">Fill out the form to estimate your revenue increase.</p>
                 </div>
               </div>
             )}
@@ -179,7 +179,7 @@ export default function RevenueEstimator() {
           <Calculator className="mr-2 h-5 w-5" />
           Calculate My Revenue Growth
         </Button>
-        <p className="text-xs text-slate-400 italic text-center w-full pt-4">
+        <p className="text-xs text-gray-400 italic text-center w-full pt-4">
           *These estimates are based on Cornell's study of impact of higher customer satisfaction on Revenue, which found a one-point increase in review score can boost RevPAR by up to 1.42%.
         </p>
       </CardFooter>

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Card, CardTitle } from '@/components/ui/card';
 import { Building2, Users, UserCheck } from 'lucide-react';
@@ -38,20 +37,20 @@ const useCases = [
 
 export default function UseCases() {
   return (
-    <section className="py-20 bg-gray-900">
+    <section className="py-20 bg-gray-50">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Value for Every Stakeholder
           </h2>
-          <p className="text-xl text-slate-300 leading-relaxed">
+          <p className="text-xl text-gray-600 leading-relaxed">
             ARS<sup className="text-xs text-slate-300">360</sup> creates wins across your entire organization
           </p>
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8 mb-16">
           {useCases.map((useCase, index) => (
-            <Card key={index} className="border-white/10 bg-white/5 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col group">
+            <Card key={index} className="border border-gray-200 bg-white shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col group">
                 <div className="relative">
                     <img 
                       src={useCase.image} 
@@ -64,7 +63,7 @@ export default function UseCases() {
                     <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
                 </div>
               <div className="p-6 flex flex-col flex-grow">
-                  <CardTitle className="text-xl text-white flex items-center gap-3 mb-4">
+                  <CardTitle className="text-xl text-gray-900 flex items-center gap-3 mb-4">
                     <div className="w-10 h-10 flex items-center justify-center rounded-lg bg-teal-400/10">
                         <useCase.icon className="w-6 h-6 text-teal-400" />
                     </div>
@@ -75,7 +74,7 @@ export default function UseCases() {
                       {useCase.benefits.map((benefit, i) => (
                         <li key={i} className="flex items-start gap-3">
                           <div className="w-2 h-2 bg-teal-400 rounded-full flex-shrink-0 mt-2" />
-                          <p className="text-slate-400 leading-relaxed">{benefit}</p>
+                          <p className="text-gray-500 leading-relaxed">{benefit}</p>
                         </li>
                       ))}
                     </ul>
@@ -87,7 +86,7 @@ export default function UseCases() {
 
         {/* Evocative Question with Background */}
         <div className="max-w-4xl mx-auto">
-          <div className="relative rounded-3xl p-12 text-center overflow-hidden border border-white/10">
+          <div className="relative rounded-3xl p-12 text-center overflow-hidden border border-gray-200">
             <img 
               src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
               alt="Hotel staff working together" 

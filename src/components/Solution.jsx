@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Mic, Brain, Gift, BarChart3 } from 'lucide-react';
@@ -35,13 +34,13 @@ const benefits = [
 
 export default function Solution() {
   return (
-    <section id="solution" className="py-20 bg-gray-900">
+    <section id="solution" className="py-20 bg-gray-50">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Our Solution: ARS<sup className="text-xl md:text-2xl text-white">360</sup> + Revenue Growth
           </h2>
-          <p className="text-xl text-slate-300 leading-relaxed">
+          <p className="text-xl text-gray-600 leading-relaxed">
             ARS<sup className="text-xs text-slate-300">360</sup> isn't just about measuring service—it's about improving it, recognizing it, and turning that improvement into real, measurable profit.
           </p>
         </div>
@@ -49,15 +48,15 @@ export default function Solution() {
         {/* Features Grid */}
         <div className="grid md:grid-cols-2 gap-8 mb-16">
           {features.map((feature, index) => (
-            <Card key={index} className="bg-white/5 backdrop-blur-md border border-white/10 shadow-lg hover:shadow-xl hover:border-white/20 transition-all duration-300 transform hover:-translate-y-2">
+            <Card key={index} className="bg-white border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
               <CardContent className="p-8">
                 <div className={`w-16 h-16 bg-teal-400/10 rounded-2xl flex items-center justify-center mb-6`}>
                   <feature.icon className="w-8 h-8 text-teal-400" />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-4">
+                <h3 className="text-xl font-bold text-gray-900 mb-4">
                   {feature.title}
                 </h3>
-                <p className="text-slate-400 leading-relaxed">
+                <p className="text-gray-500 leading-relaxed">
                   {feature.description}
                 </p>
               </CardContent>
@@ -67,16 +66,16 @@ export default function Solution() {
 
         {/* Benefits */}
         <div className="max-w-4xl mx-auto">
-          <h3 className="text-2xl md:text-3xl font-bold text-white text-center mb-12">
+          <h3 className="text-2xl md:text-3xl font-bold text-gray-900 text-center mb-12">
             How ARS360 helps you capture revenue upside:
           </h3>
           <div className="grid md:grid-cols-2 gap-6">
             {benefits.map((benefit, index) => (
-              <div key={index} className="flex items-start gap-4 p-6 bg-white/5 rounded-2xl border border-white/10">
+              <div key={index} className="flex items-start gap-4 p-6 bg-white rounded-2xl border border-gray-200 shadow-sm">
                 <div className="w-6 h-6 bg-teal-400 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                   <span className="text-gray-900 font-bold text-sm">{index + 1}</span>
                 </div>
-                <p className="text-slate-300 leading-relaxed">{benefit}</p>
+                <p className="text-gray-600 leading-relaxed">{benefit}</p>
               </div>
             ))}
           </div>

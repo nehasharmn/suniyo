@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import {
@@ -23,13 +22,13 @@ const quotes = [
 
 export default function BrandCarousel() {
   return (
-    <section className="py-20 bg-gray-900/70">
+    <section className="py-20 bg-gray-50">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Inspired by the Best in Service
           </h2>
-          <p className="text-xl text-slate-300 leading-relaxed">
+          <p className="text-xl text-gray-600 leading-relaxed">
             Great companies are built on exceptional customer experiences. ARS<sup className="text-xs text-slate-300">360</sup> provides the tools to measure, manage, and reward the service that sets you apart.
           </p>
         </div>
@@ -46,10 +45,10 @@ export default function BrandCarousel() {
             {quotes.map((item, index) => (
               <CarouselItem key={index}>
                 <div className="p-1 h-full">
-                  <Card className="h-full flex flex-col justify-center border-white/10 bg-white/5 shadow-lg backdrop-blur-md">
+                  <Card className="h-full flex flex-col justify-center border border-gray-200 bg-white shadow-lg">
                     <CardContent className="p-6 text-center">
                       <p className="text-lg font-semibold text-teal-400 mb-3">{item.brand}</p>
-                      <blockquote className="text-sm text-slate-400 italic">
+                      <blockquote className="text-sm text-gray-500 italic">
                         "{item.quote}"
                       </blockquote>
                     </CardContent>
@@ -58,8 +57,8 @@ export default function BrandCarousel() {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="bg-white/10 border-white/20 text-white hover:bg-white/20" />
-          <CarouselNext className="bg-white/10 border-white/20 text-white hover:bg-white/20" />
+          <CarouselPrevious className="bg-white border-gray-200 text-gray-700 hover:bg-gray-100" />
+          <CarouselNext className="bg-white border-gray-200 text-gray-700 hover:bg-gray-100" />
         </Carousel>
       </div>
     </section>

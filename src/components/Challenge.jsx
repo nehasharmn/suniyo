@@ -27,28 +27,28 @@ const challenges = [
 
 export default function Challenge() {
   return (
-    <section className="py-20 bg-gray-900">
+    <section className="py-20 bg-white">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             The Challenge We're Solving
           </h2>
-          <p className="text-xl text-slate-300 leading-relaxed">
+          <p className="text-xl text-gray-600 leading-relaxed">
             The front desk is the first impression—and often the place where guest challenges surface. Yet most hotels:
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           {challenges.map((challenge, index) => (
-            <Card key={index} className="bg-white/5 backdrop-blur-md border border-white/10 shadow-lg hover:shadow-xl hover:border-white/20 transition-all duration-300 transform hover:-translate-y-2">
+            <Card key={index} className="bg-white border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
               <CardContent className="p-8">
                 <div className="w-16 h-16 bg-red-500/10 rounded-2xl flex items-center justify-center mb-6 mx-auto">
                   <challenge.icon className="w-8 h-8 text-red-400" />
                 </div>
-                <h3 className="text-lg font-bold text-white mb-4 text-center">
+                <h3 className="text-lg font-bold text-gray-900 mb-4 text-center">
                   {challenge.title}
                 </h3>
-                <p className="text-slate-400 text-center leading-relaxed">
+                <p className="text-gray-500 text-center leading-relaxed">
                   {challenge.description}
                 </p>
               </CardContent>

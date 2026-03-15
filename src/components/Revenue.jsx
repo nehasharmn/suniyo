@@ -35,35 +35,35 @@ const studies = [
 
 export default function Revenue() {
   return (
-    <section className="py-20 bg-gray-900/70">
+    <section className="py-20 bg-white">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Why Guest Satisfaction = Revenue
           </h2>
-          <p className="text-xl text-slate-300 leading-relaxed">
+          <p className="text-xl text-gray-600 leading-relaxed">
             Recent data shows the financial payoff of high guest satisfaction and strong service:
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8 mb-16">
           {studies.map((study, index) => (
-            <Card key={index} className="bg-white/5 backdrop-blur-md border border-white/10 shadow-lg hover:shadow-xl hover:border-white/20 transition-all duration-300">
+            <Card key={index} className="bg-white border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300">
               <CardHeader className="pb-4">
                 <div className="flex items-center gap-4">
                   <div className={`w-12 h-12 ${study.color} rounded-xl flex items-center justify-center`}>
                     <study.icon className="w-6 h-6" />
                   </div>
-                  <CardTitle className="text-lg text-white flex-1">
+                  <CardTitle className="text-lg text-gray-900 flex-1">
                     {study.title}
                   </CardTitle>
                 </div>
               </CardHeader>
               <CardContent className="pt-0">
-                <p className="text-gray-200 mb-4 font-medium leading-relaxed">
+                <p className="text-gray-700 mb-4 font-medium leading-relaxed">
                   {study.finding}
                 </p>
-                <p className="text-sm text-slate-400 italic">
+                <p className="text-sm text-gray-400 italic">
                   Source: {study.source}
                 </p>
               </CardContent>
@@ -73,7 +73,7 @@ export default function Revenue() {
 
         {/* Revenue Impact Quote with Background Image */}
         <div className="max-w-4xl mx-auto">
-          <div className="relative rounded-3xl p-12 text-center overflow-hidden border border-white/10">
+          <div className="relative rounded-3xl p-12 text-center overflow-hidden border border-gray-200">
             <img 
               src="https://images.unsplash.com/photo-1445019980597-93fa8acb246c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80" 
               alt="Happy hotel guests at reception" 

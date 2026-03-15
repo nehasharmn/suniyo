@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -146,24 +145,24 @@ You can view this request in your dashboard.
 
   if (isSubmitted) {
     return (
-      <section className="py-20 bg-gray-900">
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-6">
           <div id="contact" className="max-w-2xl mx-auto text-center">
             <div className="w-20 h-20 bg-green-500/10 rounded-full flex items-center justify-center mx-auto mb-8">
               <CheckCircle className="w-10 h-10 text-green-400" />
             </div>
-            <h2 className="text-3xl font-bold text-white mb-4">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
               Thank You for Your Request!
             </h2>
-            <p className="text-xl text-slate-300 leading-relaxed mb-6">
+            <p className="text-xl text-gray-600 leading-relaxed mb-6">
               We've received your pilot program request and someone will reach back out to you soon to discuss how ARS<sup>360</sup> can help your property.
             </p>
             {/* Added "What's Next" section */}
-            <div className="bg-slate-800/50 rounded-2xl p-6 backdrop-blur-sm border-white/10">
-              <p className="text-gray-300 mb-2">
+            <div className="bg-gray-50 rounded-2xl p-6 border border-gray-200">
+              <p className="text-gray-700 mb-2">
                 <strong>What's Next:</strong>
               </p>
-              <ul className="text-center text-gray-400 space-y-2 list-none">
+              <ul className="text-center text-gray-500 space-y-2 list-none">
                 <li>We'll contact you to schedule a brief discovery call</li>
                 <li>You'll receive a customized pilot program proposal</li>
               </ul>
@@ -175,21 +174,21 @@ You can view this request in your dashboard.
   }
 
   return (
-    <section className="py-20 bg-gray-900">
+    <section className="py-20 bg-white">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Every guest interaction tells a story.
           </h2>
-          <p className="text-xl text-slate-300 leading-relaxed">
+          <p className="text-xl text-gray-600 leading-relaxed">
             Let's ensure yours is positive.
           </p>
         </div>
 
         <div id="contact" className="max-w-2xl mx-auto scroll-mt-24">
-          <Card className="border-white/20 bg-slate-800/50 backdrop-blur-md shadow-2xl">
+          <Card className="border border-gray-200 bg-white shadow-2xl">
             <CardHeader className="text-center pb-8">
-              <CardTitle className="text-2xl text-white">
+              <CardTitle className="text-2xl text-gray-900">
                 Request Pilot Access
               </CardTitle>
             </CardHeader>
@@ -197,24 +196,24 @@ You can view this request in your dashboard.
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <Label htmlFor="name" className="text-gray-300 font-medium">Name *</Label>
+                    <Label htmlFor="name" className="text-gray-700 font-medium">Name *</Label>
                     <Input
                       id="name"
                       value={formData.name}
                       onChange={(e) => handleChange('name', e.target.value)}
-                      className={`bg-slate-700 border-slate-600 text-white focus:border-yellow-400 focus:ring-yellow-400 ${fieldErrors.name ? 'border-red-500 focus:border-red-500 focus:ring-red-500' : ''}`}
+                      className={`bg-white border-gray-300 text-gray-900 focus:border-teal-500 focus:ring-teal-500 ${fieldErrors.name ? 'border-red-500 focus:border-red-500 focus:ring-red-500' : ''}`}
                       required
                     />
                     {fieldErrors.name && <p className="text-sm text-red-500">{fieldErrors.name}</p>}
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="email" className="text-gray-300 font-medium">Email *</Label>
+                    <Label htmlFor="email" className="text-gray-700 font-medium">Email *</Label>
                     <Input
                       id="email"
                       type="email"
                       value={formData.email}
                       onChange={(e) => handleChange('email', e.target.value)}
-                      className={`bg-slate-700 border-slate-600 text-white focus:border-yellow-400 focus:ring-yellow-400 ${fieldErrors.email ? 'border-red-500 focus:border-red-500 focus:ring-red-500' : ''}`}
+                      className={`bg-white border-gray-300 text-gray-900 focus:border-teal-500 focus:ring-teal-500 ${fieldErrors.email ? 'border-red-500 focus:border-red-500 focus:ring-red-500' : ''}`}
                       required
                     />
                     {fieldErrors.email && <p className="text-sm text-red-500">{fieldErrors.email}</p>}
@@ -222,13 +221,13 @@ You can view this request in your dashboard.
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="phone" className="text-gray-300 font-medium">Phone Number</Label>
+                  <Label htmlFor="phone" className="text-gray-700 font-medium">Phone Number</Label>
                   <div className="flex gap-2">
                     <Select value={countryCode} onValueChange={setCountryCode}>
-                      <SelectTrigger className="w-24 bg-slate-700 border-slate-600 text-white focus:border-yellow-400 focus:ring-yellow-400">
+                      <SelectTrigger className="w-24 bg-white border-gray-300 text-gray-900 focus:border-teal-500 focus:ring-teal-500">
                         <SelectValue placeholder="Code" />
                       </SelectTrigger>
-                      <SelectContent className="bg-slate-700 border-slate-600 text-white">
+                      <SelectContent className="bg-white border-gray-200 text-gray-900">
                         <SelectItem value="+1">+1 (US)</SelectItem>
                         <SelectItem value="+44">+44 (UK)</SelectItem>
                         <SelectItem value="+1 (CA)">+1 (CA)</SelectItem>
@@ -239,31 +238,31 @@ You can view this request in your dashboard.
                       type="tel"
                       value={phoneNumber}
                       onChange={(e) => setPhoneNumber(e.target.value)}
-                      className="flex-1 bg-slate-700 border-slate-600 text-white focus:border-yellow-400 focus:ring-yellow-400"
+                      className="flex-1 bg-white border-gray-300 text-gray-900 focus:border-teal-500 focus:ring-teal-500"
                       placeholder="555 123 4567"
                     />
                   </div>
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="hotel_company" className="text-gray-300 font-medium">Hotel / Company *</Label>
+                  <Label htmlFor="hotel_company" className="text-gray-700 font-medium">Hotel / Company *</Label>
                   <Input
                     id="hotel_company"
                     value={formData.hotel_company}
                     onChange={(e) => handleChange('hotel_company', e.target.value)}
-                    className={`bg-slate-700 border-slate-600 text-white focus:border-yellow-400 focus:ring-yellow-400 ${fieldErrors.hotel_company ? 'border-red-500 focus:border-red-500 focus:ring-red-500' : ''}`}
+                    className={`bg-white border-gray-300 text-gray-900 focus:border-teal-500 focus:ring-teal-500 ${fieldErrors.hotel_company ? 'border-red-500 focus:border-red-500 focus:ring-red-500' : ''}`}
                     required
                   />
                   {fieldErrors.hotel_company && <p className="text-sm text-red-500">{fieldErrors.hotel_company}</p>}
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="brand" className="text-gray-300 font-medium">What Brand is your hotel?</Label>
+                  <Label htmlFor="brand" className="text-gray-700 font-medium">What Brand is your hotel?</Label>
                   <Select value={formData.brand} onValueChange={(value) => handleChange('brand', value)}>
-                    <SelectTrigger className="bg-slate-700 border-slate-600 text-white focus:border-yellow-400 focus:ring-yellow-400">
+                    <SelectTrigger className="bg-white border-gray-300 text-gray-900 focus:border-teal-500 focus:ring-teal-500">
                       <SelectValue placeholder="Select brand" />
                     </SelectTrigger>
-                    <SelectContent className="bg-slate-700 border-slate-600 text-white">
+                    <SelectContent className="bg-white border-gray-200 text-gray-900">
                       <SelectItem value="Marriott">Marriott</SelectItem>
                       <SelectItem value="Hilton">Hilton</SelectItem>
                       <SelectItem value="IHG">IHG</SelectItem>
@@ -276,7 +275,7 @@ You can view this request in your dashboard.
                 </div>
 
                 <div className="space-y-4">
-                  <Label className="text-gray-300 font-medium">What would you like to get this solution for? (Select all that apply)</Label>
+                  <Label className="text-gray-700 font-medium">What would you like to get this solution for? (Select all that apply)</Label>
                   <div className="space-y-3">
                     {solutionGoalOptions.map((option) => (
                       <div key={option.value} className="flex items-center space-x-2">
@@ -288,7 +287,7 @@ You can view this request in your dashboard.
                         />
                         <Label
                           htmlFor={option.value}
-                          className="text-sm font-normal text-gray-300 cursor-pointer"
+                          className="text-sm font-normal text-gray-600 cursor-pointer"
                         >
                           {option.label}
                         </Label>
@@ -298,12 +297,12 @@ You can view this request in your dashboard.
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="urgency" className="text-gray-300 font-medium">How urgent is your interest?</Label>
+                  <Label htmlFor="urgency" className="text-gray-700 font-medium">How urgent is your interest?</Label>
                   <Select value={formData.urgency} onValueChange={(value) => handleChange('urgency', value)}>
-                    <SelectTrigger className="bg-slate-700 border-slate-600 text-white focus:border-yellow-400 focus:ring-yellow-400">
+                    <SelectTrigger className="bg-white border-gray-300 text-gray-900 focus:border-teal-500 focus:ring-teal-500">
                       <SelectValue placeholder="Select urgency level" />
                     </SelectTrigger>
-                    <SelectContent className="bg-slate-700 border-slate-600 text-white">
+                    <SelectContent className="bg-white border-gray-200 text-gray-900">
                       <SelectItem value="immediate">Immediate (within 1 week)</SelectItem>
                       <SelectItem value="within_month">Within a month</SelectItem>
                       <SelectItem value="within_quarter">Within this quarter</SelectItem>
@@ -313,19 +312,19 @@ You can view this request in your dashboard.
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="message" className="text-gray-300 font-medium">Message</Label>
+                  <Label htmlFor="message" className="text-gray-700 font-medium">Message</Label>
                   <Textarea
                     id="message"
                     rows={4}
                     value={formData.message}
                     onChange={(e) => handleChange('message', e.target.value)}
                     placeholder="Tell us about your property and any specific questions..."
-                    className="bg-slate-700 border-slate-600 text-white focus:border-yellow-400 focus:ring-yellow-400"
+                    className="bg-white border-gray-300 text-gray-900 focus:border-teal-500 focus:ring-teal-500"
                   />
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="captcha" className="text-gray-300 font-medium">
+                  <Label htmlFor="captcha" className="text-gray-700 font-medium">
                     Simple Captcha: What is {captchaNum1} + {captchaNum2}? *
                   </Label>
                   <Input
@@ -333,7 +332,7 @@ You can view this request in your dashboard.
                     type="number"
                     value={captchaAnswer}
                     onChange={(e) => setCaptchaAnswer(e.target.value)}
-                    className="bg-slate-700 border-slate-600 text-white focus:border-yellow-400 focus:ring-yellow-400"
+                    className="bg-white border-gray-300 text-gray-900 focus:border-teal-500 focus:ring-teal-500"
                     required
                   />
                   {captchaError && <p className="text-sm text-red-500">{captchaError}</p>}
