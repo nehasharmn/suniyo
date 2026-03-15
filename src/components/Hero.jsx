@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Play } from 'lucide-react';
+import { ArrowRight, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 
 const evocativeQuestions = [
-  "You pay me $15 per hour and I'm here all alone to deliver on the promise of great service in a $20 million hotel.",
+  "You pay me $15/hr and I'm here alone delivering the promise of great service at your $20M hotel.",
   "How much more revenue can you earn if your guest satisfaction goes up? We know—just ask.",
-  "Would you rather know today what exactly happened all day at your $20M property rather than wait for bad reviews to come in several days later?",
+  "Would you rather know today what happened at your property—or wait for bad reviews days later?",
   "Do you know why you get all those chargebacks? We do—just ask.",
-  "Your new hire has been at the front desk for 3 months. Do you really know which areas they can improve? We do—just ask.",
-  "Avoid a franchise default notice to lender because of failing guest satisfaction."
+  "Your new hire has been at the front desk 3 months. Do you know which areas they can improve?",
+  "Avoid a franchise default notice because of failing guest satisfaction scores."
 ];
 
 export default function Hero() {
@@ -20,89 +20,76 @@ export default function Hero() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentQuestion((prev) => (prev + 1) % evocativeQuestions.length);
-    }, 4000);
+    }, 4500);
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <section className="relative min-h-screen text-white overflow-hidden">
-      {/* Background Image */}
-      <img 
-        src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68ceff2e17a02290721df37f/6927f1945_WhatsAppImage2025-09-22at14647PM.jpg"
-        alt="Hotel front desk"
-        className="absolute inset-0 w-full h-full object-cover"
-      />
-      {/* Overlay — light enough to see the image, dark enough for text legibility */}
-      <div className="absolute inset-0 bg-gradient-to-br from-teal-900/70 via-slate-900/60 to-gray-900/70"></div>
-      
-      <div className="relative z-10 container mx-auto px-6 py-20 flex flex-col items-center text-center min-h-screen justify-center">
-        {/* Logo + Headline */}
-        <div className="max-w-5xl mx-auto mb-10">
-          <h1 className="text-6xl md:text-8xl font-bold text-white mb-4 leading-tight drop-shadow-2xl">
-            ARS<sup className="text-3xl md:text-4xl relative -top-10">360</sup>
-          </h1>
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">
-            Where Service Gets
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-300 to-cyan-300"> Rewarded</span>
-          </h2>
-          <p className="text-lg md:text-xl text-gray-200 leading-relaxed max-w-3xl mx-auto">
-            Boost guest satisfaction, reward associates, and drive revenue—while never letting bad service go unnoticed.
-          </p>
+    <section className="relative min-h-screen overflow-hidden bg-gradient-to-br from-slate-50 via-white to-teal-50">
+      {/* Decorative blobs */}
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-bl from-teal-100 to-cyan-50 rounded-full blur-3xl opacity-60 -translate-y-1/4 translate-x-1/4 pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gradient-to-tr from-blue-100 to-teal-50 rounded-full blur-3xl opacity-50 pointer-events-none" />
+
+      <div className="relative z-10 container mx-auto px-6 pt-32 pb-20 min-h-screen flex flex-col justify-center items-center text-center">
+        {/* Badge */}
+        <div className="inline-flex items-center gap-2 bg-teal-50 border border-teal-200 text-teal-700 text-sm font-medium px-4 py-1.5 rounded-full mb-8">
+          <span className="w-2 h-2 bg-teal-500 rounded-full animate-pulse"></span>
+          Now accepting pilot partners
         </div>
 
-        {/* Rotating Questions */}
-        <div className="max-w-3xl mx-auto mb-10 min-h-[100px] flex items-center justify-center w-full">
-          <div className="bg-white/10 backdrop-blur-md rounded-2xl px-8 py-6 border border-white/20 shadow-xl w-full">
+        {/* Headline */}
+        <h1 className="text-6xl md:text-8xl font-extrabold text-slate-900 mb-4 leading-none tracking-tight">
+          ARS<sup className="text-3xl md:text-4xl relative -top-8 font-bold text-teal-500">360</sup>
+        </h1>
+        <h2 className="text-3xl md:text-5xl font-bold text-slate-800 mb-6 leading-tight max-w-4xl">
+          Where Hotel Service Gets{' '}
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-cyan-500">Rewarded</span>
+        </h2>
+        <p className="text-lg md:text-xl text-slate-500 leading-relaxed max-w-2xl mx-auto mb-10">
+          Boost guest satisfaction, reward associates, and drive revenue—while never letting bad service go unnoticed.
+        </p>
+
+        {/* CTA Buttons */}
+        <div className="flex flex-col sm:flex-row gap-4 mb-14">
+          <Link to={createPageUrl('PilotProgram')}>
+            <Button className="group px-9 py-6 text-base font-semibold bg-teal-500 hover:bg-teal-600 text-white rounded-full shadow-lg shadow-teal-200 hover:shadow-teal-300 transition-all duration-300 border-0 min-w-[240px]">
+              Request Pilot Access
+              <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+            </Button>
+          </Link>
+          <Link to={createPageUrl('OurSolution')}>
+            <Button variant="outline" className="group px-9 py-6 text-base font-semibold border-2 border-slate-200 text-slate-700 hover:border-teal-300 hover:text-teal-600 hover:bg-teal-50 rounded-full transition-all duration-300 min-w-[240px]">
+              Discover ARS360
+              <ChevronRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+            </Button>
+          </Link>
+        </div>
+
+        {/* Rotating quote card */}
+        <div className="max-w-2xl w-full mx-auto">
+          <div className="bg-white border border-slate-100 shadow-xl rounded-2xl px-8 py-6 min-h-[90px] flex items-center justify-center">
             <AnimatePresence mode="wait">
               <motion.blockquote
                 key={currentQuestion}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.6, ease: "easeInOut" }}
-                className="text-base md:text-lg text-white italic leading-relaxed font-light"
+                exit={{ opacity: 0, y: -12 }}
+                transition={{ duration: 0.5 }}
+                className="text-base md:text-lg text-slate-600 italic leading-relaxed text-center"
               >
                 "{evocativeQuestions[currentQuestion]}"
               </motion.blockquote>
             </AnimatePresence>
           </div>
-        </div>
-
-        {/* Progress Indicators */}
-        <div className="flex gap-2 mb-10">
-          {evocativeQuestions.map((_, index) => (
-            <div
-              key={index}
-              className={`h-1.5 rounded-full transition-all duration-500 ${
-                index === currentQuestion 
-                  ? 'w-10 bg-teal-400' 
-                  : 'w-4 bg-white/30'
-              }`}
-            />
-          ))}
-        </div>
-
-        {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 mb-16">
-          <Link to={createPageUrl('PilotProgram')}>
-            <Button className="group px-10 py-6 text-lg font-bold bg-gradient-to-r from-teal-400 to-cyan-500 hover:from-teal-500 hover:to-cyan-600 text-white rounded-full shadow-2xl transform hover:scale-105 transition-all duration-300 border-0 min-w-[260px]">
-              Request Pilot Access
-              <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-            </Button>
-          </Link>
-          
-          <Link to={createPageUrl('OurSolution')}>
-            <Button className="group px-10 py-6 text-lg font-bold border-2 border-white/60 text-white hover:bg-white hover:text-gray-900 rounded-full backdrop-blur-sm bg-white/10 transition-all duration-300 hover:scale-105 min-w-[260px]">
-              <Play className="mr-3 w-5 h-5 group-hover:scale-125 transition-transform duration-300" />
-              Discover ARS360 Impact
-            </Button>
-          </Link>
-        </div>
-
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-teal-400 rounded-full mt-2 animate-pulse" />
+          {/* Dots */}
+          <div className="flex gap-2 justify-center mt-4">
+            {evocativeQuestions.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setCurrentQuestion(i)}
+                className={`h-1.5 rounded-full transition-all duration-300 ${i === currentQuestion ? 'w-8 bg-teal-500' : 'w-2 bg-slate-200'}`}
+              />
+            ))}
           </div>
         </div>
       </div>

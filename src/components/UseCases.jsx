@@ -1,11 +1,12 @@
 import React from 'react';
-import { Card, CardTitle } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 import { Building2, Users, UserCheck } from 'lucide-react';
 
 const useCases = [
   {
     icon: Building2,
     title: "Owners / Executives",
+    color: "bg-blue-50 text-blue-500",
     benefits: [
       "See measurable ROI from data-driven service improvements.",
       "Strengthen brand reputation for more repeat and direct bookings.",
@@ -16,6 +17,7 @@ const useCases = [
   {
     icon: Users,
     title: "Managers",
+    color: "bg-purple-50 text-purple-500",
     benefits: [
       "Effective coaching tools to pinpoint and develop staff potential.",
       "Proactively reduce chargebacks and guest complaints.",
@@ -26,6 +28,7 @@ const useCases = [
   {
     icon: UserCheck,
     title: "Associates",
+    color: "bg-teal-50 text-teal-500",
     benefits: [
       "Get recognized and rewarded for delivering excellent service.",
       "Receive clear, actionable guidance for professional growth.",
@@ -37,68 +40,48 @@ const useCases = [
 
 export default function UseCases() {
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 bg-white">
       <div className="container mx-auto px-6">
-        <div className="max-w-4xl mx-auto text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Value for Every Stakeholder
-          </h2>
-          <p className="text-xl text-gray-600 leading-relaxed">
-            ARS<sup className="text-xs text-slate-300">360</sup> creates wins across your entire organization
-          </p>
+        <div className="max-w-3xl mx-auto text-center mb-14">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">Value for Every Stakeholder</h2>
+          <p className="text-lg text-slate-500 leading-relaxed">ARS<sup className="text-xs">360</sup> creates wins across your entire organization.</p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid lg:grid-cols-3 gap-8 mb-14">
           {useCases.map((useCase, index) => (
-            <Card key={index} className="border border-gray-200 bg-white shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col group">
-                <div className="relative">
-                    <img 
-                      src={useCase.image} 
-                      alt={useCase.title} 
-                      className="h-80 w-full object-cover transition-transform duration-500 grayscale"
-                      style={{
-                        objectPosition: useCase.title === 'Associates' ? 'center 20%' : 'center top'
-                      }}
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
-                </div>
-              <div className="p-6 flex flex-col flex-grow">
-                  <CardTitle className="text-xl text-gray-900 flex items-center gap-3 mb-4">
-                    <div className="w-10 h-10 flex items-center justify-center rounded-lg bg-teal-400/10">
-                        <useCase.icon className="w-6 h-6 text-teal-400" />
-                    </div>
-                    {useCase.title}
-                  </CardTitle>
-                  <div className="flex-grow">
-                    <ul className="space-y-4">
-                      {useCase.benefits.map((benefit, i) => (
-                        <li key={i} className="flex items-start gap-3">
-                          <div className="w-2 h-2 bg-teal-400 rounded-full flex-shrink-0 mt-2" />
-                          <p className="text-gray-500 leading-relaxed">{benefit}</p>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+            <Card key={index} className="border border-slate-100 shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden">
+              <div className="h-52 overflow-hidden">
+                <img
+                  src={useCase.image}
+                  alt={useCase.title}
+                  className="w-full h-full object-cover grayscale"
+                  style={{ objectPosition: useCase.title === 'Associates' ? 'center 20%' : 'center top' }}
+                />
               </div>
+              <CardContent className="p-7">
+                <div className="flex items-center gap-3 mb-5">
+                  <div className={`w-10 h-10 ${useCase.color} rounded-xl flex items-center justify-center`}>
+                    <useCase.icon className="w-5 h-5" />
+                  </div>
+                  <h3 className="text-lg font-bold text-slate-900">{useCase.title}</h3>
+                </div>
+                <ul className="space-y-3">
+                  {useCase.benefits.map((benefit, i) => (
+                    <li key={i} className="flex items-start gap-3">
+                      <div className="w-1.5 h-1.5 bg-teal-400 rounded-full flex-shrink-0 mt-2" />
+                      <p className="text-sm text-slate-500 leading-relaxed">{benefit}</p>
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
             </Card>
           ))}
         </div>
 
-        {/* Evocative Question with Background */}
-        <div className="max-w-4xl mx-auto">
-          <div className="relative rounded-3xl p-12 text-center overflow-hidden border border-gray-200">
-            <img 
-              src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
-              alt="Hotel staff working together" 
-              className="absolute inset-0 w-full h-full object-cover grayscale"
-            />
-            <div className="absolute inset-0 bg-black/70"></div>
-            <div className="relative z-10">
-              <blockquote className="text-2xl md:text-3xl font-bold text-white leading-relaxed">
-                "Customers earn reward points, managers get paid well, owners make profits. What does an associate get?"
-              </blockquote>
-            </div>
-          </div>
+        <div className="max-w-2xl mx-auto bg-slate-50 rounded-2xl p-10 text-center border border-slate-100">
+          <blockquote className="text-xl md:text-2xl font-bold text-slate-800 leading-relaxed">
+            "Customers earn reward points, managers get paid well, owners make profits. What does an associate get?"
+          </blockquote>
         </div>
       </div>
     </section>
