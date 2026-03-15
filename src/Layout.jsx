@@ -9,25 +9,25 @@ export default function Layout({ children }) {
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400;500&display=swap');
 
         :root {
-          --background: #ffffff;
-          --foreground: #F3F4F6;
-          --card: #1F2937;
-          --card-foreground: #F3F4F6;
-          --popover: #1F2937;
-          --popover-foreground: #F3F4F6;
-          --primary: #06B6D4;
-          --primary-foreground: #FFFFFF;
-          --secondary: #374151;
-          --secondary-foreground: #F3F4F6;
-          --muted: #374151;
-          --muted-foreground: #9CA3AF;
-          --accent: #0891B2;
-          --accent-foreground: #FFFFFF;
-          --destructive: #DC2626;
-          --destructive-foreground: #F3F4F6;
-          --border: #374151;
-          --input: #374151;
-          --ring: #06B6D4;
+          --background: 0 0% 100%;
+          --foreground: 222 47% 11%;
+          --card: 0 0% 100%;
+          --card-foreground: 222 47% 11%;
+          --popover: 0 0% 100%;
+          --popover-foreground: 222 47% 11%;
+          --primary: 187 100% 42%;
+          --primary-foreground: 0 0% 100%;
+          --secondary: 210 40% 96%;
+          --secondary-foreground: 222 47% 11%;
+          --muted: 210 40% 96%;
+          --muted-foreground: 215 16% 47%;
+          --accent: 210 40% 96%;
+          --accent-foreground: 222 47% 11%;
+          --destructive: 0 84% 60%;
+          --destructive-foreground: 0 0% 98%;
+          --border: 214 32% 91%;
+          --input: 214 32% 91%;
+          --ring: 187 100% 42%;
           --radius: 0.75rem;
         }
         
