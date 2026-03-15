@@ -12,6 +12,8 @@ export default function Home() {
     <div className="bg-white">
       <Hero />
 
+      <ReportPreview />
+
       {/* Challenge + Solution Cards */}
       <section className="py-24 bg-slate-50">
         <div className="container mx-auto px-6">
