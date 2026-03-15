@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
@@ -9,19 +8,18 @@ import { ArrowRight, Lightbulb, TrendingUp } from 'lucide-react';
 
 export default function Home() {
   return (
-    <div className="bg-gray-900 text-white">
+    <div className="bg-white text-gray-900">
       <Hero />
       
-      <section className="py-32 relative overflow-hidden">
+      <section className="py-32 relative overflow-hidden bg-gray-50">
         {/* Background effects */}
-        <div className="absolute inset-0 bg-gradient-to-r from-teal-900/20 via-cyan-900/20 to-blue-900/20"></div>
-        <div className="absolute top-20 left-20 w-72 h-72 bg-gradient-to-r from-teal-400/10 to-cyan-400/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-20 w-96 h-96 bg-gradient-to-r from-blue-400/10 to-teal-400/10 rounded-full blur-3xl"></div>
+        <div className="absolute top-20 left-20 w-72 h-72 bg-gradient-to-r from-teal-200/40 to-cyan-200/40 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-20 w-96 h-96 bg-gradient-to-r from-blue-200/40 to-teal-200/40 rounded-full blur-3xl"></div>
         
         <div className="container mx-auto px-6 relative z-10">
           <div className="grid md:grid-cols-2 gap-16 items-center max-w-7xl mx-auto">
             {/* The Challenge Summary */}
-            <Card className="border-0 shadow-2xl overflow-hidden bg-gradient-to-br from-red-600/10 via-red-500/5 to-pink-600/10 backdrop-blur-sm transition-all duration-500">
+            <Card className="border border-gray-200 shadow-2xl overflow-hidden bg-white transition-all duration-500">
               <div className="relative">
                 <img 
                   src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68ceff2e17a02290721df37f/4fdde6290_HotelCheck-InDisruption.png" 
@@ -35,9 +33,9 @@ export default function Home() {
                   <div className="w-20 h-20 bg-gradient-to-r from-red-500 to-pink-500 rounded-3xl flex items-center justify-center shadow-lg">
                     <Lightbulb className="w-10 h-10 text-white" />
                   </div>
-                  <h2 className="text-4xl font-bold text-white">The Challenge</h2>
+                  <h2 className="text-4xl font-bold text-gray-900">The Challenge</h2>
                 </div>
-                <p className="text-gray-300 leading-relaxed mb-10 text-lg">
+                <p className="text-gray-600 leading-relaxed mb-10 text-lg">
                   The front desk is your first impression, but inconsistent service, a reactive approach to challenges, and lack of visibility often lead to lost revenue and high staff turnover.
                 </p>
                 <Link to={createPageUrl('TheChallenge')}>
@@ -50,7 +48,7 @@ export default function Home() {
             </Card>
 
             {/* The Solution Summary */}
-            <Card className="border-0 shadow-2xl overflow-hidden bg-gradient-to-br from-teal-600/10 via-cyan-500/5 to-blue-600/10 backdrop-blur-sm transition-all duration-500">
+            <Card className="border border-gray-200 shadow-2xl overflow-hidden bg-white transition-all duration-500">
               <div className="relative">
                 <img 
                   src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68ceff2e17a02290721df37f/0ec336ed6_image.png" 
@@ -64,9 +62,9 @@ export default function Home() {
                   <div className="w-20 h-20 bg-gradient-to-r from-teal-500 to-cyan-500 rounded-3xl flex items-center justify-center shadow-lg">
                     <TrendingUp className="w-10 h-10 text-white" />
                   </div>
-                  <h2 className="text-4xl font-bold text-white">Our Solution</h2>
+                  <h2 className="text-4xl font-bold text-gray-900">Our Solution</h2>
                 </div>
-                <p className="text-gray-300 leading-relaxed mb-10 text-lg">
+                <p className="text-gray-600 leading-relaxed mb-10 text-lg">
                   ARS<sup className="text-xs text-gray-300">360</sup> uses AI-powered voice analysis to provide real-time feedback, reward associates, and give managers the insights needed to turn excellent service into measurable profit.
                 </p>
                 <Link to={createPageUrl('OurSolution')}>

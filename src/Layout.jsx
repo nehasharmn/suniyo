@@ -32,15 +32,16 @@ export default function Layout({ children }) {
         }
         
         body {
-          background-color: #111827;
+          background-color: #ffffff;
           font-family: 'Roboto', sans-serif;
+          color: #111827;
         }
 
         h1, h2, h3, h4, h5, h6 {
           font-family: 'Playfair Display', serif;
         }
       `}</style>
-      <div className="bg-gray-900 text-white min-h-screen">
+      <div className="bg-white text-gray-900 min-h-screen">
         <Header />
         <main>
           {children}
