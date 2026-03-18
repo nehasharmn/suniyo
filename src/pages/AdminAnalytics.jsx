@@ -223,7 +223,7 @@ export default function AdminAnalytics() {
                 <tbody>
                   {visits.slice(0, 50).map((visit, i) => (
                     <tr key={visit.id} className={i % 2 === 0 ? 'bg-white' : 'bg-slate-50/50'}>
-                      <td className="py-3 px-2 text-slate-400 text-xs whitespace-nowrap">{new Date(visit.created_date).toLocaleString()}</td>
+                      <td className="py-3 px-2 text-slate-400 text-xs whitespace-nowrap">{new Date(visit.created_date).toLocaleString('en-US', { timeZone: 'America/New_York', month: 'short', day: 'numeric', year: 'numeric', hour: 'numeric', minute: '2-digit', hour12: true })} EST</td>
                       <td className="py-3 px-2 text-teal-600 font-mono text-xs font-medium">{visit.page}</td>
                       <td className="py-3 px-2 text-slate-700 text-xs">{visit.visitor_email || <span className="text-slate-400 italic">Anonymous</span>}</td>
                       <td className="py-3 px-2 text-xs capitalize">
