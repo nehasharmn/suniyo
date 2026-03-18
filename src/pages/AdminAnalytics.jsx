@@ -24,6 +24,13 @@ export default function AdminAnalytics() {
     }
   };
 
+  useEffect(() => {
+    base44.entities.PageVisit.list('-created_date', 500).then(data => {
+      setVisits(data);
+      setLoading(false);
+    });
+  }, []);
+
   if (!authenticated) {
     return (
       <div className="min-h-screen bg-slate-50 flex items-center justify-center">
