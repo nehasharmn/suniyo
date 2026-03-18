@@ -28,12 +28,24 @@ function getDeviceName() {
   return `${os} / ${browser}`;
 }
 
+function getOrCreateVisitorId() {
+  const key = 'ars360_visitor_id';
+  let id = document.cookie.split('; ').find(r => r.startsWith(key + '='))?.split('=')[1];
+  if (!id) {
+    id = 'v_' + Math.random().toString(36).slice(2) + Date.now().toString(36);
+    const expires = new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toUTCString();
+    document.cookie = `${key}=${id}; expires=${expires}; path=/; SameSite=Lax`;
+  }
+  return id;
+}
+
 export default function usePageTracking() {
   const location = useLocation();
 
   useEffect(() => {
     const track = async () => {
       try {
+        const visitor_id = getOrCreateVisitorId();
         let visitor_email = '';
         try {
           const user = await base44.auth.me();
