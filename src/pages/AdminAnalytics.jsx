@@ -187,15 +187,23 @@ export default function AdminAnalytics() {
                     <th className="text-left py-2 text-slate-400 font-medium">Page</th>
                     <th className="text-left py-2 text-slate-400 font-medium">Visitor</th>
                     <th className="text-left py-2 text-slate-400 font-medium">Device</th>
+                    <th className="text-left py-2 text-slate-400 font-medium">OS / Browser</th>
+                    <th className="text-left py-2 text-slate-400 font-medium">IP</th>
+                    <th className="text-left py-2 text-slate-400 font-medium">Location</th>
+                    <th className="text-left py-2 text-slate-400 font-medium">Domain</th>
                   </tr>
                 </thead>
                 <tbody>
                   {visits.slice(0, 50).map(visit => (
                     <tr key={visit.id} className="border-b border-slate-50">
-                      <td className="py-2 text-slate-400 text-xs">{new Date(visit.created_date).toLocaleString()}</td>
+                      <td className="py-2 text-slate-400 text-xs whitespace-nowrap">{new Date(visit.created_date).toLocaleString()}</td>
                       <td className="py-2 text-slate-700 font-mono text-xs">{visit.page}</td>
                       <td className="py-2 text-slate-600 text-xs">{visit.visitor_email || 'Anonymous'}</td>
                       <td className="py-2 text-slate-500 text-xs capitalize">{visit.device}</td>
+                      <td className="py-2 text-slate-500 text-xs">{visit.device_name || '—'}</td>
+                      <td className="py-2 text-slate-500 text-xs">{visit.ip_address || '—'}</td>
+                      <td className="py-2 text-slate-500 text-xs whitespace-nowrap">{[visit.city, visit.country].filter(Boolean).join(', ') || '—'}</td>
+                      <td className="py-2 text-slate-500 text-xs">{visit.domain || '—'}</td>
                     </tr>
                   ))}
                 </tbody>
