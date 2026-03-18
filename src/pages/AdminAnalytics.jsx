@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/button';
 const ADMIN_PASSWORD = 'ARS360admin!';
 
 export default function AdminAnalytics() {
-  const [authenticated, setAuthenticated] = useState(false);
+  const [authenticated, setAuthenticated] = useState(() => sessionStorage.getItem('ars360_admin_auth') === 'true');
   const [passwordInput, setPasswordInput] = useState('');
   const [passwordError, setPasswordError] = useState(false);
   const [visits, setVisits] = useState([]);
