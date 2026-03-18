@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import usePageTracking from './hooks/usePageTracking';
 
 export default function Layout({ children }) {
   return (
