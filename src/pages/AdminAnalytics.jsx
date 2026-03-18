@@ -59,13 +59,6 @@ export default function AdminAnalytics() {
     );
   }
 
-  useEffect(() => {
-    base44.entities.PageVisit.list('-created_date', 500).then(data => {
-      setVisits(data);
-      setLoading(false);
-    });
-  }, []);
-
   if (loading) return (
     <div className="min-h-screen bg-slate-50 flex items-center justify-center pt-24">
       <div className="w-8 h-8 border-4 border-teal-200 border-t-teal-500 rounded-full animate-spin" />
