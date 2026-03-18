@@ -195,6 +195,8 @@ export default function AdminAnalytics() {
                   v.city || '',
                   v.country || ''
                 ]);
+                const fmtTime = (d) => new Date(d).toLocaleString('en-US', { timeZone: 'America/New_York', month: 'short', day: 'numeric', year: 'numeric', hour: 'numeric', minute: '2-digit', hour12: true }) + ' EST';
+                rows.forEach((r, i) => r[0] = fmtTime(visits[i].created_date));
                 const csv = [headers, ...rows].map(r => r.map(c => `"${String(c).replace(/"/g, '""')}"`).join(',')).join('\n');
                 const blob = new Blob([csv], { type: 'text/csv' });
                 const url = URL.createObjectURL(blob);
