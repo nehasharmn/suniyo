@@ -51,6 +51,7 @@ import Home from './pages/Home';
 import OurSolution from './pages/OurSolution';
 import PilotProgram from './pages/PilotProgram';
 import TheChallenge from './pages/TheChallenge';
+import AdminAnalytics from './pages/AdminAnalytics';
 import __Layout from './Layout.jsx';
 
 
@@ -59,6 +60,7 @@ export const PAGES = {
     "OurSolution": OurSolution,
     "PilotProgram": PilotProgram,
     "TheChallenge": TheChallenge,
+    "AdminAnalytics": AdminAnalytics,
 }
 
 export const pagesConfig = {

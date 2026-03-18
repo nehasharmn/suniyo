@@ -1,11 +1,56 @@
 import React, { useState, useEffect } from 'react';
 import { base44 } from '@/api/base44Client';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Users, Eye, Monitor, Smartphone, Globe } from 'lucide-react';
+import { Users, Eye, Monitor, Smartphone, Globe, Lock } from 'lucide-react';
+import { Input } from '@/components/ui/input';
+import { Button } from '@/components/ui/button';
+
+const ADMIN_PASSWORD = 'ARS360admin!';
 
 export default function AdminAnalytics() {
+  const [authenticated, setAuthenticated] = useState(false);
+  const [passwordInput, setPasswordInput] = useState('');
+  const [passwordError, setPasswordError] = useState(false);
   const [visits, setVisits] = useState([]);
   const [loading, setLoading] = useState(true);
+
+  const handlePasswordSubmit = (e) => {
+    e.preventDefault();
+    if (passwordInput === ADMIN_PASSWORD) {
+      setAuthenticated(true);
+      setPasswordError(false);
+    } else {
+      setPasswordError(true);
+    }
+  };
+
+  if (!authenticated) {
+    return (
+      <div className="min-h-screen bg-slate-50 flex items-center justify-center">
+        <div className="bg-white border border-slate-100 shadow-lg rounded-2xl p-10 w-full max-w-sm text-center">
+          <div className="w-14 h-14 bg-teal-50 rounded-full flex items-center justify-center mx-auto mb-5">
+            <Lock className="w-7 h-7 text-teal-500" />
+          </div>
+          <h2 className="text-xl font-extrabold text-slate-900 mb-1">Admin Access</h2>
+          <p className="text-sm text-slate-400 mb-6">Enter the password to view analytics.</p>
+          <form onSubmit={handlePasswordSubmit} className="space-y-4">
+            <Input
+              type="password"
+              placeholder="Password"
+              value={passwordInput}
+              onChange={(e) => { setPasswordInput(e.target.value); setPasswordError(false); }}
+              className={`text-center ${passwordError ? 'border-red-400' : 'border-slate-200'}`}
+              autoFocus
+            />
+            {passwordError && <p className="text-xs text-red-500">Incorrect password.</p>}
+            <Button type="submit" className="w-full bg-teal-500 hover:bg-teal-600 text-white rounded-full border-0">
+              Unlock
+            </Button>
+          </form>
+        </div>
+      </div>
+    );
+  }
 
   useEffect(() => {
     base44.entities.PageVisit.list('-created_date', 500).then(data => {
