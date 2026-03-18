@@ -3,6 +3,11 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import usePageTracking from './hooks/usePageTracking';
 
+function TrackingWrapper() {
+  usePageTracking();
+  return null;
+}
+
 export default function Layout({ children }) {
   return (
     <>
@@ -47,6 +52,7 @@ export default function Layout({ children }) {
         }
       `}</style>
       <div className="bg-white text-slate-900 min-h-screen">
+        <TrackingWrapper />
         <Header />
         <main>
           {children}
