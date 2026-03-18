@@ -63,6 +63,7 @@ export default function usePageTracking() {
         await base44.entities.PageVisit.create({
           page: location.pathname,
           visitor_email,
+          visitor_id,
           user_agent: navigator.userAgent,
           referrer: document.referrer || 'direct',
           device: getDevice(),
