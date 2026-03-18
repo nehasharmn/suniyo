@@ -17,6 +17,7 @@ export default function AdminAnalytics() {
   const handlePasswordSubmit = (e) => {
     e.preventDefault();
     if (passwordInput === ADMIN_PASSWORD) {
+      sessionStorage.setItem('ars360_admin_auth', 'true');
       setAuthenticated(true);
       setPasswordError(false);
     } else {
