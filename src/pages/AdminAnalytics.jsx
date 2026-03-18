@@ -177,33 +177,64 @@ export default function AdminAnalytics() {
 
         {/* Recent Visits */}
         <Card className="bg-white border border-slate-100 shadow-sm mt-6">
-          <CardHeader><CardTitle className="text-base font-bold text-slate-900">Recent Visits</CardTitle></CardHeader>
+          <CardHeader className="flex flex-row items-center justify-between">
+            <CardTitle className="text-base font-bold text-slate-900">Recent Visits</CardTitle>
+            <Button
+              variant="outline"
+              size="sm"
+              className="gap-2 text-slate-600 border-slate-200"
+              onClick={() => {
+                const headers = ['Time', 'Page', 'Visitor', 'Device', 'OS / Browser', 'IP Address', 'City', 'Country'];
+                const rows = visits.map(v => [
+                  new Date(v.created_date).toLocaleString(),
+                  v.page,
+                  v.visitor_email || 'Anonymous',
+                  v.device || '',
+                  v.device_name || '',
+                  v.ip_address || '',
+                  v.city || '',
+                  v.country || ''
+                ]);
+                const csv = [headers, ...rows].map(r => r.map(c => `"${String(c).replace(/"/g, '""')}"`).join(',')).join('\n');
+                const blob = new Blob([csv], { type: 'text/csv' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url; a.download = 'analytics.csv'; a.click();
+                URL.revokeObjectURL(url);
+              }}
+            >
+              <Download className="w-4 h-4" /> Export CSV
+            </Button>
+          </CardHeader>
           <CardContent className="px-6 pb-6">
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="border-b border-slate-100">
-                    <th className="text-left py-2 text-slate-400 font-medium">Time</th>
-                    <th className="text-left py-2 text-slate-400 font-medium">Page</th>
-                    <th className="text-left py-2 text-slate-400 font-medium">Visitor</th>
-                    <th className="text-left py-2 text-slate-400 font-medium">Device</th>
-                    <th className="text-left py-2 text-slate-400 font-medium">OS / Browser</th>
-                    <th className="text-left py-2 text-slate-400 font-medium">IP</th>
-                    <th className="text-left py-2 text-slate-400 font-medium">Location</th>
-                    <th className="text-left py-2 text-slate-400 font-medium">Domain</th>
+                  <tr className="border-b border-slate-200">
+                    <th className="text-left py-3 px-2 text-slate-500 font-semibold text-xs uppercase tracking-wide">Time</th>
+                    <th className="text-left py-3 px-2 text-slate-500 font-semibold text-xs uppercase tracking-wide">Page</th>
+                    <th className="text-left py-3 px-2 text-slate-500 font-semibold text-xs uppercase tracking-wide">Visitor</th>
+                    <th className="text-left py-3 px-2 text-slate-500 font-semibold text-xs uppercase tracking-wide">Device</th>
+                    <th className="text-left py-3 px-2 text-slate-500 font-semibold text-xs uppercase tracking-wide">OS / Browser</th>
+                    <th className="text-left py-3 px-2 text-slate-500 font-semibold text-xs uppercase tracking-wide">IP Address</th>
+                    <th className="text-left py-3 px-2 text-slate-500 font-semibold text-xs uppercase tracking-wide">Location</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {visits.slice(0, 50).map(visit => (
-                    <tr key={visit.id} className="border-b border-slate-50">
-                      <td className="py-2 text-slate-400 text-xs whitespace-nowrap">{new Date(visit.created_date).toLocaleString()}</td>
-                      <td className="py-2 text-slate-700 font-mono text-xs">{visit.page}</td>
-                      <td className="py-2 text-slate-600 text-xs">{visit.visitor_email || 'Anonymous'}</td>
-                      <td className="py-2 text-slate-500 text-xs capitalize">{visit.device}</td>
-                      <td className="py-2 text-slate-500 text-xs">{visit.device_name || '—'}</td>
-                      <td className="py-2 text-slate-500 text-xs">{visit.ip_address || '—'}</td>
-                      <td className="py-2 text-slate-500 text-xs whitespace-nowrap">{[visit.city, visit.country].filter(Boolean).join(', ') || '—'}</td>
-                      <td className="py-2 text-slate-500 text-xs">{visit.domain || '—'}</td>
+                  {visits.slice(0, 50).map((visit, i) => (
+                    <tr key={visit.id} className={i % 2 === 0 ? 'bg-white' : 'bg-slate-50/50'}>
+                      <td className="py-3 px-2 text-slate-400 text-xs whitespace-nowrap">{new Date(visit.created_date).toLocaleString()}</td>
+                      <td className="py-3 px-2 text-teal-600 font-mono text-xs font-medium">{visit.page}</td>
+                      <td className="py-3 px-2 text-slate-700 text-xs">{visit.visitor_email || <span className="text-slate-400 italic">Anonymous</span>}</td>
+                      <td className="py-3 px-2 text-xs capitalize">
+                        <span className="inline-flex items-center gap-1 text-slate-600">
+                          {visit.device === 'mobile' ? <Smartphone className="w-3 h-3" /> : <Monitor className="w-3 h-3" />}
+                          {visit.device}
+                        </span>
+                      </td>
+                      <td className="py-3 px-2 text-slate-500 text-xs whitespace-nowrap">{visit.device_name || '—'}</td>
+                      <td className="py-3 px-2 text-slate-500 text-xs font-mono">{visit.ip_address || '—'}</td>
+                      <td className="py-3 px-2 text-slate-500 text-xs whitespace-nowrap">{[visit.city, visit.country].filter(Boolean).join(', ') || '—'}</td>
                     </tr>
                   ))}
                 </tbody>
