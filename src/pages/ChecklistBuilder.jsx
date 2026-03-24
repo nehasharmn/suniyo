@@ -68,7 +68,7 @@ export default function ChecklistBuilder() {
         {activeTab === 'edit' ? (
           <ChecklistEditor
             config={config}
-            onChange={{ setHotelName, setLoyaltyProgram, setUpsellAmount, setGuestName }}
+            onChange={{ setHotelName, setLoyaltyProgram, setUpsellAmount, setGuestName, setHotelImage }}
             onPreview={() => setActiveTab('preview')}
           />
         ) : (
