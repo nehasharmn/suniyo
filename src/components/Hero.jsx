@@ -75,7 +75,7 @@ export default function Hero() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -12 }}
                 transition={{ duration: 0.5 }}
-                className="text-base md:text-lg text-slate-600 italic leading-relaxed text-center"
+                className="text-lg md:text-xl text-slate-600 italic leading-relaxed text-center"
               >
                 "{evocativeQuestions[currentQuestion]}"
               </motion.blockquote>
