@@ -38,14 +38,14 @@ export default function Hero() {
         </div>
 
         {/* Headline */}
-        <h1 className="text-6xl md:text-8xl font-extrabold text-slate-900 mb-4 leading-none tracking-tight">
-          ARS<sup className="text-3xl md:text-4xl relative -top-8 font-bold text-teal-500">360</sup>
+        <h1 className="text-7xl md:text-9xl font-extrabold text-slate-900 mb-4 leading-none tracking-tight">
+          ARS<sup className="text-4xl md:text-5xl relative -top-10 font-bold text-teal-500">360</sup>
         </h1>
-        <h2 className="text-3xl md:text-5xl font-bold text-slate-800 mb-6 leading-tight max-w-4xl">
+        <h2 className="text-4xl md:text-6xl font-bold text-slate-800 mb-8 leading-tight max-w-5xl">
           Where Hotel Service Gets{' '}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-cyan-500">Rewarded</span>
         </h2>
-        <p className="text-lg md:text-xl text-slate-500 leading-relaxed max-w-2xl mx-auto mb-10">
+        <p className="text-xl md:text-2xl text-slate-500 leading-relaxed max-w-3xl mx-auto mb-10">
           Boost guest satisfaction, reward associates, and drive revenue—while never letting bad service go unnoticed.
         </p>
 
