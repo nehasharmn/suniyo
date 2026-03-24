@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
 import { Card, CardContent } from '@/components/ui/card';
+import { Building2, Upload, X } from 'lucide-react';
 
 export default function ChecklistEditor({ config, onChange, onPreview }) {
-  const { hotelName, loyaltyProgram, upsellAmount, guestName } = config;
-  const { setHotelName, setLoyaltyProgram, setUpsellAmount, setGuestName } = onChange;
+  const { hotelName, loyaltyProgram, upsellAmount, guestName, hotelImage } = config;
+  const { setHotelName, setLoyaltyProgram, setUpsellAmount, setGuestName, setHotelImage } = onChange;
+  const fileInputRef = useRef();
 
   const fields = [
     { label: 'Hotel Name', value: hotelName, set: setHotelName, placeholder: 'e.g. ABC Hotel', help: 'Used in greetings and document title' },
