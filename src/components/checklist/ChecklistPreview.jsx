@@ -12,7 +12,7 @@ const F = {
 };
 
 export default function ChecklistPreview({ config, printRef, onPrint, onBack }) {
-  const { hotelName, loyaltyProgram, upsellAmount, guestName } = config;
+  const { hotelName, loyaltyProgram, upsellAmount, guestName, hotelImage } = config;
 
   const script = (text) => (
     <span style={{ fontStyle: 'italic', color: '#0e7490', fontWeight: 600 }}>{text}</span>
