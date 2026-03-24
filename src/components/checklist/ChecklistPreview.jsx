@@ -100,7 +100,7 @@ export default function ChecklistPreview({ config, printRef, onPrint, onBack }) 
         <p>{script(`"You're all set, ${guestName} — room [###].""`)}</p>
         <p>{script('"Is there anything else I can take care of for you?"')}</p>
         <p>{script('"Enjoy your stay!"')}</p>
-        <p style={{ marginTop: '5px' }}><strong>9. REVIEW REQUEST:</strong> {script('"If everything looks great, we'd really appreciate a positive review."')}</p>
+        <p style={{ marginTop: '5px' }}><strong>9. REVIEW REQUEST:</strong> {script("\"If everything looks great, we'd really appreciate a positive review.\"")}</p>
       </Step>
     </>
   );
