@@ -15,10 +15,10 @@ export default function ReportPreview() {
               <div className="inline-flex items-center gap-2 bg-teal-50 border border-teal-100 text-teal-700 text-sm font-medium px-4 py-1.5 rounded-full mb-6">
                 AI-Generated Daily Reports
               </div>
-              <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-5">
+              <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-5">
                 Every shift, every score — in one clear report
               </h2>
-              <p className="text-lg text-slate-500 leading-relaxed mb-6">
+              <p className="text-xl text-slate-500 leading-relaxed mb-6">
                 ARS<sup className="text-xs">360</sup> automatically generates a daily performance report for your property — covering check-in scores, soft skills, upsell attempts, review requests, and operational issues across every shift.
               </p>
               <ul className="space-y-3 mb-8">
