@@ -52,7 +52,7 @@ export default function ChecklistBuilder() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 pt-24 pb-16">
+    <div className="min-h-screen bg-slate-50 pt-24 pb-6">
       <div className="container mx-auto px-6 max-w-6xl">
         <div className="mb-8">
           <h1 className="text-3xl font-extrabold text-slate-900 tracking-tight">Front Desk Checklist Builder</h1>
