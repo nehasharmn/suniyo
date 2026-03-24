@@ -82,10 +82,10 @@ export default function Home() {
       {/* CTA Banner */}
       <section className="py-24 bg-gradient-to-br from-teal-500 to-cyan-500">
         <div className="container mx-auto px-6 text-center">
-          <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-5 tracking-tight">
+          <h2 className="text-5xl md:text-7xl font-extrabold text-white mb-6 tracking-tight">
             Ready to Unlock Your Revenue Potential?
           </h2>
-          <p className="text-lg text-teal-100 mb-10 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-teal-100 mb-10 max-w-3xl mx-auto leading-relaxed">
             Be among the first to see how data-driven service coaching can transform your guest satisfaction scores and your bottom line.
           </p>
           <Link to={createPageUrl('PilotProgram')}>
