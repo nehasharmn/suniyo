@@ -45,11 +45,14 @@ export default function ChecklistPreview({ config, printRef, onPrint, onBack }) 
       borderBottom: `3px solid ${accentColor}`,
     }}>
       <div style={{
-        width: '80px', height: '80px', background: accentColor + '18',
+        width: '90px', height: '90px', background: accentColor + '18',
         borderRadius: '20px', display: 'flex', alignItems: 'center',
         justifyContent: 'center', fontSize: '44px', flexShrink: 0,
+        overflow: 'hidden',
       }}>
-        {emoji}
+        {hotelImage
+          ? <img src={hotelImage} alt="Hotel" style={{ width: '100%', height: '100%', objectFit: 'contain', padding: '6px' }} />
+          : emoji}
       </div>
       <div>
         <div style={{ fontSize: '11px', fontWeight: 700, color: accentColor, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '4px' }}>
