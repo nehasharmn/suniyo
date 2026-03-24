@@ -26,8 +26,8 @@ export default function Challenge() {
           {challenges.map((challenge, index) => (
             <Card key={index} className="bg-white border border-slate-100 shadow-sm hover:shadow-md transition-shadow duration-300">
               <CardContent className="p-7">
-                <div className="w-12 h-12 bg-rose-50 rounded-xl flex items-center justify-center mb-5">
-                  <challenge.icon className="w-6 h-6 text-rose-500" />
+                <div className="w-16 h-16 bg-rose-50 rounded-2xl flex items-center justify-center mb-5">
+                  <challenge.icon className="w-9 h-9 text-rose-500" />
                 </div>
                 <h3 className="text-base font-bold text-slate-800 mb-2">{challenge.title}</h3>
                 <p className="text-sm text-slate-500 leading-relaxed">{challenge.description}</p>
