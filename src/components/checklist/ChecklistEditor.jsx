@@ -17,6 +17,14 @@ export default function ChecklistEditor({ config, onChange, onPreview }) {
     { label: 'Sample Guest Name', value: guestName, set: setGuestName, placeholder: 'e.g. Mr. Smith', help: 'Used in script examples throughout the checklist' },
   ];
 
+  const handleImageUpload = (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = (ev) => setHotelImage(ev.target.result);
+    reader.readAsDataURL(file);
+  };
+
   return (
     <div className="max-w-2xl mx-auto">
       <Card className="bg-white border border-slate-100 shadow-sm">
@@ -25,6 +33,41 @@ export default function ChecklistEditor({ config, onChange, onPreview }) {
             <h2 className="text-lg font-bold text-slate-800 mb-1">Customize Your Checklist</h2>
             <p className="text-sm text-slate-500">These values will be injected into all scripts and examples in the checklist.</p>
           </div>
+
+          {/* Hotel Image Upload */}
+          <div className="space-y-1">
+            <Label className="text-sm font-semibold text-slate-700">Hotel Logo / Image</Label>
+            <div
+              onClick={() => !hotelImage && fileInputRef.current.click()}
+              className={`relative border-2 border-dashed rounded-xl overflow-hidden flex items-center justify-center transition-colors ${hotelImage ? 'border-teal-300 bg-teal-50' : 'border-slate-200 bg-slate-50 hover:border-teal-300 hover:bg-teal-50 cursor-pointer'}`}
+              style={{ height: '120px' }}
+            >
+              {hotelImage ? (
+                <>
+                  <img src={hotelImage} alt="Hotel" className="h-full w-full object-contain p-2" />
+                  <button
+                    onClick={(e) => { e.stopPropagation(); setHotelImage(null); }}
+                    className="absolute top-2 right-2 bg-white rounded-full p-1 shadow hover:bg-rose-50 text-slate-500 hover:text-rose-500 transition-colors"
+                  >
+                    <X className="w-4 h-4" />
+                  </button>
+                </>
+              ) : (
+                <div className="flex flex-col items-center gap-2 text-slate-400">
+                  <Upload className="w-7 h-7" />
+                  <span className="text-sm">Click to upload hotel logo or photo</span>
+                </div>
+              )}
+            </div>
+            {hotelImage && (
+              <button onClick={() => fileInputRef.current.click()} className="text-xs text-teal-600 hover:underline">
+                Change image
+              </button>
+            )}
+            <input ref={fileInputRef} type="file" accept="image/*" className="hidden" onChange={handleImageUpload} />
+            <p className="text-xs text-slate-400">Appears in the top-left corner of each printed page</p>
+          </div>
+
           {fields.map(f => (
             <div key={f.label} className="space-y-1">
               <Label className="text-sm font-semibold text-slate-700">{f.label}</Label>
