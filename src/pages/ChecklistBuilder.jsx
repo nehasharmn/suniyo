@@ -7,10 +7,11 @@ export default function ChecklistBuilder() {
   const [loyaltyProgram, setLoyaltyProgram] = useState('Marriott Bonvoy');
   const [upsellAmount, setUpsellAmount] = useState('XX');
   const [guestName, setGuestName] = useState('Mr. Smith');
+  const [hotelImage, setHotelImage] = useState(null);
   const [activeTab, setActiveTab] = useState('edit');
   const printRef = useRef();
 
-  const config = { hotelName, loyaltyProgram, upsellAmount, guestName };
+  const config = { hotelName, loyaltyProgram, upsellAmount, guestName, hotelImage };
 
   const handlePrint = () => {
     const content = printRef.current.innerHTML;
