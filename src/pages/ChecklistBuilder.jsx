@@ -22,23 +22,11 @@ export default function ChecklistBuilder() {
           <title>Front Desk Checklist — ${hotelName}</title>
           <style>
             * { box-sizing: border-box; margin: 0; padding: 0; }
-            body { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 11px; color: #1e293b; background: #fff; }
-            .page { width: 8.5in; min-height: 11in; padding: 0.5in; margin: 0 auto; }
-            h1 { font-size: 20px; font-weight: 800; letter-spacing: -0.02em; color: #0f172a; margin-bottom: 2px; }
-            h2 { font-size: 14px; font-weight: 700; color: #0f4c5c; margin: 16px 0 8px; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 2px solid #0f4c5c; padding-bottom: 4px; }
-            .subtitle { font-size: 11px; font-style: italic; color: #64748b; margin-bottom: 12px; }
-            .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-            .step { margin-bottom: 10px; }
-            .step-title { font-weight: 700; font-size: 11.5px; color: #0f172a; margin-bottom: 3px; }
-            .step-body { color: #334155; line-height: 1.5; }
-            .step-body .script { font-style: italic; color: #0f4c5c; font-weight: 600; }
-            .check { color: #16a34a; font-weight: 700; }
-            .arrow { color: #64748b; }
-            .badge { display: inline-block; background: #f0fdf4; color: #15803d; border: 1px solid #bbf7d0; border-radius: 4px; padding: 1px 6px; font-size: 10px; font-weight: 700; margin-bottom: 4px; }
-            .warning { color: #dc2626; font-weight: 700; }
-            .divider { border: none; border-top: 1px solid #e2e8f0; margin: 14px 0; }
-            .footer { margin-top: 20px; font-size: 9px; color: #94a3b8; text-align: center; border-top: 1px solid #e2e8f0; padding-top: 8px; }
-            @media print { body { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
+            body { font-family: 'Helvetica Neue', Arial, sans-serif; color: #1e293b; background: #fff; }
+            @media print {
+              body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+              @page { size: A4; margin: 0; }
+            }
           </style>
         </head>
         <body>
