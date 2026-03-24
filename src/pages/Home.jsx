@@ -33,9 +33,9 @@ export default function Home() {
                   <div className="w-12 h-12 bg-rose-50 rounded-xl flex items-center justify-center">
                     <Lightbulb className="w-6 h-6 text-rose-500" />
                   </div>
-                  <h2 className="text-2xl font-bold text-slate-900">The Challenge</h2>
+                  <h2 className="text-3xl font-bold text-slate-900">The Challenge</h2>
                 </div>
-                <p className="text-slate-500 leading-relaxed mb-6">
+                <p className="text-lg text-slate-500 leading-relaxed mb-6">
                   The front desk is your first impression, but inconsistent service, reactive management, and limited visibility lead to lost revenue and high staff turnover.
                 </p>
                 <Link to={createPageUrl('TheChallenge')}>
