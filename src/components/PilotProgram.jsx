@@ -42,7 +42,7 @@ export default function PilotProgram({ onScrollToContact }) {
             onClick={onScrollToContact}
             className="px-10 py-6 text-base font-semibold bg-white text-teal-600 hover:bg-teal-50 rounded-full shadow-lg border-0 transition-all duration-300 hover:scale-105"
           >
-            Request Pilot Access
+            Subscribe
             <ArrowRight className="ml-2 w-4 h-4" />
           </Button>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl mx-auto mt-10">
