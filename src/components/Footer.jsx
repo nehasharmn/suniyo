@@ -27,7 +27,7 @@ export default function Footer() {
           </div>
           <div>
             <h4 className="font-semibold text-slate-800 mb-4 text-sm uppercase tracking-wide">Ready to boost revenue?</h4>
-            <p className="text-sm leading-relaxed">Join the pilot and see the difference data-driven service coaching can make for your property.</p>
+            <p className="text-sm leading-relaxed">Subscribe and see the difference data-driven service coaching can make for your property.</p>
           </div>
         </div>
         <div className="mt-6 pt-4 border-t border-slate-200 text-center text-xs text-slate-400">
