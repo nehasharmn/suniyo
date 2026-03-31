@@ -11,25 +11,25 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section className="py-6 bg-slate-50">
+    <section className="py-20 bg-slate-50">
       <div className="container mx-auto px-6">
-        <div className="max-w-3xl mx-auto text-center mb-6">
+        <div className="max-w-3xl mx-auto text-center mb-14">
           <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">How It Works</h2>
           <p className="text-lg text-slate-500 leading-relaxed">A seamless four-step process that transforms service delivery.</p>
         </div>
 
-        <div className="max-w-5xl mx-auto grid md:grid-cols-4 gap-4 mb-6">
+        <div className="max-w-5xl mx-auto grid md:grid-cols-4 gap-5 mb-12">
           {steps.map((step, index) => (
             <div key={index} className="relative">
               {index < steps.length - 1 && (
-                <div className="hidden md:block absolute top-10 left-full w-full h-0.5 bg-slate-200 z-0" />
+                <div className="hidden md:block absolute top-12 left-full w-full h-0.5 bg-slate-200 z-0" />
               )}
-              <Card className="relative z-10 bg-white border border-slate-100 shadow-sm hover:shadow-md transition-shadow duration-300">
+              <Card className="relative z-10 bg-white border border-slate-100 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-0.5">
                 <CardContent className="p-6 text-center">
-                  <div className={`w-14 h-14 ${step.color} rounded-2xl flex items-center justify-center mb-4 mx-auto`}>
-                    <step.icon className="w-7 h-7" />
+                  <div className={`w-16 h-16 ${step.color} rounded-2xl flex items-center justify-center mb-4 mx-auto`}>
+                    <step.icon className="w-8 h-8" />
                   </div>
-                  <div className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Step {index + 1}</div>
+                  <div className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1.5">Step {index + 1}</div>
                   <h3 className="text-sm font-bold text-slate-800 mb-2">{step.title}</h3>
                   <p className="text-xs text-slate-500 leading-relaxed">{step.description}</p>
                 </CardContent>
@@ -38,9 +38,9 @@ export default function HowItWorks() {
           ))}
         </div>
 
-        <div className="max-w-2xl mx-auto bg-white rounded-2xl p-6 text-center border border-slate-100 shadow-sm">
+        <div className="max-w-2xl mx-auto bg-white rounded-2xl p-8 text-center border border-slate-100 shadow-sm">
           <blockquote className="text-lg md:text-xl text-slate-600 italic leading-relaxed">
-            "Would you rather know today what exactly happened at your property—or wait until bad reviews appear days later?"
+            "Would you rather know today what exactly happened at your property — or wait until bad reviews appear days later?"
           </blockquote>
         </div>
       </div>

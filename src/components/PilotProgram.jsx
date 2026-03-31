@@ -11,20 +11,24 @@ const pilotBenefits = [
 
 export default function PilotProgram({ onScrollToContact }) {
   return (
-    <section className="py-10 bg-gradient-to-br from-teal-500 to-cyan-600">
+    <section className="py-20 bg-gradient-to-br from-teal-500 to-cyan-600">
       <div className="container mx-auto px-6 text-white">
-        <div className="max-w-3xl mx-auto text-center mb-8">
+        <div className="max-w-3xl mx-auto text-center mb-12">
           <div className="inline-flex items-center gap-2 bg-white/20 text-white text-sm font-medium px-4 py-1.5 rounded-full mb-6">
             Limited Availability
           </div>
-
-
+          <h2 className="text-3xl md:text-4xl font-extrabold mb-4 tracking-tight">
+            Ready to Transform Your Property?
+          </h2>
+          <p className="text-teal-100 text-lg leading-relaxed">
+            Join the properties already using Suniyo to elevate guest satisfaction and grow revenue.
+          </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-4 mb-8 max-w-4xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-6 mb-12 max-w-4xl mx-auto">
           {pilotBenefits.map((benefit, index) => (
-            <Card key={index} className="bg-white border-0 shadow-lg">
-              <CardContent className="p-5 text-center">
+            <Card key={index} className="bg-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+              <CardContent className="p-7 text-center">
                 <div className={`w-14 h-14 ${benefit.color} rounded-2xl flex items-center justify-center mb-5 mx-auto`}>
                   <benefit.icon className="w-7 h-7" />
                 </div>
@@ -38,14 +42,14 @@ export default function PilotProgram({ onScrollToContact }) {
         <div className="text-center">
           <Button
             onClick={onScrollToContact}
-            className="px-10 py-6 text-base font-semibold bg-white text-teal-600 hover:bg-teal-50 rounded-full shadow-lg border-0 transition-all duration-300 hover:scale-105"
+            className="px-12 py-6 text-base font-semibold bg-white text-teal-600 hover:bg-teal-50 rounded-full shadow-lg border-0 transition-all duration-300 hover:scale-105"
           >
-            Subscribe
+            Subscribe Now
             <ArrowRight className="ml-2 w-4 h-4" />
           </Button>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 max-w-3xl mx-auto mt-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl mx-auto mt-8">
             {["Raise your rating, raise your revenue", "One point up = thousands more per month", "Coach today, profit tomorrow"].map((copy, index) => (
-              <div key={index} className="text-sm text-teal-100 italic bg-white/10 rounded-xl px-4 py-3 border border-white/20">
+              <div key={index} className="text-sm text-teal-100 italic bg-white/10 rounded-xl px-5 py-4 border border-white/20">
                 "{copy}"
               </div>
             ))}

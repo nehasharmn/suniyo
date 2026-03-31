@@ -89,7 +89,7 @@ export default function Contact() {
 
   if (isSubmitted) {
     return (
-      <section className="py-20 bg-white">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-6">
           <div id="contact" className="max-w-lg mx-auto text-center">
             <div className="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -113,17 +113,17 @@ export default function Contact() {
   }
 
   return (
-    <section className="py-8 bg-white">
+    <section className="py-16 bg-white">
       <div className="container mx-auto px-6">
-        <div className="max-w-2xl mx-auto text-center mb-5">
-          <h2 className="text-2xl font-extrabold text-slate-900 mb-1 tracking-tight">Subscribe</h2>
-          <p className="text-sm text-slate-500">Every guest interaction tells a story. Let's ensure yours is positive.</p>
+        <div className="max-w-2xl mx-auto text-center mb-8">
+          <h2 className="text-3xl font-extrabold text-slate-900 mb-2 tracking-tight">Subscribe</h2>
+          <p className="text-base text-slate-500">Every guest interaction tells a story. Let's ensure yours is positive.</p>
         </div>
 
         <div id="contact" className="max-w-2xl mx-auto scroll-mt-24">
           <Card className="border border-slate-100 shadow-lg bg-white">
-            <CardContent className="px-6 py-6">
-              <form onSubmit={handleSubmit} className="space-y-3">
+            <CardContent className="px-8 py-8">
+              <form onSubmit={handleSubmit} className="space-y-5">
                 <div className="grid md:grid-cols-2 gap-3">
                   <div className="space-y-1">
                     <Label htmlFor="name" className="text-slate-700 font-medium text-sm">Name *</Label>

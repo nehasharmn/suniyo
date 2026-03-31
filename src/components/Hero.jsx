@@ -25,40 +25,40 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-teal-50">
-      {/* Decorative blobs */}
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-bl from-teal-100 to-cyan-50 rounded-full blur-3xl opacity-60 -translate-y-1/4 translate-x-1/4 pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gradient-to-tr from-blue-100 to-teal-50 rounded-full blur-3xl opacity-50 pointer-events-none" />
+    <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-teal-50 pt-24 pb-16">
+      <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-gradient-to-bl from-teal-100 to-cyan-50 rounded-full blur-3xl opacity-50 -translate-y-1/3 translate-x-1/4 pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gradient-to-tr from-blue-100 to-teal-50 rounded-full blur-3xl opacity-40 pointer-events-none" />
 
-      <div className="relative z-10 container mx-auto px-6 pt-10 pb-3 flex flex-col justify-center items-center text-center">
-        {/* Headline */}
-        <h1 className="text-3xl md:text-4xl font-bold text-slate-800 mb-3 leading-tight max-w-4xl">
+      <div className="relative z-10 container mx-auto px-6 flex flex-col items-center text-center">
+        <div className="inline-flex items-center gap-2 bg-teal-50 border border-teal-200 text-teal-700 text-sm font-medium px-4 py-1.5 rounded-full mb-6">
+          AI-Powered Hotel Service Intelligence
+        </div>
+
+        <h1 className="text-4xl md:text-6xl font-extrabold text-slate-900 mb-5 leading-tight tracking-tight max-w-4xl">
           Where Hotel Service Gets{' '}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-cyan-500">Rewarded</span>
         </h1>
-        <p className="text-base md:text-lg text-slate-500 leading-relaxed max-w-3xl mx-auto mb-3">
-          Boost guest satisfaction, reward associates, and drive revenue—while never letting bad service go unnoticed.
+        <p className="text-lg md:text-xl text-slate-500 leading-relaxed max-w-2xl mx-auto mb-8">
+          Boost guest satisfaction, reward associates, and drive revenue — while never letting bad service go unnoticed.
         </p>
 
-        {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-3 mb-3">
+        <div className="flex flex-col sm:flex-row gap-4 mb-12">
           <Link to={createPageUrl('PilotProgram')}>
-            <Button className="group px-8 py-5 text-sm font-semibold bg-teal-500 hover:bg-teal-600 text-white rounded-full shadow-lg shadow-teal-200 hover:shadow-teal-300 transition-all duration-300 border-0 min-w-[220px]">
+            <Button className="group px-8 py-6 text-base font-semibold bg-teal-500 hover:bg-teal-600 text-white rounded-full shadow-lg shadow-teal-200 hover:shadow-teal-300 transition-all duration-300 border-0 min-w-[220px]">
               Subscribe
               <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
             </Button>
           </Link>
           <Link to={createPageUrl('OurSolution')}>
-            <Button variant="outline" className="group px-8 py-5 text-sm font-semibold border-2 border-slate-200 text-slate-700 hover:border-teal-300 hover:text-teal-600 hover:bg-teal-50 rounded-full transition-all duration-300 min-w-[220px]">
+            <Button variant="outline" className="group px-8 py-6 text-base font-semibold border-2 border-slate-200 text-slate-700 hover:border-teal-300 hover:text-teal-600 hover:bg-teal-50 rounded-full transition-all duration-300 min-w-[220px]">
               Discover How It Works
               <ChevronRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
             </Button>
           </Link>
         </div>
 
-        {/* Rotating quote card */}
         <div className="max-w-2xl w-full mx-auto">
-          <div className="bg-white border border-slate-100 shadow-xl rounded-2xl px-8 py-5 min-h-[80px] flex items-center justify-center">
+          <div className="bg-white border border-slate-100 shadow-xl rounded-2xl px-8 py-6 min-h-[90px] flex items-center justify-center">
             <AnimatePresence mode="wait">
               <motion.blockquote
                 key={currentQuestion}
@@ -72,8 +72,7 @@ export default function Hero() {
               </motion.blockquote>
             </AnimatePresence>
           </div>
-          {/* Dots */}
-          <div className="flex gap-2 justify-center mt-3">
+          <div className="flex gap-2 justify-center mt-4">
             {evocativeQuestions.map((_, i) => (
               <button
                 key={i}
