@@ -30,7 +30,7 @@ export default function Header() {
           {/* Logo */}
           <Link to={createPageUrl('Home')} className="group flex flex-col">
             <img
-              src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68ceff2e17a02290721df37f/fd3f1a952_ARS360logo.png"
+              src="https://media.base44.com/images/public/68ceff2e17a02290721df37f/e18c4d4d6_suniyo_logo_darker_only.png"
               alt="Logo"
               className="h-14 w-auto object-contain"
               style={{ background: 'transparent' }}
