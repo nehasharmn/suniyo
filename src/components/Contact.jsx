@@ -113,71 +113,81 @@ export default function Contact() {
   }
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-8 bg-white">
       <div className="container mx-auto px-6">
-        <div className="max-w-3xl mx-auto text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-3 tracking-tight">
-            Every guest interaction tells a story.
-          </h2>
-          <p className="text-lg text-slate-500">Let's ensure yours is positive.</p>
+        <div className="max-w-2xl mx-auto text-center mb-5">
+          <h2 className="text-2xl font-extrabold text-slate-900 mb-1 tracking-tight">Subscribe</h2>
+          <p className="text-sm text-slate-500">Every guest interaction tells a story. Let's ensure yours is positive.</p>
         </div>
 
         <div id="contact" className="max-w-2xl mx-auto scroll-mt-24">
           <Card className="border border-slate-100 shadow-lg bg-white">
-            <CardHeader className="text-center pb-6 pt-8">
-              <CardTitle className="text-xl font-bold text-slate-900">Request Pilot Access</CardTitle>
-            </CardHeader>
-            <CardContent className="px-8 pb-8">
-              <form onSubmit={handleSubmit} className="space-y-5">
-                <div className="grid md:grid-cols-2 gap-5">
-                  <div className="space-y-1.5">
+            <CardContent className="px-6 py-6">
+              <form onSubmit={handleSubmit} className="space-y-3">
+                <div className="grid md:grid-cols-2 gap-3">
+                  <div className="space-y-1">
                     <Label htmlFor="name" className="text-slate-700 font-medium text-sm">Name *</Label>
                     <Input id="name" value={formData.name} onChange={(e) => handleChange('name', e.target.value)} className={`${inputClass} ${fieldErrors.name ? errorClass : ''}`} required />
                     {fieldErrors.name && <p className="text-xs text-red-500">{fieldErrors.name}</p>}
                   </div>
-                  <div className="space-y-1.5">
+                  <div className="space-y-1">
                     <Label htmlFor="email" className="text-slate-700 font-medium text-sm">Email *</Label>
                     <Input id="email" type="email" value={formData.email} onChange={(e) => handleChange('email', e.target.value)} className={`${inputClass} ${fieldErrors.email ? errorClass : ''}`} required />
                     {fieldErrors.email && <p className="text-xs text-red-500">{fieldErrors.email}</p>}
                   </div>
                 </div>
 
-                <div className="space-y-1.5">
-                  <Label htmlFor="phone" className="text-slate-700 font-medium text-sm">Phone Number</Label>
-                  <div className="flex gap-2">
-                    <Select value={countryCode} onValueChange={setCountryCode}>
-                      <SelectTrigger className={`w-24 ${inputClass}`}><SelectValue /></SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="+1">+1 (US)</SelectItem>
-                        <SelectItem value="+44">+44 (UK)</SelectItem>
-                        <SelectItem value="+1 (CA)">+1 (CA)</SelectItem>
-                      </SelectContent>
-                    </Select>
-                    <Input id="phone" type="tel" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} className={`flex-1 ${inputClass}`} placeholder="555 123 4567" />
+                <div className="grid md:grid-cols-2 gap-3">
+                  <div className="space-y-1">
+                    <Label htmlFor="phone" className="text-slate-700 font-medium text-sm">Phone</Label>
+                    <div className="flex gap-2">
+                      <Select value={countryCode} onValueChange={setCountryCode}>
+                        <SelectTrigger className={`w-24 ${inputClass}`}><SelectValue /></SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="+1">+1 (US)</SelectItem>
+                          <SelectItem value="+44">+44 (UK)</SelectItem>
+                          <SelectItem value="+1 (CA)">+1 (CA)</SelectItem>
+                        </SelectContent>
+                      </Select>
+                      <Input id="phone" type="tel" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} className={`flex-1 ${inputClass}`} placeholder="555 123 4567" />
+                    </div>
+                  </div>
+                  <div className="space-y-1">
+                    <Label htmlFor="hotel_company" className="text-slate-700 font-medium text-sm">Hotel / Company *</Label>
+                    <Input id="hotel_company" value={formData.hotel_company} onChange={(e) => handleChange('hotel_company', e.target.value)} className={`${inputClass} ${fieldErrors.hotel_company ? errorClass : ''}`} required />
+                    {fieldErrors.hotel_company && <p className="text-xs text-red-500">{fieldErrors.hotel_company}</p>}
                   </div>
                 </div>
 
-                <div className="space-y-1.5">
-                  <Label htmlFor="hotel_company" className="text-slate-700 font-medium text-sm">Hotel / Company *</Label>
-                  <Input id="hotel_company" value={formData.hotel_company} onChange={(e) => handleChange('hotel_company', e.target.value)} className={`${inputClass} ${fieldErrors.hotel_company ? errorClass : ''}`} required />
-                  {fieldErrors.hotel_company && <p className="text-xs text-red-500">{fieldErrors.hotel_company}</p>}
+                <div className="grid md:grid-cols-2 gap-3">
+                  <div className="space-y-1">
+                    <Label htmlFor="brand" className="text-slate-700 font-medium text-sm">Hotel Brand</Label>
+                    <Select value={formData.brand} onValueChange={(value) => handleChange('brand', value)}>
+                      <SelectTrigger className={inputClass}><SelectValue placeholder="Select brand" /></SelectTrigger>
+                      <SelectContent>
+                        {["Marriott","Hilton","IHG","Choice","Wyndham","Independent","Other"].map(b => <SelectItem key={b} value={b}>{b}</SelectItem>)}
+                      </SelectContent>
+                    </Select>
+                  </div>
+                  <div className="space-y-1">
+                    <Label htmlFor="urgency" className="text-slate-700 font-medium text-sm">Urgency</Label>
+                    <Select value={formData.urgency} onValueChange={(value) => handleChange('urgency', value)}>
+                      <SelectTrigger className={inputClass}><SelectValue placeholder="Select urgency" /></SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="immediate">Immediate (within 1 week)</SelectItem>
+                        <SelectItem value="within_month">Within a month</SelectItem>
+                        <SelectItem value="within_quarter">Within this quarter</SelectItem>
+                        <SelectItem value="exploring">Just exploring</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
                 </div>
 
-                <div className="space-y-1.5">
-                  <Label htmlFor="brand" className="text-slate-700 font-medium text-sm">Hotel Brand</Label>
-                  <Select value={formData.brand} onValueChange={(value) => handleChange('brand', value)}>
-                    <SelectTrigger className={inputClass}><SelectValue placeholder="Select brand" /></SelectTrigger>
-                    <SelectContent>
-                      {["Marriott","Hilton","IHG","Choice","Wyndham","Independent","Other"].map(b => <SelectItem key={b} value={b}>{b}</SelectItem>)}
-                    </SelectContent>
-                  </Select>
-                </div>
-
-                <div className="space-y-2">
-                  <Label className="text-slate-700 font-medium text-sm">What would you like to achieve? (Select all that apply)</Label>
-                  <div className="space-y-2">
+                <div className="space-y-1">
+                  <Label className="text-slate-700 font-medium text-sm">Goals (select all that apply)</Label>
+                  <div className="flex flex-wrap gap-x-6 gap-y-1.5">
                     {solutionGoalOptions.map((option) => (
-                      <div key={option.value} className="flex items-center space-x-3">
+                      <div key={option.value} className="flex items-center space-x-2">
                         <Checkbox
                           id={option.value}
                           checked={formData.solution_goals.includes(option.value)}
@@ -190,33 +200,21 @@ export default function Contact() {
                   </div>
                 </div>
 
-                <div className="space-y-1.5">
-                  <Label htmlFor="urgency" className="text-slate-700 font-medium text-sm">How urgent is your interest?</Label>
-                  <Select value={formData.urgency} onValueChange={(value) => handleChange('urgency', value)}>
-                    <SelectTrigger className={inputClass}><SelectValue placeholder="Select urgency level" /></SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="immediate">Immediate (within 1 week)</SelectItem>
-                      <SelectItem value="within_month">Within a month</SelectItem>
-                      <SelectItem value="within_quarter">Within this quarter</SelectItem>
-                      <SelectItem value="exploring">Just exploring</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-
-                <div className="space-y-1.5">
+                <div className="space-y-1">
                   <Label htmlFor="message" className="text-slate-700 font-medium text-sm">Message</Label>
-                  <Textarea id="message" rows={4} value={formData.message} onChange={(e) => handleChange('message', e.target.value)} placeholder="Tell us about your property and any specific questions..." className={inputClass} />
+                  <Textarea id="message" rows={2} value={formData.message} onChange={(e) => handleChange('message', e.target.value)} placeholder="Tell us about your property..." className={inputClass} />
                 </div>
 
-                <div className="space-y-1.5">
-                  <Label htmlFor="captcha" className="text-slate-700 font-medium text-sm">Quick check: What is {captchaNum1} + {captchaNum2}? *</Label>
-                  <Input id="captcha" type="number" value={captchaAnswer} onChange={(e) => setCaptchaAnswer(e.target.value)} className={inputClass} required />
-                  {captchaError && <p className="text-xs text-red-500">{captchaError}</p>}
+                <div className="flex items-end gap-3">
+                  <div className="space-y-1 flex-1">
+                    <Label htmlFor="captcha" className="text-slate-700 font-medium text-sm">What is {captchaNum1} + {captchaNum2}? *</Label>
+                    <Input id="captcha" type="number" value={captchaAnswer} onChange={(e) => setCaptchaAnswer(e.target.value)} className={inputClass} required />
+                    {captchaError && <p className="text-xs text-red-500">{captchaError}</p>}
+                  </div>
+                  <Button type="submit" disabled={isSubmitting} className="px-8 py-2 font-semibold bg-teal-500 hover:bg-teal-600 text-white rounded-full shadow-md transition-all duration-300 border-0 whitespace-nowrap">
+                    {isSubmitting ? 'Submitting...' : (<>Submit <Send className="ml-2 w-4 h-4" /></>)}
+                  </Button>
                 </div>
-
-                <Button type="submit" disabled={isSubmitting} className="w-full py-6 text-base font-semibold bg-teal-500 hover:bg-teal-600 text-white rounded-full shadow-md transition-all duration-300 border-0">
-                  {isSubmitting ? 'Submitting...' : (<>Submit Request <Send className="ml-2 w-4 h-4" /></>)}
-                </Button>
               </form>
             </CardContent>
           </Card>

@@ -12,8 +12,8 @@ export default function PilotProgramPage() {
 
   return (
     <div>
-      <PilotProgram onScrollToContact={scrollToContact} />
       <Contact />
+      <PilotProgram onScrollToContact={scrollToContact} />
     </div>
   );
 }
