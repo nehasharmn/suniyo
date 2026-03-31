@@ -13,12 +13,12 @@ export default function Home() {
 
       {/* Video Section */}
       <section className="py-3 bg-white">
-        <div className="container mx-auto px-6 max-w-4xl">
+        <div className="container mx-auto px-6 max-w-2xl">
           <div className="rounded-2xl overflow-hidden shadow-2xl aspect-video">
             <iframe
               width="100%"
               height="100%"
-              src="https://www.youtube.com/embed/LPv44XDItio?autoplay=1&mute=1&rel=0"
+              src="https://www.youtube.com/embed/LPv44XDItio?autoplay=1&mute=0&rel=0"
               allow="autoplay; encrypted-media"
               allowFullScreen
               className="w-full h-full"
