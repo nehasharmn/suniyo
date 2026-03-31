@@ -30,7 +30,7 @@ export default function Hero() {
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-bl from-teal-100 to-cyan-50 rounded-full blur-3xl opacity-60 -translate-y-1/4 translate-x-1/4 pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gradient-to-tr from-blue-100 to-teal-50 rounded-full blur-3xl opacity-50 pointer-events-none" />
 
-      <div className="relative z-10 container mx-auto px-6 pt-20 pb-6 flex flex-col justify-center items-center text-center">
+      <div className="relative z-10 container mx-auto px-6 pt-16 pb-4 flex flex-col justify-center items-center text-center">
         {/* Badge */}
         <div className="inline-flex items-center gap-2 bg-teal-50 border border-teal-200 text-teal-700 text-sm font-medium px-4 py-1.5 rounded-full mb-3">
           <span className="w-2 h-2 bg-teal-500 rounded-full animate-pulse"></span>

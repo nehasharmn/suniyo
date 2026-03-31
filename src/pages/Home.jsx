@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import Hero from '../components/Hero';
-import ReportPreview from '../components/ReportPreview';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Lightbulb, TrendingUp } from 'lucide-react';
@@ -13,7 +12,7 @@ export default function Home() {
       <Hero />
 
       {/* Video Section */}
-      <section className="py-4 bg-white">
+      <section className="py-3 bg-white">
         <div className="container mx-auto px-6 max-w-4xl">
           <div className="rounded-2xl overflow-hidden shadow-2xl aspect-video">
             <iframe
@@ -28,10 +27,8 @@ export default function Home() {
         </div>
       </section>
 
-      <ReportPreview />
-
       {/* Challenge + Solution Cards */}
-      <section className="py-5 bg-slate-50">
+      <section className="py-4 bg-slate-50">
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
             {/* The Challenge */}
