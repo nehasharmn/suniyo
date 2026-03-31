@@ -50,7 +50,7 @@ export default function Hero() {
         <div className="flex flex-col sm:flex-row gap-3 mb-5">
           <Link to={createPageUrl('PilotProgram')}>
             <Button className="group px-8 py-5 text-sm font-semibold bg-teal-500 hover:bg-teal-600 text-white rounded-full shadow-lg shadow-teal-200 hover:shadow-teal-300 transition-all duration-300 border-0 min-w-[220px]">
-              Request Pilot Access
+              Subscribe
               <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
             </Button>
           </Link>
