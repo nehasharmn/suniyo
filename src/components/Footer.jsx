@@ -5,7 +5,7 @@ import { createPageUrl } from '@/utils';
 export default function Footer() {
   return (
     <footer className="bg-slate-50 border-t border-slate-100 text-slate-500">
-      <div className="container mx-auto px-6 py-14">
+      <div className="container mx-auto px-6 py-8">
         <div className="grid md:grid-cols-3 gap-10">
           <div>
             <img
@@ -30,7 +30,7 @@ export default function Footer() {
             <p className="text-sm leading-relaxed">Join the pilot and see the difference data-driven service coaching can make for your property.</p>
           </div>
         </div>
-        <div className="mt-10 pt-6 border-t border-slate-200 text-center text-xs text-slate-400">
+        <div className="mt-6 pt-4 border-t border-slate-200 text-center text-xs text-slate-400">
           <p>&copy; {new Date().getFullYear()} Suniyo LLC. All rights reserved.</p>
         </div>
       </div>
