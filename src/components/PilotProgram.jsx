@@ -20,9 +20,7 @@ export default function PilotProgram({ onScrollToContact }) {
           <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-5 tracking-tight">
             Join the Pilot Program
           </h2>
-          <p className="text-lg text-teal-100 leading-relaxed">
-            We are currently in pilot phase. Be among the first to unlock:
-          </p>
+
         </div>
 
         <div className="grid md:grid-cols-3 gap-6 mb-14 max-w-4xl mx-auto">
