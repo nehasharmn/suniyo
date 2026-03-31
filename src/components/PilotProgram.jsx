@@ -18,10 +18,10 @@ export default function PilotProgram({ onScrollToContact }) {
             Limited Availability
           </div>
           <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-5 tracking-tight">
-            Join the ARS<sup className="text-xl text-white/80">360</sup> Pilot Program
+            Join the Pilot Program
           </h2>
           <p className="text-lg text-teal-100 leading-relaxed">
-            ARS<sup className="text-xs">360</sup> is currently in pilot phase. Be among the first to unlock:
+            We are currently in pilot phase. Be among the first to unlock:
           </p>
         </div>
 

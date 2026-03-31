@@ -31,10 +31,10 @@ export default function Header() {
           <Link to={createPageUrl('Home')} className="group flex flex-col">
             <img
               src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68ceff2e17a02290721df37f/fd3f1a952_ARS360logo.png"
-              alt="ARS360"
+              alt="Logo"
               className="h-10 w-auto object-contain brightness-0"
             />
-            <span className="text-slate-400 text-[9px] tracking-wide mt-0.5">Associate Rewards System 360</span>
+            
           </Link>
 
           {/* Desktop Nav */}

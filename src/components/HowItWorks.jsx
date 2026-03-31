@@ -3,7 +3,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Mic, Search, Gift, TrendingUp } from 'lucide-react';
 
 const steps = [
-  { icon: Mic, title: "Voice Capture", description: "ARS360 records front desk interactions, 24/7.", color: "bg-blue-50 text-blue-500" },
+  { icon: Mic, title: "Voice Capture", description: "Our platform records front desk interactions, 24/7.", color: "bg-blue-50 text-blue-500" },
   { icon: Search, title: "Voice Analysis", description: "AI evaluates greeting, loyalty recognition, upselling, clarity, and issue handling.", color: "bg-purple-50 text-purple-500" },
   { icon: Gift, title: "Feedback & Rewards", description: "Associates receive shift-end summaries and reward points.", color: "bg-emerald-50 text-emerald-500" },
   { icon: TrendingUp, title: "Manager Insights", description: "Dashboards show trends so managers can act fast on what matters.", color: "bg-amber-50 text-amber-500" }

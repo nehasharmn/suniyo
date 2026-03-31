@@ -19,7 +19,7 @@ export default function ReportPreview() {
                 Every shift, every score — in one clear report
               </h2>
               <p className="text-xl text-slate-500 leading-relaxed mb-6">
-                ARS<sup className="text-xs">360</sup> automatically generates a daily performance report for your property — covering check-in scores, soft skills, upsell attempts, review requests, and operational issues across every shift.
+                Our platform automatically generates a daily performance report for your property — covering check-in scores, soft skills, upsell attempts, review requests, and operational issues across every shift.
               </p>
               <ul className="space-y-3 mb-8">
                 {[
@@ -60,7 +60,7 @@ export default function ReportPreview() {
                 </div>
                 <img
                   src="https://media.base44.com/images/public/68ceff2e17a02290721df37f/8c2be1979_HotelInnSuniyoreport.png"
-                  alt="ARS360 Sample Daily Report"
+                  alt="Sample Daily Report"
                   className="w-full h-auto"
                 />
               </div>

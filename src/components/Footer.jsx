@@ -10,10 +10,10 @@ export default function Footer() {
           <div>
             <img
               src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68ceff2e17a02290721df37f/fd3f1a952_ARS360logo.png"
-              alt="ARS360"
+              alt="Logo"
               className="h-14 w-auto object-contain brightness-0 opacity-70 mb-3"
             />
-            <p className="text-xs text-slate-400 mb-2">Associate Rewards System 360</p>
+            
             <p className="text-sm text-slate-500">Where Service Gets Rewarded.</p>
           </div>
           <div>

@@ -38,13 +38,10 @@ export default function Hero() {
         </div>
 
         {/* Headline */}
-        <h1 className="text-7xl md:text-9xl font-extrabold text-slate-900 mb-4 leading-none tracking-tight">
-          ARS<sup className="text-4xl md:text-5xl relative -top-10 font-bold text-teal-500">360</sup>
-        </h1>
-        <h2 className="text-4xl md:text-6xl font-bold text-slate-800 mb-8 leading-tight max-w-5xl">
+        <h1 className="text-4xl md:text-6xl font-bold text-slate-800 mb-8 leading-tight max-w-5xl">
           Where Hotel Service Gets{' '}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-cyan-500">Rewarded</span>
-        </h2>
+        </h1>
         <p className="text-xl md:text-2xl text-slate-500 leading-relaxed max-w-3xl mx-auto mb-10">
           Boost guest satisfaction, reward associates, and drive revenue—while never letting bad service go unnoticed.
         </p>
@@ -59,7 +56,7 @@ export default function Hero() {
           </Link>
           <Link to={createPageUrl('OurSolution')}>
             <Button variant="outline" className="group px-9 py-6 text-base font-semibold border-2 border-slate-200 text-slate-700 hover:border-teal-300 hover:text-teal-600 hover:bg-teal-50 rounded-full transition-all duration-300 min-w-[240px]">
-              Discover ARS360
+              Discover How It Works
               <ChevronRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
             </Button>
           </Link>

@@ -22,7 +22,7 @@ export default function Solution() {
       <div className="container mx-auto px-6">
         <div className="max-w-3xl mx-auto text-center mb-14">
           <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">
-            ARS<sup className="text-base text-teal-500">360</sup> + Revenue Growth
+            Service + Revenue Growth
           </h2>
           <p className="text-lg text-slate-500 leading-relaxed">
             Not just measuring service—improving it, recognizing it, and turning that improvement into real, measurable profit.
@@ -46,7 +46,7 @@ export default function Solution() {
         </div>
 
         <div className="max-w-3xl mx-auto">
-          <h3 className="text-xl font-bold text-slate-900 text-center mb-8">How ARS360 helps you capture revenue upside:</h3>
+          <h3 className="text-xl font-bold text-slate-900 text-center mb-8">How we help you capture revenue upside:</h3>
           <div className="grid md:grid-cols-2 gap-4">
             {benefits.map((benefit, index) => (
               <div key={index} className="flex items-start gap-4 p-5 bg-teal-50 rounded-xl border border-teal-100">

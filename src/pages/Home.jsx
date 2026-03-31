@@ -81,7 +81,7 @@ export default function Home() {
                   <h2 className="text-3xl font-bold text-slate-900">Our Solution</h2>
                 </div>
                 <p className="text-lg text-slate-500 leading-relaxed mb-6">
-                  ARS<sup className="text-xs">360</sup> uses AI-powered voice analysis to provide real-time feedback, reward associates, and give managers the insights needed to turn service into measurable profit.
+                  Our platform uses AI-powered voice analysis to provide real-time feedback, reward associates, and give managers the insights needed to turn service into measurable profit.
                 </p>
                 <Link to={createPageUrl('OurSolution')}>
                   <Button variant="outline" className="group border-teal-200 text-teal-600 hover:bg-teal-50 rounded-full px-6">
