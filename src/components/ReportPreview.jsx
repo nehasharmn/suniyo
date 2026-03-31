@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 
 export default function ReportPreview() {
   return (
-    <section className="py-10 bg-white">
+    <section className="py-6 bg-white">
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-8 items-center">

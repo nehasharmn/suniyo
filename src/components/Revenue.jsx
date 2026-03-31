@@ -11,9 +11,9 @@ const studies = [
 
 export default function Revenue() {
   return (
-    <section className="py-20 bg-slate-50">
+    <section className="py-10 bg-slate-50">
       <div className="container mx-auto px-6">
-        <div className="max-w-3xl mx-auto text-center mb-14">
+        <div className="max-w-3xl mx-auto text-center mb-8">
           <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">
             Why Guest Satisfaction = Revenue
           </h2>
@@ -22,7 +22,7 @@ export default function Revenue() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6 mb-14">
+        <div className="grid md:grid-cols-2 gap-4 mb-8">
           {studies.map((study, index) => (
             <Card key={index} className="bg-white border border-slate-100 shadow-sm hover:shadow-md transition-shadow duration-300">
               <CardHeader className="pb-3">
@@ -41,7 +41,7 @@ export default function Revenue() {
           ))}
         </div>
 
-        <div className="max-w-2xl mx-auto bg-white rounded-2xl p-10 text-center border border-slate-100 shadow-sm">
+        <div className="max-w-2xl mx-auto bg-white rounded-2xl p-6 text-center border border-slate-100 shadow-sm">
           <blockquote className="text-xl md:text-2xl font-bold text-slate-800 mb-4 leading-relaxed">
             "How much more revenue can you earn if your guest satisfaction goes up? We know—just ask."
           </blockquote>

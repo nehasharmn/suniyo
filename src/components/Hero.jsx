@@ -30,18 +30,18 @@ export default function Hero() {
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-bl from-teal-100 to-cyan-50 rounded-full blur-3xl opacity-60 -translate-y-1/4 translate-x-1/4 pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gradient-to-tr from-blue-100 to-teal-50 rounded-full blur-3xl opacity-50 pointer-events-none" />
 
-      <div className="relative z-10 container mx-auto px-6 pt-16 pb-4 flex flex-col justify-center items-center text-center">
+      <div className="relative z-10 container mx-auto px-6 pt-10 pb-3 flex flex-col justify-center items-center text-center">
         {/* Headline */}
         <h1 className="text-3xl md:text-4xl font-bold text-slate-800 mb-3 leading-tight max-w-4xl">
           Where Hotel Service Gets{' '}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-cyan-500">Rewarded</span>
         </h1>
-        <p className="text-base md:text-lg text-slate-500 leading-relaxed max-w-3xl mx-auto mb-5">
+        <p className="text-base md:text-lg text-slate-500 leading-relaxed max-w-3xl mx-auto mb-3">
           Boost guest satisfaction, reward associates, and drive revenue—while never letting bad service go unnoticed.
         </p>
 
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-3 mb-5">
+        <div className="flex flex-col sm:flex-row gap-3 mb-3">
           <Link to={createPageUrl('PilotProgram')}>
             <Button className="group px-8 py-5 text-sm font-semibold bg-teal-500 hover:bg-teal-600 text-white rounded-full shadow-lg shadow-teal-200 hover:shadow-teal-300 transition-all duration-300 border-0 min-w-[220px]">
               Subscribe
