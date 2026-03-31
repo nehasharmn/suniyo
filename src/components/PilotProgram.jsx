@@ -17,9 +17,7 @@ export default function PilotProgram({ onScrollToContact }) {
           <div className="inline-flex items-center gap-2 bg-white/20 text-white text-sm font-medium px-4 py-1.5 rounded-full mb-6">
             Limited Availability
           </div>
-          <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-5 tracking-tight">
-            Join the Pilot Program
-          </h2>
+
 
         </div>
 
