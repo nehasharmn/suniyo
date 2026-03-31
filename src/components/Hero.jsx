@@ -31,12 +31,6 @@ export default function Hero() {
       <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gradient-to-tr from-blue-100 to-teal-50 rounded-full blur-3xl opacity-50 pointer-events-none" />
 
       <div className="relative z-10 container mx-auto px-6 pt-16 pb-4 flex flex-col justify-center items-center text-center">
-        {/* Badge */}
-        <div className="inline-flex items-center gap-2 bg-teal-50 border border-teal-200 text-teal-700 text-sm font-medium px-4 py-1.5 rounded-full mb-3">
-          <span className="w-2 h-2 bg-teal-500 rounded-full animate-pulse"></span>
-          Now accepting pilot partners
-        </div>
-
         {/* Headline */}
         <h1 className="text-3xl md:text-4xl font-bold text-slate-800 mb-3 leading-tight max-w-4xl">
           Where Hotel Service Gets{' '}
