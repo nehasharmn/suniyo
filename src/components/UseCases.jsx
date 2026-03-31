@@ -44,7 +44,7 @@ export default function UseCases() {
       <div className="container mx-auto px-6">
         <div className="max-w-3xl mx-auto text-center mb-14">
           <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">Value for Every Stakeholder</h2>
-          <p className="text-lg text-slate-500 leading-relaxed">ARS<sup className="text-xs">360</sup> creates wins across your entire organization.</p>
+          <p className="text-lg text-slate-500 leading-relaxed">Our platform creates wins across your entire organization.</p>
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8 mb-14">

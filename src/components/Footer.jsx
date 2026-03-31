@@ -9,9 +9,9 @@ export default function Footer() {
         <div className="grid md:grid-cols-3 gap-10">
           <div>
             <img
-              src="https://media.base44.com/images/public/68ceff2e17a02290721df37f/c82ca62ec_suniyo_logo_darker_only.png"
-              alt="Suniyo"
-              className="h-14 w-auto object-contain mb-3"
+              src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68ceff2e17a02290721df37f/fd3f1a952_ARS360logo.png"
+              alt="Logo"
+              className="h-14 w-auto object-contain brightness-0 opacity-70 mb-3"
             />
             
             <p className="text-sm text-slate-500">Where Service Gets Rewarded.</p>

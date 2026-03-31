@@ -14,7 +14,7 @@ export default function OurSolution() {
             How It Works
           </div>
           <h1 className="text-4xl md:text-6xl font-extrabold text-slate-900 tracking-tight mb-4">
-            The ARS<sup className="text-xl md:text-3xl text-teal-500 relative -top-6">360</sup> Solution
+            Our Solution
           </h1>
           <p className="text-lg text-slate-500 mt-4 max-w-2xl mx-auto leading-relaxed">
             Transforming service delivery with AI-powered insights, associate rewards, and measurable revenue growth.

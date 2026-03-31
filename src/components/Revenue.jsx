@@ -46,7 +46,7 @@ export default function Revenue() {
             "How much more revenue can you earn if your guest satisfaction goes up? We know—just ask."
           </blockquote>
           <p className="text-slate-500 text-sm leading-relaxed">
-            With ARS360, that question isn't theoretical. Hotels see RevPAR increases, ADR improvements, and more direct bookings—all tied to improvements in guest satisfaction.
+            That question isn't theoretical. Hotels see RevPAR increases, ADR improvements, and more direct bookings—all tied to improvements in guest satisfaction.
           </p>
         </div>
       </div>

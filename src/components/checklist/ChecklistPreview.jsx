@@ -82,7 +82,7 @@ export default function ChecklistPreview({ config, printRef, onPrint, onBack }) 
       marginTop: '32px', fontSize: F.footer, color: '#94a3b8',
       textAlign: 'center', borderTop: '1px solid #e2e8f0', paddingTop: '10px',
     }}>
-      {hotelName} · Front Desk Checklist · Page {page} of 2 · Powered by ARS360 · {new Date().toLocaleDateString()}
+      {hotelName} · Front Desk Checklist · Page {page} of 2 · {new Date().toLocaleDateString()}
     </div>
   );
 

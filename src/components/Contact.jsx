@@ -58,7 +58,7 @@ export default function Contact() {
       try {
         await SendEmail({
           to: 'psharma@suniyo.ai',
-          subject: 'New ARS360 Pilot Program Request',
+          subject: 'New Pilot Program Request',
           body: `New pilot request:\n- Name: ${formData.name}\n- Email: ${formData.email}\n- Phone: ${fullPhoneNumber || 'N/A'}\n- Hotel: ${formData.hotel_company}\n- Brand: ${formData.brand || 'N/A'}\n- Goals: ${formData.solution_goals.join(', ') || 'None'}\n- Urgency: ${formData.urgency || 'N/A'}\n- Message: ${formData.message || 'None'}`
         });
       } catch (emailError) {
@@ -97,7 +97,7 @@ export default function Contact() {
             </div>
             <h2 className="text-2xl font-bold text-slate-900 mb-3">Thank You!</h2>
             <p className="text-slate-500 leading-relaxed mb-6">
-              We've received your pilot program request and will reach out soon to discuss how ARS<sup>360</sup> can help your property.
+              We've received your pilot program request and will reach out soon to discuss how our platform can help your property.
             </p>
             <div className="bg-slate-50 rounded-xl p-6 border border-slate-100 text-left">
               <p className="text-slate-700 font-semibold mb-2">What's Next:</p>

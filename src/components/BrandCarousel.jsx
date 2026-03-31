@@ -23,7 +23,7 @@ export default function BrandCarousel() {
             Inspired by the Best in Service
           </h2>
           <p className="text-lg text-slate-500 leading-relaxed">
-            Great companies are built on exceptional customer experiences. ARS<sup className="text-xs">360</sup> gives you the tools to measure, manage, and reward the service that sets you apart.
+            Great companies are built on exceptional customer experiences. Our platform gives you the tools to measure, manage, and reward the service that sets you apart.
           </p>
         </div>
 
