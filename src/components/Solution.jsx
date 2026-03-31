@@ -18,9 +18,9 @@ const benefits = [
 
 export default function Solution() {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-10 bg-white">
       <div className="container mx-auto px-6">
-        <div className="max-w-3xl mx-auto text-center mb-14">
+        <div className="max-w-3xl mx-auto text-center mb-8">
           <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">
             Service Excellence + Revenue Growth
           </h2>
@@ -29,12 +29,12 @@ export default function Solution() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6 mb-14">
+        <div className="grid md:grid-cols-2 gap-4 mb-8">
           {features.map((feature, index) => (
             <Card key={index} className="bg-white border border-slate-100 shadow-sm hover:shadow-md transition-shadow duration-300">
-              <CardContent className="p-8 flex gap-5">
-                <div className="w-12 h-12 bg-teal-50 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <feature.icon className="w-6 h-6 text-teal-500" />
+              <CardContent className="p-5 flex gap-4">
+                <div className="w-10 h-10 bg-teal-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <feature.icon className="w-5 h-5 text-teal-500" />
                 </div>
                 <div>
                   <h3 className="text-base font-bold text-slate-800 mb-1">{feature.title}</h3>
@@ -46,10 +46,10 @@ export default function Solution() {
         </div>
 
         <div className="max-w-3xl mx-auto">
-          <h3 className="text-xl font-bold text-slate-900 text-center mb-8">How our platform helps you capture revenue upside:</h3>
-          <div className="grid md:grid-cols-2 gap-4">
+          <h3 className="text-lg font-bold text-slate-900 text-center mb-5">How our platform helps you capture revenue upside:</h3>
+          <div className="grid md:grid-cols-2 gap-3">
             {benefits.map((benefit, index) => (
-              <div key={index} className="flex items-start gap-4 p-5 bg-teal-50 rounded-xl border border-teal-100">
+              <div key={index} className="flex items-start gap-3 p-4 bg-teal-50 rounded-xl border border-teal-100">
                 <div className="w-6 h-6 bg-teal-500 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                   <span className="text-white font-bold text-xs">{index + 1}</span>
                 </div>

@@ -11,14 +11,14 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section className="py-20 bg-slate-50">
+    <section className="py-10 bg-slate-50">
       <div className="container mx-auto px-6">
-        <div className="max-w-3xl mx-auto text-center mb-14">
+        <div className="max-w-3xl mx-auto text-center mb-8">
           <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">How It Works</h2>
           <p className="text-lg text-slate-500 leading-relaxed">A seamless four-step process that transforms service delivery.</p>
         </div>
 
-        <div className="max-w-5xl mx-auto grid md:grid-cols-4 gap-6 mb-14">
+        <div className="max-w-5xl mx-auto grid md:grid-cols-4 gap-4 mb-8">
           {steps.map((step, index) => (
             <div key={index} className="relative">
               {index < steps.length - 1 && (
@@ -38,7 +38,7 @@ export default function HowItWorks() {
           ))}
         </div>
 
-        <div className="max-w-2xl mx-auto bg-white rounded-2xl p-10 text-center border border-slate-100 shadow-sm">
+        <div className="max-w-2xl mx-auto bg-white rounded-2xl p-6 text-center border border-slate-100 shadow-sm">
           <blockquote className="text-lg md:text-xl text-slate-600 italic leading-relaxed">
             "Would you rather know today what exactly happened at your property—or wait until bad reviews appear days later?"
           </blockquote>

@@ -6,22 +6,22 @@ import { Button } from '@/components/ui/button';
 
 export default function ReportPreview() {
   return (
-    <section className="py-24 bg-white">
+    <section className="py-10 bg-white">
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-14 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 items-center">
             {/* Left: Text */}
             <div>
-              <div className="inline-flex items-center gap-2 bg-teal-50 border border-teal-100 text-teal-700 text-sm font-medium px-4 py-1.5 rounded-full mb-6">
+              <div className="inline-flex items-center gap-2 bg-teal-50 border border-teal-100 text-teal-700 text-sm font-medium px-4 py-1.5 rounded-full mb-4">
                 AI-Generated Daily Reports
               </div>
-              <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-5">
+              <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-3">
                 Every shift, every score — in one clear report
               </h2>
-              <p className="text-xl text-slate-500 leading-relaxed mb-6">
+              <p className="text-base text-slate-500 leading-relaxed mb-4">
                 Our platform automatically generates a daily performance report for your property — covering check-in scores, soft skills, upsell attempts, review requests, and operational issues across every shift.
               </p>
-              <ul className="space-y-3 mb-8">
+              <ul className="space-y-2 mb-6">
                 {[
                   "Check-in performance scored across Night Audit, Morning & Evening shifts",
                   "Soft skills tracking: greetings, loyalty recognition, name usage & more",

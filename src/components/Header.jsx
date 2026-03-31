@@ -26,15 +26,15 @@ export default function Header() {
   return (
     <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-sm' : 'bg-white/80 backdrop-blur-sm'}`}>
       <div className="container mx-auto px-6">
-        <div className="flex items-center justify-between h-18 py-3">
+        <div className="flex items-center justify-between h-16 py-2">
           {/* Logo */}
           <Link to={createPageUrl('Home')} className="group flex flex-col">
             <img
               src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68ceff2e17a02290721df37f/fd3f1a952_ARS360logo.png"
               alt="Logo"
-              className="h-10 w-auto object-contain brightness-0"
+              className="h-14 w-auto object-contain"
+              style={{ background: 'transparent' }}
             />
-            
           </Link>
 
           {/* Desktop Nav */}
