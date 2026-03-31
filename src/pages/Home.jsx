@@ -103,7 +103,7 @@ export default function Home() {
           </p>
           <Link to={createPageUrl('PilotProgram')}>
             <Button className="group px-10 py-6 text-base font-semibold bg-white text-teal-600 hover:bg-teal-50 rounded-full shadow-lg transition-all duration-300 border-0">
-              Join the Pilot Program
+              Subscribe
               <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Button>
           </Link>
