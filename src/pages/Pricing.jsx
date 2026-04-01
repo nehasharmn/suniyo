@@ -102,14 +102,6 @@ export default function Pricing() {
             </div>
             <p className="text-teal-600 text-xs font-semibold mb-1">That's just $250/month — save $1,200 vs monthly</p>
             <p className="text-slate-500 text-sm mb-5">Billed once per year. Best value for committed properties.</p>
-            <ul className="space-y-2">
-              {['Everything in Monthly', 'Priority support', 'Quarterly business reviews', 'Early access to new features', 'Dedicated onboarding'].map(f => (
-                <li key={f} className="flex items-center gap-2 text-sm text-slate-700">
-                  <Check className="w-4 h-4 text-teal-500 flex-shrink-0" />
-                  {f}
-                </li>
-              ))}
-            </ul>
             {billing === 'annual' && (
               <Link to="/PilotProgram" className="block mt-5">
                 <button className="w-full bg-teal-500 hover:bg-teal-400 text-white font-bold px-6 py-3 rounded-full text-sm transition-colors">
