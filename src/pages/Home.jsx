@@ -32,67 +32,43 @@ export default function Home() {
       </section>
 
       {/* Challenge + Solution Cards */}
-      <section className="py-8 bg-slate-50">
-        <div className="container mx-auto px-6">
+      <section className="py-12 bg-slate-50">
+        <div className="container mx-auto px-6 max-w-5xl">
           <div className="text-center mb-10">
             <h2 className="text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight">The Problem & Our Solution</h2>
           </div>
-          <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-            <Card className="border border-slate-100 shadow-md overflow-hidden bg-white hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-              <div className="relative h-44 overflow-hidden">
-                <img
-                  src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68ceff2e17a02290721df37f/4fdde6290_HotelCheck-InDisruption.png"
-                  alt=""
-                  className="w-full h-full object-cover grayscale"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-white/70 to-transparent"></div>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="bg-white rounded-2xl border border-rose-100 shadow-sm p-8 flex flex-col gap-4">
+              <div className="w-12 h-12 bg-rose-50 rounded-2xl flex items-center justify-center">
+                <Lightbulb className="w-6 h-6 text-rose-500" />
               </div>
-              <CardContent className="p-6">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="w-10 h-10 bg-rose-50 rounded-xl flex items-center justify-center">
-                    <Lightbulb className="w-5 h-5 text-rose-500" />
-                  </div>
-                  <h2 className="text-xl font-bold text-slate-900">The Challenge</h2>
-                </div>
-                <p className="text-sm text-slate-500 leading-relaxed mb-5">
-                  The front desk is your first impression, but inconsistent service, reactive management, and limited visibility lead to lost revenue and high staff turnover.
-                </p>
-                <Link to={createPageUrl('TheChallenge')}>
-                  <Button variant="outline" className="group border-rose-200 text-rose-600 hover:bg-rose-50 rounded-full px-5 text-sm">
-                    See the Financial Impact
-                    <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </Button>
-                </Link>
-              </CardContent>
-            </Card>
+              <h2 className="text-xl font-bold text-slate-900">The Challenge</h2>
+              <p className="text-slate-500 leading-relaxed text-sm flex-1">
+                The front desk is your first impression, but inconsistent service, reactive management, and limited visibility lead to lost revenue and high staff turnover.
+              </p>
+              <Link to={createPageUrl('TheChallenge')}>
+                <Button variant="outline" className="group border-rose-200 text-rose-600 hover:bg-rose-50 rounded-full px-5 text-sm w-fit">
+                  See the Financial Impact
+                  <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </Link>
+            </div>
 
-            <Card className="border border-slate-100 shadow-md overflow-hidden bg-white hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-              <div className="relative h-44 overflow-hidden">
-                <img
-                  src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68ceff2e17a02290721df37f/0ec336ed6_image.png"
-                  alt=""
-                  className="w-full h-full object-cover grayscale"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-white/70 to-transparent"></div>
+            <div className="bg-white rounded-2xl border border-teal-100 shadow-sm p-8 flex flex-col gap-4">
+              <div className="w-12 h-12 bg-teal-50 rounded-2xl flex items-center justify-center">
+                <TrendingUp className="w-6 h-6 text-teal-500" />
               </div>
-              <CardContent className="p-6">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="w-10 h-10 bg-teal-50 rounded-xl flex items-center justify-center">
-                    <TrendingUp className="w-5 h-5 text-teal-500" />
-                  </div>
-                  <h2 className="text-xl font-bold text-slate-900">Our Solution</h2>
-                </div>
-                <p className="text-sm text-slate-500 leading-relaxed mb-5">
-                  Our platform uses AI-powered voice analysis to provide real-time feedback, reward associates, and give managers the insights needed to turn service into measurable profit.
-                </p>
-                <Link to={createPageUrl('OurSolution')}>
-                  <Button variant="outline" className="group border-teal-200 text-teal-600 hover:bg-teal-50 rounded-full px-5 text-sm">
-                    Discover How It Works
-                    <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </Button>
-                </Link>
-              </CardContent>
-            </Card>
+              <h2 className="text-xl font-bold text-slate-900">Our Solution</h2>
+              <p className="text-slate-500 leading-relaxed text-sm flex-1">
+                Our platform uses AI-powered voice analysis to provide real-time feedback, reward associates, and give managers the insights needed to turn service into measurable profit.
+              </p>
+              <Link to={createPageUrl('OurSolution')}>
+                <Button variant="outline" className="group border-teal-200 text-teal-600 hover:bg-teal-50 rounded-full px-5 text-sm w-fit">
+                  Discover How It Works
+                  <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
