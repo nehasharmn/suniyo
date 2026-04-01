@@ -12,11 +12,11 @@ export default function Home() {
       <MeetKelly />
 
       {/* Video Section */}
-      <section className="py-8 bg-white">
+      <section className="py-4 bg-white">
         <div className="container mx-auto px-6 max-w-3xl">
-          <div className="text-center mb-8">
-            <h2 className="text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight mb-3">See It in Action</h2>
-            <p className="text-slate-500 text-base">Watch how Suniyo transforms front desk service into measurable results.</p>
+          <div className="text-center mb-3">
+            <h2 className="text-xl font-extrabold text-slate-900 tracking-tight mb-1">See It in Action</h2>
+            <p className="text-slate-500 text-sm">Watch how Suniyo transforms front desk service into measurable results.</p>
           </div>
           <div className="rounded-2xl overflow-hidden shadow-2xl aspect-video">
             <iframe
@@ -32,7 +32,7 @@ export default function Home() {
       </section>
 
       {/* Challenge + Solution Cards */}
-      <section className="py-12 bg-slate-50">
+      <section className="py-4 bg-slate-50">
         <div className="container mx-auto px-6 max-w-5xl">
           <div className="text-center mb-10">
             <h2 className="text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight">The Problem & Our Solution</h2>
@@ -74,12 +74,12 @@ export default function Home() {
       </section>
 
       {/* CTA Banner */}
-      <section className="py-10 bg-gradient-to-br from-teal-500 to-cyan-500">
+      <section className="py-6 bg-gradient-to-br from-teal-500 to-cyan-500">
         <div className="container mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4 tracking-tight">
+          <h2 className="text-2xl md:text-3xl font-extrabold text-white mb-2 tracking-tight">
             Ready to Unlock Your Revenue Potential?
           </h2>
-          <p className="text-base md:text-lg text-teal-100 mb-8 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-sm text-teal-100 mb-4 max-w-2xl mx-auto leading-relaxed">
             Be among the first to see how data-driven service coaching can transform your guest satisfaction scores and your bottom line.
           </p>
           <Link to={createPageUrl('PilotProgram')}>
