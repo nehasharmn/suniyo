@@ -76,14 +76,6 @@ export default function Pricing() {
               <span className="text-slate-400 text-sm mb-2">/month</span>
             </div>
             <p className="text-slate-500 text-sm mb-5">Flexible month-to-month commitment. Cancel anytime.</p>
-            <ul className="space-y-2">
-              {['Full Kelly AI platform access', 'Real-time guest interaction analysis', 'Staff performance scoring', 'Manager dashboard & reports', 'Ongoing AI updates'].map(f => (
-                <li key={f} className="flex items-center gap-2 text-sm text-slate-700">
-                  <Check className="w-4 h-4 text-teal-500 flex-shrink-0" />
-                  {f}
-                </li>
-              ))}
-            </ul>
           </div>
 
           {/* Annual */}
