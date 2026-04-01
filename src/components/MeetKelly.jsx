@@ -10,7 +10,7 @@ const capabilities = [
 
 export default function MeetKelly() {
   return (
-    <section className="py-6 bg-white">
+    <section className="pt-20 pb-6 bg-white">
       <div className="container mx-auto px-6 max-w-5xl">
         <div className="flex flex-col md:flex-row items-center gap-6">
           <div className="flex-shrink-0 flex flex-col items-center">
