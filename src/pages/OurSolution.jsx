@@ -30,11 +30,12 @@ export default function OurSolution() {
           </div>
           <div className="rounded-2xl overflow-hidden shadow-2xl aspect-video">
             <iframe
-              src="https://player.vimeo.com/video/1179238131?h=1005580fcf"
+              src="https://player.vimeo.com/video/1179238131?h=1005580fcf&autoplay=1&muted=0"
               width="100%"
               height="100%"
-              allow="autoplay; fullscreen; picture-in-picture"
+              allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
               allowFullScreen
+              style={{ border: 0 }}
               className="w-full h-full"
             />
           </div>
