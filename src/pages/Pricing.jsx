@@ -52,7 +52,7 @@ export default function Pricing() {
               onClick={() => setBilling('annual')}
               className={`px-5 py-2 rounded-full text-sm font-semibold transition-all ${billing === 'annual' ? 'bg-white text-slate-900 shadow' : 'text-slate-500'}`}
             >
-              Annual <span className="text-teal-600 font-bold ml-1">Save $600</span>
+              Annual <span className="text-teal-600 font-bold ml-1">Save $1,200</span>
             </button>
           </div>
         </div>
@@ -72,7 +72,7 @@ export default function Pricing() {
               )}
             </div>
             <div className="flex items-end gap-1 mb-4">
-              <span className="text-5xl font-extrabold text-slate-900">$300</span>
+              <span className="text-5xl font-extrabold text-slate-900">$350</span>
               <span className="text-slate-400 text-sm mb-2">/month</span>
             </div>
             <p className="text-slate-500 text-sm mb-5">Flexible month-to-month commitment. Cancel anytime.</p>
@@ -101,7 +101,7 @@ export default function Pricing() {
               <span className="text-5xl font-extrabold text-slate-900">$3,000</span>
               <span className="text-slate-400 text-sm mb-2">/year</span>
             </div>
-            <p className="text-teal-600 text-xs font-semibold mb-1">That's just $250/month — save $600 vs monthly</p>
+            <p className="text-teal-600 text-xs font-semibold mb-1">That's just $250/month — save $1,200 vs monthly</p>
             <p className="text-slate-500 text-sm mb-5">Billed once per year. Best value for committed properties.</p>
             <ul className="space-y-2">
               {['Everything in Monthly', 'Priority support', 'Quarterly business reviews', 'Early access to new features', 'Dedicated onboarding'].map(f => (
@@ -121,7 +121,7 @@ export default function Pricing() {
           <div className="flex flex-col sm:flex-row justify-center gap-6 mb-6">
             <div>
               <p className="text-slate-400 text-xs uppercase tracking-widest mb-1">Month to Month</p>
-              <p className="text-2xl font-extrabold text-white">$500 <span className="text-teal-400">+</span> $300<span className="text-sm text-slate-400">/mo</span></p>
+              <p className="text-2xl font-extrabold text-white">$500 <span className="text-teal-400">+</span> $350<span className="text-sm text-slate-400">/mo</span></p>
             </div>
             <div className="hidden sm:block w-px bg-slate-700" />
             <div>
