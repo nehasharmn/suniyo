@@ -36,7 +36,7 @@ export default function MeetKelly() {
               Meet <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-cyan-500">Kelly</span>, the Hotel DeskBuddy
             </h2>
             <p className="text-slate-500 text-base leading-relaxed mb-6 max-w-xl">
-              Kelly is an AI agent that listens, analyzes, categorizes, scores, and provides feedback to agents and managers — helping you <strong className="text-slate-700">reward, coach, and recognize</strong> your associates like never before.
+              Kelly is an AI agent that helps increase revenue and guest satisfaction as she listens, analyzes, categorizes, scores, and provides feedback to agents and managers — helping you <strong className="text-slate-700">reward, coach, and recognize</strong> your associates like never before.
             </p>
 
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
