@@ -7,6 +7,7 @@ import PageNotFound from './lib/PageNotFound';
 import { AuthProvider, useAuth } from '@/lib/AuthContext';
 import UserNotRegisteredError from '@/components/UserNotRegisteredError';
 import AdminAnalytics from './pages/AdminAnalytics';
+import Pricing from './pages/Pricing';
 import ChecklistBuilder from './pages/ChecklistBuilder';
 
 const { Pages, Layout, mainPage } = pagesConfig;
@@ -61,6 +62,7 @@ const AuthenticatedApp = () => {
       ))}
       <Route path="/AdminAnalytics" element={<LayoutWrapper currentPageName="AdminAnalytics"><AdminAnalytics /></LayoutWrapper>} />
       <Route path="/ChecklistBuilder" element={<LayoutWrapper currentPageName="ChecklistBuilder"><ChecklistBuilder /></LayoutWrapper>} />
+      <Route path="/Pricing" element={<LayoutWrapper currentPageName="Pricing"><Pricing /></LayoutWrapper>} />
       <Route path="*" element={<PageNotFound />} />
     </Routes>
   );

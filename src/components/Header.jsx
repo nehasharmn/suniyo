@@ -8,6 +8,7 @@ const navLinks = [
   { href: createPageUrl('Home'), label: 'Home' },
   { href: createPageUrl('TheChallenge'), label: 'The Challenge' },
   { href: createPageUrl('OurSolution'), label: 'Our Solution' },
+  { href: '/Pricing', label: 'Pricing' },
 ];
 
 export default function Header() {
