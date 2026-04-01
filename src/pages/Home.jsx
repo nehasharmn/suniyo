@@ -11,26 +11,6 @@ export default function Home() {
     <div className="bg-white">
       <MeetKelly />
 
-      {/* Video Section */}
-      <section className="py-4 bg-white">
-        <div className="container mx-auto px-6 max-w-3xl">
-          <div className="text-center mb-3">
-            <h2 className="text-xl font-extrabold text-slate-900 tracking-tight mb-1">See It in Action</h2>
-            <p className="text-slate-500 text-sm">Watch how Suniyo transforms front desk service into measurable results.</p>
-          </div>
-          <div className="rounded-2xl overflow-hidden shadow-2xl aspect-video">
-            <iframe
-              width="100%"
-              height="100%"
-              src="https://www.youtube.com/embed/LPv44XDItio?autoplay=1&mute=0&rel=0"
-              allow="autoplay; encrypted-media"
-              allowFullScreen
-              className="w-full h-full"
-            />
-          </div>
-        </div>
-      </section>
-
       {/* Challenge + Solution Cards */}
       <section className="py-4 bg-slate-50">
         <div className="container mx-auto px-6 max-w-5xl">
