@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import Hero from '../components/Hero';
+import MeetKelly from '../components/MeetKelly';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Lightbulb, TrendingUp } from 'lucide-react';
@@ -10,6 +11,8 @@ export default function Home() {
   return (
     <div className="bg-white">
       <Hero />
+
+      <MeetKelly />
 
       {/* Video Section */}
       <section className="py-8 bg-white">
