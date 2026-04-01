@@ -19,7 +19,7 @@ export default function MeetKelly() {
               <img
                 src="https://media.base44.com/images/public/68ceff2e17a02290721df37f/aed7b422d_KellyPic.jpg"
                 alt="Kelly - Hotel DeskBuddy"
-                className="relative w-40 h-44 object-cover object-top rounded-full border-4 border-white shadow-xl"
+                className="relative w-48 h-48 object-cover rounded-full border-4 border-white shadow-xl" style={{objectPosition: '50% 15%'}}
               />
             </div>
             <div className="mt-2 inline-flex items-center gap-2 bg-teal-50 border border-teal-200 text-teal-700 text-xs font-semibold px-3 py-1 rounded-full">
