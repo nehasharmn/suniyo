@@ -76,6 +76,13 @@ export default function Pricing() {
               <span className="text-slate-400 text-sm mb-2">/month</span>
             </div>
             <p className="text-slate-500 text-sm mb-5">Flexible month-to-month commitment. Cancel anytime.</p>
+            {billing === 'monthly' && (
+              <Link to="/PilotProgram">
+                <button className="w-full bg-teal-500 hover:bg-teal-400 text-white font-bold px-6 py-3 rounded-full text-sm transition-colors">
+                  Subscribe Monthly →
+                </button>
+              </Link>
+            )}
           </div>
 
           {/* Annual */}
@@ -103,6 +110,13 @@ export default function Pricing() {
                 </li>
               ))}
             </ul>
+            {billing === 'annual' && (
+              <Link to="/PilotProgram" className="block mt-5">
+                <button className="w-full bg-teal-500 hover:bg-teal-400 text-white font-bold px-6 py-3 rounded-full text-sm transition-colors">
+                  Subscribe Annually →
+                </button>
+              </Link>
+            )}
           </div>
         </div>
 
