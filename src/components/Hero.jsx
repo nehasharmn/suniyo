@@ -25,7 +25,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-teal-50 pt-24 pb-16">
+    <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-teal-50 pt-14 pb-8">
       <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-gradient-to-bl from-teal-100 to-cyan-50 rounded-full blur-3xl opacity-50 -translate-y-1/3 translate-x-1/4 pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gradient-to-tr from-blue-100 to-teal-50 rounded-full blur-3xl opacity-40 pointer-events-none" />
 
@@ -38,11 +38,11 @@ export default function Hero() {
           Where Hotel Service Gets{' '}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-cyan-500">Rewarded</span>
         </h1>
-        <p className="text-lg md:text-xl text-slate-500 leading-relaxed max-w-2xl mx-auto mb-8">
+        <p className="text-lg md:text-xl text-slate-500 leading-relaxed max-w-2xl mx-auto mb-5">
           Boost guest satisfaction, reward associates, and drive revenue — while never letting bad service go unnoticed.
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-4 mb-12">
+        <div className="flex flex-col sm:flex-row gap-4 mb-6">
           <Link to={createPageUrl('PilotProgram')}>
             <Button className="group px-8 py-6 text-base font-semibold bg-teal-500 hover:bg-teal-600 text-white rounded-full shadow-lg shadow-teal-200 hover:shadow-teal-300 transition-all duration-300 border-0 min-w-[220px]">
               Subscribe

@@ -16,9 +16,9 @@ const quotes = [
 
 export default function BrandCarousel() {
   return (
-    <section className="py-20 bg-slate-50">
+    <section className="py-10 bg-slate-50">
       <div className="container mx-auto px-6">
-        <div className="max-w-3xl mx-auto text-center mb-12">
+        <div className="max-w-3xl mx-auto text-center mb-6">
           <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">
             Inspired by the Best in Service
           </h2>

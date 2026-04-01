@@ -12,7 +12,7 @@ export default function Home() {
       <Hero />
 
       {/* Video Section */}
-      <section className="py-16 bg-white">
+      <section className="py-8 bg-white">
         <div className="container mx-auto px-6 max-w-3xl">
           <div className="text-center mb-8">
             <h2 className="text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight mb-3">See It in Action</h2>
@@ -32,7 +32,7 @@ export default function Home() {
       </section>
 
       {/* Challenge + Solution Cards */}
-      <section className="py-16 bg-slate-50">
+      <section className="py-8 bg-slate-50">
         <div className="container mx-auto px-6">
           <div className="text-center mb-10">
             <h2 className="text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight">The Problem & Our Solution</h2>
@@ -98,7 +98,7 @@ export default function Home() {
       </section>
 
       {/* CTA Banner */}
-      <section className="py-20 bg-gradient-to-br from-teal-500 to-cyan-500">
+      <section className="py-10 bg-gradient-to-br from-teal-500 to-cyan-500">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4 tracking-tight">
             Ready to Unlock Your Revenue Potential?
