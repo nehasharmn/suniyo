@@ -11,41 +11,41 @@ const studies = [
 
 export default function Revenue() {
   return (
-    <section className="py-20 bg-slate-50">
+    <section className="py-8 bg-slate-50">
       <div className="container mx-auto px-6">
-        <div className="max-w-3xl mx-auto text-center mb-14">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">
+        <div className="max-w-3xl mx-auto text-center mb-6">
+          <h2 className="text-2xl md:text-3xl font-extrabold text-slate-900 mb-2 tracking-tight">
             Why Guest Satisfaction = Revenue
           </h2>
-          <p className="text-lg text-slate-500 leading-relaxed">
+          <p className="text-sm text-slate-500 leading-relaxed">
             Recent data shows the financial payoff of high guest satisfaction and strong service:
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-5 mb-12 max-w-4xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-4 mb-6 max-w-4xl mx-auto">
           {studies.map((study, index) => (
             <Card key={index} className="bg-white border border-slate-100 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-0.5">
-              <CardHeader className="pb-3">
-                <div className="flex items-center gap-4">
-                  <div className={`w-11 h-11 ${study.iconColor} rounded-xl flex items-center justify-center flex-shrink-0`}>
-                    <study.icon className="w-5 h-5" />
+              <CardHeader className="pb-2 pt-4 px-4">
+                <div className="flex items-center gap-3">
+                  <div className={`w-9 h-9 ${study.iconColor} rounded-xl flex items-center justify-center flex-shrink-0`}>
+                    <study.icon className="w-4 h-4" />
                   </div>
-                  <CardTitle className="text-base text-slate-800 flex-1 leading-snug">{study.title}</CardTitle>
+                  <CardTitle className="text-sm text-slate-800 flex-1 leading-snug">{study.title}</CardTitle>
                 </div>
               </CardHeader>
-              <CardContent className="pt-0 px-6 pb-6">
-                <p className="text-slate-700 mb-2 font-medium text-sm leading-relaxed">{study.finding}</p>
+              <CardContent className="pt-0 px-4 pb-4">
+                <p className="text-slate-700 mb-1 font-medium text-xs leading-relaxed">{study.finding}</p>
                 <p className="text-xs text-slate-400 italic">Source: {study.source}</p>
               </CardContent>
             </Card>
           ))}
         </div>
 
-        <div className="max-w-2xl mx-auto bg-white rounded-2xl p-10 text-center border border-slate-100 shadow-sm">
-          <blockquote className="text-xl md:text-2xl font-bold text-slate-800 mb-4 leading-relaxed">
+        <div className="max-w-2xl mx-auto bg-white rounded-xl p-6 text-center border border-slate-100 shadow-sm">
+          <blockquote className="text-base font-bold text-slate-800 mb-2 leading-relaxed">
             "How much more revenue can you earn if your guest satisfaction goes up? We know — just ask."
           </blockquote>
-          <p className="text-slate-500 text-sm leading-relaxed">
+          <p className="text-slate-500 text-xs leading-relaxed">
             Hotels see RevPAR increases, ADR improvements, and more direct bookings — all tied to improvements in guest satisfaction.
           </p>
         </div>
