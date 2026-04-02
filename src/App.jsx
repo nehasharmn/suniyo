@@ -9,6 +9,7 @@ import UserNotRegisteredError from '@/components/UserNotRegisteredError';
 import AdminAnalytics from './pages/AdminAnalytics';
 import Pricing from './pages/Pricing';
 import ChecklistBuilder from './pages/ChecklistBuilder';
+import Subscribe from './pages/Subscribe';
 
 const { Pages, Layout, mainPage } = pagesConfig;
 const mainPageKey = mainPage ?? Object.keys(Pages)[0];
@@ -63,6 +64,7 @@ const AuthenticatedApp = () => {
       <Route path="/AdminAnalytics" element={<LayoutWrapper currentPageName="AdminAnalytics"><AdminAnalytics /></LayoutWrapper>} />
       <Route path="/ChecklistBuilder" element={<LayoutWrapper currentPageName="ChecklistBuilder"><ChecklistBuilder /></LayoutWrapper>} />
       <Route path="/Pricing" element={<LayoutWrapper currentPageName="Pricing"><Pricing /></LayoutWrapper>} />
+      <Route path="/Subscribe" element={<LayoutWrapper currentPageName="Subscribe"><Subscribe /></LayoutWrapper>} />
       <Route path="*" element={<PageNotFound />} />
     </Routes>
   );

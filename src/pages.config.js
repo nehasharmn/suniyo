@@ -49,7 +49,7 @@
  */
 import Home from './pages/Home';
 import OurSolution from './pages/OurSolution';
-import PilotProgram from './pages/PilotProgram';
+import Subscribe from './pages/Subscribe';
 import TheChallenge from './pages/TheChallenge';
 import AdminAnalytics from './pages/AdminAnalytics';
 import __Layout from './Layout.jsx';
@@ -58,7 +58,7 @@ import __Layout from './Layout.jsx';
 export const PAGES = {
     "Home": Home,
     "OurSolution": OurSolution,
-    "PilotProgram": PilotProgram,
+    "Subscribe": Subscribe,
     "TheChallenge": TheChallenge,
     "AdminAnalytics": AdminAnalytics,
 }
