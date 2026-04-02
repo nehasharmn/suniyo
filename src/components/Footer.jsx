@@ -22,7 +22,7 @@ export default function Footer() {
               <li><Link to={createPageUrl('Home')} className="hover:text-teal-600 transition-colors">Home</Link></li>
               <li><Link to={createPageUrl('TheChallenge')} className="hover:text-teal-600 transition-colors">The Challenge</Link></li>
               <li><Link to={createPageUrl('OurSolution')} className="hover:text-teal-600 transition-colors">Our Solution</Link></li>
-              <li><Link to={createPageUrl('PilotProgram')} className="hover:text-teal-600 transition-colors">Pilot Program</Link></li>
+              <li><Link to="/Pricing" className="hover:text-teal-600 transition-colors">Pricing</Link></li>
             </ul>
           </div>
           <div>

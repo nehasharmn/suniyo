@@ -62,7 +62,7 @@ export default function Home() {
           <p className="text-sm text-teal-100 mb-4 max-w-2xl mx-auto leading-relaxed">
             Be among the first to see how data-driven service coaching can transform your guest satisfaction scores and your bottom line.
           </p>
-          <Link to={createPageUrl('PilotProgram')}>
+          <Link to="/Pricing">
             <Button className="group px-12 py-6 text-base font-semibold bg-white text-teal-600 hover:bg-teal-50 rounded-full shadow-lg transition-all duration-300 border-0 hover:scale-105">
               Subscribe
               <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
