@@ -11,7 +11,7 @@ export default function ProductShowcase() {
               Real-Time Performance Visibility
             </h2>
             <p className="text-lg text-slate-600 mb-8 leading-relaxed">
-              Get instant insights into front desk performance across all shifts. Track KPIs that matter—check-in quality, upsell success, guest reviews—and identify improvement opportunities before they impact revenue.
+              Get instant insights into front desk performance across all shifts. Track KPIs that matter: check-in quality, upsell success, guest reviews, and more. Identify improvement opportunities before they impact revenue.
             </p>
             <div className="space-y-4">
               <div className="flex gap-4">
