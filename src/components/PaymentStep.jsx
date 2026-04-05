@@ -1,7 +1,34 @@
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { CreditCard, Smartphone, Wifi, Package, Check } from 'lucide-react';
+import { CreditCard, Check } from 'lucide-react';
 import { createCheckout } from '@/functions/createCheckout';
+
+const plans = [
+  {
+    id: 'monthly',
+    label: 'Monthly',
+    badge: null,
+    subscriptionPrice: '$350',
+    subscriptionPeriod: '/mo',
+    subscriptionNote: 'Billed monthly',
+  },
+  {
+    id: 'annual',
+    label: 'Annual',
+    badge: 'Save $200',
+    subscriptionPrice: '$3,000',
+    subscriptionPeriod: '/yr',
+    subscriptionNote: '~$250/mo · billed yearly',
+  },
+];
+
+const hardwareItems = [
+  'Mobile Phone',
+  'Phone Stand',
+  'Preinstalled App',
+  'Activated eSIM',
+  'Shipping',
+];
 
 export default function PaymentStep() {
   const [selectedPlan, setSelectedPlan] = useState('monthly');
@@ -25,78 +52,76 @@ export default function PaymentStep() {
     }
   };
 
+  const activePlan = plans.find(p => p.id === selectedPlan);
+
   return (
     <div className="space-y-6">
       <div className="text-center">
         <h3 className="text-xl font-bold text-slate-800 mb-1">Complete Your Subscription</h3>
-        <p className="text-sm text-slate-500">Review what's included and choose your billing plan.</p>
+        <p className="text-sm text-slate-500">Choose your billing plan and proceed to secure checkout.</p>
       </div>
 
-      {/* One-time charge */}
+      {/* Plan selector */}
+      <div className="grid grid-cols-2 gap-3">
+        {plans.map(plan => (
+          <button
+            key={plan.id}
+            onClick={() => setSelectedPlan(plan.id)}
+            className={`rounded-xl border-2 px-4 py-4 text-left transition-all duration-200 relative ${
+              selectedPlan === plan.id
+                ? 'border-teal-500 bg-teal-50'
+                : 'border-slate-200 bg-white hover:border-teal-300'
+            }`}
+          >
+            {plan.badge && (
+              <div className="absolute -top-2 right-3 bg-teal-500 text-white text-xs font-bold px-2 py-0.5 rounded-full">
+                {plan.badge}
+              </div>
+            )}
+            <div className="flex items-center justify-between mb-1">
+              <span className="text-sm font-bold text-slate-800">{plan.label}</span>
+              {selectedPlan === plan.id && <Check className="w-4 h-4 text-teal-500" />}
+            </div>
+            <span className="text-xl font-extrabold text-teal-600">{plan.subscriptionPrice}</span>
+            <span className="text-xs text-slate-500">{plan.subscriptionPeriod}</span>
+            <p className="text-xs text-slate-400 mt-1">{plan.subscriptionNote}</p>
+          </button>
+        ))}
+      </div>
+
+      {/* Cost breakdown for selected plan */}
       <div className="rounded-xl border border-slate-200 overflow-hidden">
         <div className="bg-slate-50 px-4 py-2 border-b border-slate-200">
-          <p className="text-xs font-semibold text-slate-500 uppercase tracking-widest">One-Time Charge (All Plans)</p>
+          <p className="text-xs font-semibold text-slate-500 uppercase tracking-widest">What's Included</p>
         </div>
-        <div className="px-4 py-4 space-y-3">
-          <div className="flex items-center gap-3">
-            <Smartphone className="w-4 h-4 text-teal-500 flex-shrink-0" />
-            <span className="text-sm text-slate-700 flex-1">Mobile device with preinstalled app</span>
-          </div>
-          <div className="flex items-center gap-3">
-            <Wifi className="w-4 h-4 text-teal-500 flex-shrink-0" />
-            <span className="text-sm text-slate-700 flex-1">Stand + Activated eSIM</span>
-          </div>
-          <div className="flex items-center gap-3">
-            <Package className="w-4 h-4 text-teal-500 flex-shrink-0" />
-            <span className="text-sm text-slate-700 flex-1">Shipping</span>
-          </div>
-          <div className="flex items-center justify-between pt-2 border-t border-slate-100">
-            <span className="text-sm font-bold text-slate-900">Hardware fee</span>
-            <span className="text-lg font-extrabold text-slate-900">$500</span>
-          </div>
-        </div>
-      </div>
-
-      {/* Plan selection */}
-      <div>
-        <p className="text-xs font-semibold text-slate-500 uppercase tracking-widest mb-3">Choose Your Subscription Plan</p>
-        <div className="grid grid-cols-2 gap-3">
-          {/* Monthly */}
-          <button
-            onClick={() => setSelectedPlan('monthly')}
-            className={`rounded-xl border-2 px-4 py-4 text-left transition-all duration-200 ${
-              selectedPlan === 'monthly'
-                ? 'border-teal-500 bg-teal-50'
-                : 'border-slate-200 bg-white hover:border-teal-300'
-            }`}
-          >
-            <div className="flex items-center justify-between mb-1">
-              <span className="text-sm font-bold text-slate-800">Monthly</span>
-              {selectedPlan === 'monthly' && <Check className="w-4 h-4 text-teal-500" />}
+        <div className="divide-y divide-slate-100">
+          {/* One-time fee row */}
+          <div className="px-4 py-4">
+            <div className="flex items-start justify-between gap-4">
+              <div>
+                <p className="text-sm font-semibold text-slate-800 mb-1">One-Time Hardware Fee</p>
+                <p className="text-xs text-slate-500 leading-relaxed">
+                  {hardwareItems.join(' · ')}
+                </p>
+              </div>
+              <span className="text-base font-extrabold text-slate-900 whitespace-nowrap">$500</span>
             </div>
-            <span className="text-xl font-extrabold text-teal-600">$350</span>
-            <span className="text-xs text-slate-500">/mo</span>
-            <p className="text-xs text-slate-400 mt-1">Billed monthly</p>
-          </button>
+          </div>
 
-          {/* Annual */}
-          <button
-            onClick={() => setSelectedPlan('annual')}
-            className={`rounded-xl border-2 px-4 py-4 text-left transition-all duration-200 relative ${
-              selectedPlan === 'annual'
-                ? 'border-teal-500 bg-teal-50'
-                : 'border-slate-200 bg-white hover:border-teal-300'
-            }`}
-          >
-            <div className="absolute -top-2 right-3 bg-teal-500 text-white text-xs font-bold px-2 py-0.5 rounded-full">Save $200</div>
-            <div className="flex items-center justify-between mb-1">
-              <span className="text-sm font-bold text-slate-800">Annual</span>
-              {selectedPlan === 'annual' && <Check className="w-4 h-4 text-teal-500" />}
+          {/* Subscription row */}
+          <div className="px-4 py-4">
+            <div className="flex items-start justify-between gap-4">
+              <div>
+                <p className="text-sm font-semibold text-slate-800 mb-1">
+                  {activePlan.label} Subscription
+                </p>
+                <p className="text-xs text-slate-500">AI Hotel DeskBuddy · {activePlan.subscriptionNote}</p>
+              </div>
+              <span className="text-base font-extrabold text-teal-600 whitespace-nowrap">
+                {activePlan.subscriptionPrice}<span className="text-xs font-normal text-slate-500">{activePlan.subscriptionPeriod}</span>
+              </span>
             </div>
-            <span className="text-xl font-extrabold text-teal-600">$3,000</span>
-            <span className="text-xs text-slate-500">/yr</span>
-            <p className="text-xs text-slate-400 mt-1">~$250/mo · billed yearly</p>
-          </button>
+          </div>
         </div>
       </div>
 
