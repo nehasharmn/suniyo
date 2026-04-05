@@ -18,7 +18,7 @@ export default function Home() {
             AI-powered voice analysis that coaches your team in real-time, rewards excellence, and gives managers the insights to drive measurable profit.
           </p>
           <Link to="/Pricing">
-            <Button className="px-8 py-6 text-lg font-semibold bg-teal-500 hover:bg-teal-600 text-white rounded-full shadow-lg transition-all duration-300">
+            <Button className="px-8 py-6 text-lg font-semibold bg-primary hover:bg-primary/90 text-white rounded-full shadow-lg transition-all duration-300">
               Get Started
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
