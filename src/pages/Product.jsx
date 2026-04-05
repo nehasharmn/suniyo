@@ -46,7 +46,7 @@ export default function Product() {
             See How We Solve It
           </h2>
           <p className="text-slate-500 max-w-xl mx-auto mb-8 leading-relaxed">
-            Suniyo captures every front desk interaction, surfaces real-time insights, and rewards your team. Turning inconsistent service into a competitive advantage.
+            Suniyo captures every front desk interaction, surfaces real-time insights, and rewards your team.
           </p>
           <div className="rounded-2xl overflow-hidden shadow-2xl aspect-video mb-8">
             <iframe
