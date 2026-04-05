@@ -20,8 +20,8 @@ export default function TheChallenge() {
           </p>
         </div>
       </div>
-      <Challenge />
       <Revenue />
+      <Challenge />
       <section className="py-8 bg-slate-50">
         <div className="container mx-auto px-6">
           <RevenueEstimator />
