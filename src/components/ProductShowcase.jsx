@@ -7,8 +7,8 @@ export default function ProductShowcase() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Left side - Content */}
           <div>
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight">
-              Real-Time Performance Visibility
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight">Performance Visibility
+
             </h2>
             <p className="text-lg text-slate-600 mb-8 leading-relaxed">
               Get instant insights into front desk performance across all shifts. Track KPIs that matter: check-in quality, upsell success, guest reviews, and more. Identify improvement opportunities before they impact revenue.
@@ -120,6 +120,6 @@ export default function ProductShowcase() {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 }
