@@ -14,11 +14,11 @@ export default function Home() {
           <h1 className="text-5xl md:text-6xl font-extrabold text-slate-900 mb-6 leading-tight tracking-tight">
             Turn Front Desk Service Into Revenue
           </h1>
-          <p className="text-xl text-slate-600 max-w-2xl mx-auto mb-8 leading-relaxed">
-            AI-powered voice analysis that coaches your team in real-time, rewards excellence, and gives managers the insights to drive measurable profit.
+          <p className="text-xl text-slate-600 max-w-2xl mx-auto mb-8 leading-relaxed">AI-powered voice analysis that coaches your team, rewards excellence, and gives managers the insights to drive profit.
+
           </p>
           <Link to="/Pricing">
-            <Button className="px-8 py-6 text-lg font-semibold bg-primary hover:bg-primary/90 text-white rounded-full shadow-lg transition-all duration-300">
+            <Button className="px-8 py-6 text-lg font-semibold bg-teal-500 hover:bg-teal-600 text-white rounded-full shadow-lg transition-all duration-300">
               Get Started
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
@@ -37,8 +37,8 @@ export default function Home() {
               allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
               allowFullScreen
               style={{ border: 0 }}
-              className="w-full h-full"
-            />
+              className="w-full h-full" />
+            
           </div>
         </div>
       </section>
@@ -66,6 +66,6 @@ export default function Home() {
           </Link>
         </div>
       </section>
-    </div>
-  );
+    </div>);
+
 }
