@@ -2,19 +2,17 @@ import React from 'react';
 import Challenge from '../components/Challenge';
 import Revenue from '../components/Revenue';
 import RevenueEstimator from '../components/RevenueEstimator';
-import Solution from '../components/Solution';
-import HowItWorks from '../components/HowItWorks';
-import UseCases from '../components/UseCases';
-import BrandCarousel from '../components/BrandCarousel';
-import EvidenceChain from '../components/EvidenceChain';
+import { Link } from 'react-router-dom';
 
 export default function Product() {
   return (
     <div className="bg-white">
-      {/* The Challenge Section */}
+      {/* Hero */}
       <div className="bg-gradient-to-br from-rose-50 via-white to-orange-50 pt-32 pb-16">
         <div className="container mx-auto px-6 text-center">
-  
+          <div className="inline-flex items-center gap-2 bg-rose-100 text-rose-700 text-sm font-medium px-4 py-1.5 rounded-full mb-4">
+            Industry Insight
+          </div>
           <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
             The High Cost of Inconsistent Service
           </h1>
@@ -24,11 +22,11 @@ export default function Product() {
         </div>
       </div>
 
+      {/* Current Challenges */}
+      <Challenge />
+
       {/* Revenue Impact */}
       <Revenue />
-
-      {/* Detailed Challenge Breakdown */}
-      <Challenge />
 
       {/* Revenue Estimator */}
       <section className="py-16 bg-slate-50">
@@ -41,31 +39,21 @@ export default function Product() {
         </div>
       </section>
 
-      {/* Our Solution Section */}
-      <div className="bg-gradient-to-br from-primary/5 via-white to-teal-50 pt-36 pb-20 text-center">
-        <div className="container mx-auto px-6">
-          <div className="inline-flex items-center gap-2 bg-primary/10 text-primary text-sm font-medium px-4 py-1.5 rounded-full mb-6">
-            How It Works
+      {/* Product Teaser */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-6 max-w-3xl text-center">
+          <div className="inline-flex items-center gap-2 bg-teal-100 text-teal-700 text-sm font-medium px-4 py-1.5 rounded-full mb-4">
+            Meet Suniyo
           </div>
-          <h1 className="text-4xl md:text-6xl font-extrabold text-slate-900 tracking-tight mb-4">
-            Our Solution
-          </h1>
-          <p className="text-lg text-slate-500 mt-4 max-w-2xl mx-auto leading-relaxed">
-            Transforming service delivery with AI-powered insights, associate rewards, and measurable revenue growth.
+          <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-4">
+            See How We Solve It
+          </h2>
+          <p className="text-slate-500 max-w-xl mx-auto mb-8 leading-relaxed">
+            Suniyo captures every front desk interaction, surfaces real-time insights, and rewards your team — turning inconsistent service into a competitive advantage.
           </p>
-        </div>
-      </div>
-
-      {/* Video Section */}
-      <section className="py-10 bg-white">
-        <div className="container mx-auto px-6 max-w-3xl">
-          <div className="text-center mb-4">
-            <h2 className="text-xl font-extrabold text-slate-900 tracking-tight mb-1">See It in Action</h2>
-            <p className="text-slate-500 text-sm">Watch how Suniyo transforms front desk service into measurable results.</p>
-          </div>
-          <div className="rounded-2xl overflow-hidden shadow-2xl aspect-video">
+          <div className="rounded-2xl overflow-hidden shadow-2xl aspect-video mb-8">
             <iframe
-              src="https://player.vimeo.com/video/1179238131?h=1005580fcf&autoplay=1&muted=0"
+              src="https://player.vimeo.com/video/1179238131?h=1005580fcf&autoplay=0&muted=0"
               width="100%"
               height="100%"
               allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
@@ -74,14 +62,14 @@ export default function Product() {
               className="w-full h-full"
             />
           </div>
+          <Link
+            to="/Solutions"
+            className="inline-flex items-center gap-2 bg-teal-600 hover:bg-teal-700 text-white font-semibold px-8 py-3 rounded-full transition-colors duration-200"
+          >
+            Explore Our Solution →
+          </Link>
         </div>
       </section>
-
-      <Solution />
-      <EvidenceChain />
-      <HowItWorks />
-      <UseCases />
-      <BrandCarousel />
     </div>
   );
 }
