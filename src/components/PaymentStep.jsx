@@ -15,7 +15,7 @@ const plans = [
   {
     id: 'annual',
     label: 'Annual',
-    badge: 'Save $200',
+    badge: 'Save $1,200',
     subscriptionPrice: '$3,000',
     subscriptionPeriod: '/yr',
     subscriptionNote: '~$250/mo · billed yearly',
