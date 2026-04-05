@@ -33,7 +33,7 @@ export default function Header() {
             <img
               src="https://media.base44.com/images/public/68ceff2e17a02290721df37f/e18c4d4d6_suniyo_logo_darker_only.png"
               alt="Logo"
-              className="h-10 w-auto object-contain"
+              className="h-10 w-auto object-contain" style={{filter: 'hue-rotate(150deg) saturate(1.5) brightness(0.85)'}}
             />
           </Link>
 
