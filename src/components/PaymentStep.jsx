@@ -1,14 +1,19 @@
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { CreditCard, Check } from 'lucide-react';
+import { Input } from '@/components/ui/input';
+import { CreditCard, Check, Tag } from 'lucide-react';
 import { createCheckout } from '@/functions/createCheckout';
 
-const plans = [
+const DISCOUNT_CODE = 'AAHOACON26';
+
+const hardwareItems = 'Mobile Phone · Phone Stand · Preinstalled App · Activated eSIM · Shipping';
+
+const getPlans = (discounted) => [
   {
     id: 'monthly',
     label: 'Monthly',
     badge: null,
-    subscriptionPrice: '$350',
+    subscriptionPrice: discounted ? '$200' : '$350',
     subscriptionPeriod: '/mo',
     subscriptionNote: 'Billed monthly',
   },
@@ -16,23 +21,32 @@ const plans = [
     id: 'annual',
     label: 'Annual',
     badge: 'Save $1,200',
-    subscriptionPrice: '$3,000',
+    subscriptionPrice: discounted ? '$2,100' : '$3,000',
     subscriptionPeriod: '/yr',
-    subscriptionNote: '~$250/mo · billed yearly',
+    subscriptionNote: discounted ? '~$175/mo · billed yearly' : '~$250/mo · billed yearly',
   },
-];
-
-const hardwareItems = [
-  'Mobile Phone',
-  'Phone Stand',
-  'Preinstalled App',
-  'Activated eSIM',
-  'Shipping',
 ];
 
 export default function PaymentStep() {
   const [selectedPlan, setSelectedPlan] = useState('monthly');
   const [isLoading, setIsLoading] = useState(false);
+  const [discountCode, setDiscountCode] = useState('');
+  const [discountApplied, setDiscountApplied] = useState(false);
+  const [discountError, setDiscountError] = useState('');
+
+  const handleApplyDiscount = () => {
+    if (discountCode.trim().toUpperCase() === DISCOUNT_CODE) {
+      setDiscountApplied(true);
+      setDiscountError('');
+    } else {
+      setDiscountError('Invalid discount code.');
+      setDiscountApplied(false);
+    }
+  };
+
+  const plans = getPlans(discountApplied);
+  const activePlan = plans.find(p => p.id === selectedPlan);
+  const hardwarePrice = discountApplied ? '$350' : '$500';
 
   const handleCheckout = async () => {
     const isInIframe = window.self !== window.top;
@@ -52,13 +66,34 @@ export default function PaymentStep() {
     }
   };
 
-  const activePlan = plans.find(p => p.id === selectedPlan);
-
   return (
     <div className="space-y-6">
       <div className="text-center">
         <h3 className="text-xl font-bold text-slate-800 mb-1">Complete Your Subscription</h3>
         <p className="text-sm text-slate-500">Choose your billing plan and proceed to secure checkout.</p>
+      </div>
+
+      {/* Discount code */}
+      <div className="rounded-xl border border-slate-200 px-4 py-3 bg-slate-50">
+        <p className="text-xs font-semibold text-slate-600 mb-2 flex items-center gap-1"><Tag className="w-3 h-3" /> Discount Code</p>
+        <div className="flex gap-2">
+          <Input
+            value={discountCode}
+            onChange={e => { setDiscountCode(e.target.value); setDiscountError(''); setDiscountApplied(false); }}
+            placeholder="Enter code"
+            className="bg-white border-slate-200 text-slate-900 uppercase text-sm"
+          />
+          <Button
+            type="button"
+            onClick={handleApplyDiscount}
+            variant="outline"
+            className="whitespace-nowrap border-teal-400 text-teal-600 hover:bg-teal-50"
+          >
+            Apply
+          </Button>
+        </div>
+        {discountApplied && <p className="text-xs text-teal-600 font-semibold mt-1">✓ Discount applied!</p>}
+        {discountError && <p className="text-xs text-red-500 mt-1">{discountError}</p>}
       </div>
 
       {/* Plan selector */}
@@ -89,32 +124,28 @@ export default function PaymentStep() {
         ))}
       </div>
 
-      {/* Cost breakdown for selected plan */}
+      {/* Cost breakdown */}
       <div className="rounded-xl border border-slate-200 overflow-hidden">
         <div className="bg-slate-50 px-4 py-2 border-b border-slate-200">
           <p className="text-xs font-semibold text-slate-500 uppercase tracking-widest">What's Included</p>
         </div>
         <div className="divide-y divide-slate-100">
-          {/* One-time fee row */}
           <div className="px-4 py-4">
             <div className="flex items-start justify-between gap-4">
               <div>
                 <p className="text-sm font-semibold text-slate-800 mb-1">One-Time Hardware Fee</p>
-                <p className="text-xs text-slate-500 leading-relaxed">
-                  {hardwareItems.join(' · ')}
-                </p>
+                <p className="text-xs text-slate-500 leading-relaxed">{hardwareItems}</p>
               </div>
-              <span className="text-base font-extrabold text-slate-900 whitespace-nowrap">$500</span>
+              <div className="text-right whitespace-nowrap">
+                {discountApplied && <p className="text-xs line-through text-slate-400">$500</p>}
+                <span className="text-base font-extrabold text-slate-900">{hardwarePrice}</span>
+              </div>
             </div>
           </div>
-
-          {/* Subscription row */}
           <div className="px-4 py-4">
             <div className="flex items-start justify-between gap-4">
               <div>
-                <p className="text-sm font-semibold text-slate-800 mb-1">
-                  {activePlan.label} Subscription
-                </p>
+                <p className="text-sm font-semibold text-slate-800 mb-1">{activePlan.label} Subscription</p>
                 <p className="text-xs text-slate-500">AI Hotel DeskBuddy · {activePlan.subscriptionNote}</p>
               </div>
               <span className="text-base font-extrabold text-teal-600 whitespace-nowrap">
