@@ -159,46 +159,7 @@ export default function Contact() {
                   </div>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-3">
-                  <div className="space-y-1">
-                    <Label htmlFor="brand" className="text-slate-700 font-medium text-sm">Hotel Brand</Label>
-                    <Select value={formData.brand} onValueChange={(value) => handleChange('brand', value)}>
-                      <SelectTrigger className={inputClass}><SelectValue placeholder="Select brand" /></SelectTrigger>
-                      <SelectContent>
-                        {["Marriott","Hilton","IHG","Choice","Wyndham","Independent","Other"].map(b => <SelectItem key={b} value={b}>{b}</SelectItem>)}
-                      </SelectContent>
-                    </Select>
-                  </div>
-                  <div className="space-y-1">
-                    <Label htmlFor="urgency" className="text-slate-700 font-medium text-sm">Urgency</Label>
-                    <Select value={formData.urgency} onValueChange={(value) => handleChange('urgency', value)}>
-                      <SelectTrigger className={inputClass}><SelectValue placeholder="Select urgency" /></SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="immediate">Immediate (within 1 week)</SelectItem>
-                        <SelectItem value="within_month">Within a month</SelectItem>
-                        <SelectItem value="within_quarter">Within this quarter</SelectItem>
-                        <SelectItem value="exploring">Just exploring</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-                </div>
 
-                <div className="space-y-1">
-                  <Label className="text-slate-700 font-medium text-sm">Goals (select all that apply)</Label>
-                  <div className="flex flex-wrap gap-x-6 gap-y-1.5">
-                    {solutionGoalOptions.map((option) => (
-                      <div key={option.value} className="flex items-center space-x-2">
-                        <Checkbox
-                          id={option.value}
-                          checked={formData.solution_goals.includes(option.value)}
-                          onCheckedChange={(checked) => handleGoalToggle(option.value, checked)}
-                          className="border-slate-300 data-[state=checked]:bg-teal-500 data-[state=checked]:border-teal-500"
-                        />
-                        <Label htmlFor={option.value} className="text-sm font-normal text-slate-600 cursor-pointer">{option.label}</Label>
-                      </div>
-                    ))}
-                  </div>
-                </div>
 
                 <div className="space-y-1">
                   <Label htmlFor="message" className="text-slate-700 font-medium text-sm">Message</Label>
