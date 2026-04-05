@@ -77,7 +77,7 @@ export default function Pricing() {
             </div>
             <p className="text-slate-500 text-sm mb-5">Flexible month-to-month commitment. Cancel anytime.</p>
             {billing === 'monthly' && (
-              <Link to="/PilotProgram">
+              <Link to="/Subscribe">
                 <button className="w-full bg-teal-500 hover:bg-teal-400 text-white font-bold px-6 py-3 rounded-full text-sm transition-colors">
                   Subscribe Monthly →
                 </button>
@@ -103,7 +103,7 @@ export default function Pricing() {
             <p className="text-teal-600 text-xs font-semibold mb-1">That's just $250/month — save $1,200 vs monthly</p>
             <p className="text-slate-500 text-sm mb-5">Billed once per year. Best value for committed properties.</p>
             {billing === 'annual' && (
-              <Link to="/PilotProgram" className="block mt-5">
+              <Link to="/Subscribe" className="block mt-5">
                 <button className="w-full bg-teal-500 hover:bg-teal-400 text-white font-bold px-6 py-3 rounded-full text-sm transition-colors">
                   Subscribe Annually →
                 </button>
@@ -127,9 +127,9 @@ export default function Pricing() {
               <p className="text-2xl font-extrabold text-white">$500 <span className="text-teal-400">+</span> $3,000<span className="text-sm text-slate-400">/yr</span></p>
             </div>
           </div>
-          <Link to="/PilotProgram">
+          <Link to="/Subscribe">
             <button className="bg-teal-500 hover:bg-teal-400 text-white font-bold px-8 py-3 rounded-full text-sm transition-colors">
-              Request a Pilot →
+              Subscribe →
             </button>
           </Link>
         </div>
