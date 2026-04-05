@@ -7,8 +7,7 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Send } from 'lucide-react';
-import { PilotRequest } from '@/entities/PilotRequest';
-import { SendEmail } from '@/integrations/Core';
+import { base44 } from '@/api/base44Client';
 import PaymentStep from './PaymentStep';
 
 const solutionGoalOptions = [
@@ -55,9 +54,9 @@ export default function Contact() {
     setIsSubmitting(true);
     try {
       const fullPhoneNumber = phoneNumber.trim() ? `${countryCode} ${phoneNumber}` : '';
-      await PilotRequest.create({ ...formData, phone: fullPhoneNumber });
+      await base44.entities.PilotRequest.create({ ...formData, phone: fullPhoneNumber });
       try {
-        await SendEmail({
+        await base44.integrations.Core.SendEmail({
           to: 'psharma@suniyo.ai',
           subject: 'New Pilot Program Request',
           body: `New pilot request:\n- Name: ${formData.name}\n- Email: ${formData.email}\n- Phone: ${fullPhoneNumber || 'N/A'}\n- Hotel: ${formData.hotel_company}\n- Brand: ${formData.brand || 'N/A'}\n- Goals: ${formData.solution_goals.join(', ') || 'None'}\n- Urgency: ${formData.urgency || 'N/A'}\n- Message: ${formData.message || 'None'}`
