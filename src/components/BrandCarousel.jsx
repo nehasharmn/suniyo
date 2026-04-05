@@ -28,10 +28,10 @@ export default function BrandCarousel() {
         </div>
 
         <div className="flex justify-center">
-          <Carousel opts={{ align: "center", loop: true }} className="w-full max-w-4xl">
+          <Carousel opts={{ align: "center", loop: true }} className="w-full max-w-5xl">
             <CarouselContent>
               {quotes.map((item, index) => (
-                <CarouselItem key={index} className="md:basis-1/2 lg:basis-2/3">
+                <CarouselItem key={index} className="basis-full">
                   <div className="p-1 h-full">
                     <Card className="h-full bg-white border border-slate-100 shadow-sm">
                       <CardContent className="p-8 text-center">
