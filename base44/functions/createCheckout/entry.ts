@@ -1,10 +1,11 @@
 import Stripe from 'npm:stripe@14.21.0';
+import { createClientFromRequest } from 'npm:@base44/sdk@0.8.23';
 
 const stripe = new Stripe(Deno.env.get('STRIPE_SECRET_KEY'));
 
 Deno.serve(async (req) => {
   try {
-    const { plan, successUrl, cancelUrl, discountCode } = await req.json();
+    const { plan, successUrl, cancelUrl, discountCode, formData } = await req.json();
 
     // Bahubali26: $1 one-time pilot start fee
     if (discountCode === 'bahubali') {
@@ -75,6 +76,29 @@ Deno.serve(async (req) => {
         discount_code: discountCode || 'none',
       },
     });
+
+    // Send email with subject based on discount code
+    if (formData) {
+      const base44 = createClientFromRequest(req);
+      let emailSubject = 'New Regular Subscription Request';
+      if (discountCode === 'aahoacon26') {
+        emailSubject = 'AAHOA Discounted Subscription Request';
+      } else if (discountCode === 'bahubali') {
+        emailSubject = 'New Pilot Request';
+      }
+
+      const emailBody = `Customer Details:\n- Name: ${formData.name}\n- Email: ${formData.email}\n- Phone: ${formData.phone || 'N/A'}\n- Company: ${formData.hotel_company}\n- Brand: ${formData.brand || 'N/A'}\n- Solution Goals: ${formData.solution_goals.join(', ') || 'None'}\n- Urgency: ${formData.urgency || 'N/A'}\n- Message: ${formData.message || 'None'}\n\nSelected Plan: ${plan}\nDiscount Code: ${discountCode || 'None'}`;
+
+      try {
+        await base44.integrations.Core.SendEmail({
+          to: 'psharma@suniyo.ai',
+          subject: emailSubject,
+          body: emailBody,
+        });
+      } catch (emailError) {
+        console.error('Email notification failed:', emailError);
+      }
+    }
 
     return Response.json({ url: session.url });
   } catch (error) {

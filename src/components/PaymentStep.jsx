@@ -52,7 +52,7 @@ const getPlans = (discountType) => {
   ];
 };
 
-export default function PaymentStep() {
+export default function PaymentStep({ formData }) {
   const [selectedPlan, setSelectedPlan] = useState('monthly');
   const [isLoading, setIsLoading] = useState(false);
   const [discountCode, setDiscountCode] = useState('');
@@ -83,7 +83,7 @@ export default function PaymentStep() {
     setIsLoading(true);
     const successUrl = `${window.location.origin}/Subscribe?success=true`;
     const cancelUrl = window.location.href;
-    const res = await createCheckout({ plan: selectedPlan, successUrl, cancelUrl, discountCode: discountApplied });
+    const res = await createCheckout({ plan: selectedPlan, successUrl, cancelUrl, discountCode: discountApplied, formData });
     if (res.data?.url) {
       window.location.href = res.data.url;
     } else {

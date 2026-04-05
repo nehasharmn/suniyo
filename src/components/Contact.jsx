@@ -52,15 +52,6 @@ export default function Contact() {
     try {
       const fullPhoneNumber = phoneNumber.trim() ? `${countryCode} ${phoneNumber}` : '';
       await base44.entities.PilotRequest.create({ ...formData, phone: fullPhoneNumber });
-      try {
-        await base44.integrations.Core.SendEmail({
-          to: 'psharma@suniyo.ai',
-          subject: 'New Pilot Program Request',
-          body: `New pilot request:\n- Name: ${formData.name}\n- Email: ${formData.email}\n- Phone: ${fullPhoneNumber || 'N/A'}\n- Hotel: ${formData.hotel_company}\n- Brand: ${formData.brand || 'N/A'}\n- Goals: ${formData.solution_goals.join(', ') || 'None'}\n- Urgency: ${formData.urgency || 'N/A'}\n- Message: ${formData.message || 'None'}`
-        });
-      } catch (emailError) {
-        console.error('Email notification failed:', emailError);
-      }
       setIsSubmitted(true);
     } catch (error) {
       console.error('Error submitting form:', error);
