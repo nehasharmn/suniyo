@@ -153,7 +153,7 @@ export default function Contact() {
                     </div>
                   </div>
                   <div className="space-y-1">
-                    <Label htmlFor="hotel_company" className="text-slate-700 font-medium text-sm">Hotel / Company *</Label>
+                    <Label htmlFor="hotel_company" className="text-slate-700 font-medium text-sm">Company *</Label>
                     <Input id="hotel_company" value={formData.hotel_company} onChange={(e) => handleChange('hotel_company', e.target.value)} className={`${inputClass} ${fieldErrors.hotel_company ? errorClass : ''}`} required />
                     {fieldErrors.hotel_company && <p className="text-xs text-red-500">{fieldErrors.hotel_company}</p>}
                   </div>
