@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="grid md:grid-cols-3 gap-10">
           <div>
             <img
-              src="https://media.base44.com/images/public/68ceff2e17a02290721df37f/23656d635_SuniyoaiLogowithIcon.png"
+              src="https://media.base44.com/images/public/68ceff2e17a02290721df37f/e18c4d4d6_suniyo_logo_darker_only.png"
               alt="Logo"
               className="h-10 w-auto object-contain mb-3"
             />
