@@ -55,12 +55,6 @@ export default function Header() {
           </nav>
 
           <div className="flex items-center gap-3">
-            <Link to="/Subscribe" className="hidden md:block">
-              <Button className="px-5 py-2 text-sm font-semibold bg-teal-500 hover:bg-teal-600 text-white rounded-full shadow-sm border-0 transition-all duration-200">
-                Subscribe
-                <ArrowRight className="ml-2 w-4 h-4" />
-              </Button>
-            </Link>
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="md:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-100 transition-all duration-200"
