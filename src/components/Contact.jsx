@@ -35,10 +35,7 @@ export default function Contact() {
 
   const validateForm = () => {
     const errors = {};
-    if (!formData.name.trim()) errors.name = 'Name is required';
-    if (!formData.email.trim()) errors.email = 'Email is required';
-    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) errors.email = 'Please enter a valid email address';
-    if (!formData.hotel_company.trim()) errors.hotel_company = 'Hotel/Company name is required';
+    if (formData.email.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) errors.email = 'Please enter a valid email address';
     setFieldErrors(errors);
     return Object.keys(errors).length === 0;
   };
@@ -121,12 +118,12 @@ export default function Contact() {
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div className="grid md:grid-cols-2 gap-3">
                   <div className="space-y-1">
-                    <Label htmlFor="name" className="text-slate-700 font-medium text-sm">Name</Label>
+                    <Label htmlFor="name" className="text-slate-700 font-medium text-sm">Name *</Label>
                     <Input id="name" value={formData.name} onChange={(e) => handleChange('name', e.target.value)} className={`${inputClass} ${fieldErrors.name ? errorClass : ''}`} />
                     {fieldErrors.name && <p className="text-xs text-red-500">{fieldErrors.name}</p>}
                   </div>
                   <div className="space-y-1">
-                    <Label htmlFor="email" className="text-slate-700 font-medium text-sm">Email</Label>
+                    <Label htmlFor="email" className="text-slate-700 font-medium text-sm">Email *</Label>
                     <Input id="email" type="email" value={formData.email} onChange={(e) => handleChange('email', e.target.value)} className={`${inputClass} ${fieldErrors.email ? errorClass : ''}`} />
                     {fieldErrors.email && <p className="text-xs text-red-500">{fieldErrors.email}</p>}
                   </div>
@@ -148,7 +145,7 @@ export default function Contact() {
                     </div>
                   </div>
                   <div className="space-y-1">
-                    <Label htmlFor="hotel_company" className="text-slate-700 font-medium text-sm">Company</Label>
+                    <Label htmlFor="hotel_company" className="text-slate-700 font-medium text-sm">Company *</Label>
                     <Input id="hotel_company" value={formData.hotel_company} onChange={(e) => handleChange('hotel_company', e.target.value)} className={`${inputClass} ${fieldErrors.hotel_company ? errorClass : ''}`} />
                     {fieldErrors.hotel_company && <p className="text-xs text-red-500">{fieldErrors.hotel_company}</p>}
                   </div>
@@ -163,7 +160,7 @@ export default function Contact() {
 
                 <div className="flex items-end gap-3">
                   <div className="space-y-1 flex-1">
-                    <Label htmlFor="captcha" className="text-slate-700 font-medium text-sm">What is {captchaNum1} + {captchaNum2}?</Label>
+                    <Label htmlFor="captcha" className="text-slate-700 font-medium text-sm">What is {captchaNum1} + {captchaNum2}? *</Label>
                     <Input id="captcha" type="number" value={captchaAnswer} onChange={(e) => setCaptchaAnswer(e.target.value)} className={inputClass} />
                     {captchaError && <p className="text-xs text-red-500">{captchaError}</p>}
                   </div>
