@@ -3,6 +3,7 @@ import Solution from '../components/Solution';
 import HowItWorks from '../components/HowItWorks';
 import UseCases from '../components/UseCases';
 import BrandCarousel from '../components/BrandCarousel';
+import EvidenceChain from '../components/EvidenceChain';
 
 export default function OurSolution() {
   return (
@@ -42,6 +43,7 @@ export default function OurSolution() {
         </div>
       </section>
       <Solution />
+      <EvidenceChain />
       <HowItWorks />
       <UseCases />
       <BrandCarousel />
