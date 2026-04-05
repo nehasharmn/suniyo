@@ -31,7 +31,7 @@ export default function Header() {
           {/* Logo */}
           <Link to={createPageUrl('Home')} className="group flex flex-col">
             <img
-              src="https://media.base44.com/images/public/68ceff2e17a02290721df37f/e18c4d4d6_suniyo_logo_darker_only.png"
+              src="https://media.base44.com/images/public/68ceff2e17a02290721df37f/23656d635_SuniyoaiLogowithIcon.png"
               alt="Logo"
               className="h-10 w-auto object-contain"
             />
