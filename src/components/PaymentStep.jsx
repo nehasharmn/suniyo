@@ -11,46 +11,47 @@ const DISCOUNT_CODES = {
 
 const hardwareItems = 'Mobile Phone · Phone Stand · Preinstalled App · Activated eSIM · Shipping';
 
-const getPlans = (discountType) => {
-  if (discountType === 'bahubali') {
-    return [
-      {
-        id: 'monthly',
-        label: 'Monthly',
-        badge: '3 Months Free',
-        subscriptionPrice: '$200',
-        subscriptionPeriod: '/mo',
-        subscriptionNote: 'Free for 3 months, then $200/mo',
-      },
-      {
-        id: 'annual',
-        label: 'Annual',
-        badge: 'Save $1,200',
-        subscriptionPrice: '$2,100',
-        subscriptionPeriod: '/yr',
-        subscriptionNote: '~$175/mo · billed yearly',
-      },
-    ];
-  }
-  return [
-    {
-      id: 'monthly',
-      label: 'Monthly',
-      badge: null,
-      subscriptionPrice: discountType === 'aahoacon26' ? '$200' : '$350',
-      subscriptionPeriod: '/mo',
-      subscriptionNote: 'Billed monthly',
-    },
-    {
-      id: 'annual',
-      label: 'Annual',
-      badge: 'Save $1,200',
-      subscriptionPrice: discountType === 'aahoacon26' ? '$2,100' : '$3,000',
-      subscriptionPeriod: '/yr',
-      subscriptionNote: discountType === 'aahoacon26' ? '~$175/mo · billed yearly' : '~$250/mo · billed yearly',
-    },
-  ];
-};
+const getPlans = (discountType, numDevices = 1) => {
+   const multiplier = numDevices || 1;
+   if (discountType === 'bahubali') {
+     return [
+       {
+         id: 'monthly',
+         label: 'Monthly',
+         badge: '3 Months Free',
+         subscriptionPrice: `$${200 * multiplier}`,
+         subscriptionPeriod: '/mo',
+         subscriptionNote: `Free for 3 months, then $${200 * multiplier}/mo`,
+       },
+       {
+         id: 'annual',
+         label: 'Annual',
+         badge: 'Save $1,200',
+         subscriptionPrice: `$${2100 * multiplier}`,
+         subscriptionPeriod: '/yr',
+         subscriptionNote: `~$${Math.round(1750 * multiplier / 10) * 10}/mo · billed yearly`,
+       },
+     ];
+   }
+   return [
+     {
+       id: 'monthly',
+       label: 'Monthly',
+       badge: null,
+       subscriptionPrice: discountType === 'aahoacon26' ? `$${200 * multiplier}` : `$${350 * multiplier}`,
+       subscriptionPeriod: '/mo',
+       subscriptionNote: 'Billed monthly',
+     },
+     {
+       id: 'annual',
+       label: 'Annual',
+       badge: 'Save $1,200',
+       subscriptionPrice: discountType === 'aahoacon26' ? `$${2100 * multiplier}` : `$${3000 * multiplier}`,
+       subscriptionPeriod: '/yr',
+       subscriptionNote: discountType === 'aahoacon26' ? `~$${Math.round(1750 * multiplier / 10) * 10}/mo · billed yearly` : `~$${Math.round(2500 * multiplier / 10) * 10}/mo · billed yearly`,
+     },
+   ];
+ };
 
 export default function PaymentStep({ formData }) {
   const [selectedPlan, setSelectedPlan] = useState('monthly');
@@ -70,9 +71,11 @@ export default function PaymentStep({ formData }) {
     }
   };
 
-  const plans = getPlans(discountApplied);
+  const numDevices = formData?.num_devices || 1;
+  const plans = getPlans(discountApplied, numDevices);
   const activePlan = plans.find(p => p.id === selectedPlan);
-  const hardwarePrice = discountApplied === 'bahubali' ? '$1' : discountApplied === 'aahoacon26' ? '$350' : '$500';
+  const baseHardware = discountApplied === 'bahubali' ? 1 : discountApplied === 'aahoacon26' ? 350 : 500;
+  const hardwarePrice = `$${baseHardware * numDevices}`;
 
   const handleCheckout = async () => {
     const isInIframe = window.self !== window.top;
@@ -160,11 +163,11 @@ export default function PaymentStep({ formData }) {
           <div className="px-4 py-4">
             <div className="flex items-start justify-between gap-4">
               <div>
-                <p className="text-sm font-semibold text-slate-800 mb-1">One-Time Hardware Fee</p>
-                <p className="text-xs text-slate-500 leading-relaxed">{hardwareItems}</p>
+                <p className="text-sm font-semibold text-slate-800 mb-1">One-Time Hardware Fee {numDevices > 1 ? `(${numDevices} devices)` : ''}</p>
+                <p className="text-xs text-slate-500 leading-relaxed">{hardwareItems} {numDevices > 1 ? `× ${numDevices}` : ''}</p>
               </div>
               <div className="text-right whitespace-nowrap">
-                {discountApplied && <p className="text-xs line-through text-slate-400">$500</p>}
+                {discountApplied && <p className="text-xs line-through text-slate-400">${500 * numDevices}</p>}
                 <span className="text-base font-extrabold text-teal-600">{hardwarePrice}</span>
               </div>
             </div>

@@ -17,7 +17,7 @@ const solutionGoalOptions = [
 ];
 
 export default function Contact() {
-  const [formData, setFormData] = useState({ name: '', email: '', hotel_company: '', brand: '', solution_goals: [], urgency: '', message: '' });
+  const [formData, setFormData] = useState({ name: '', email: '', hotel_company: '', brand: '', solution_goals: [], urgency: '', message: '', num_devices: 1 });
   const [countryCode, setCountryCode] = useState('+1');
   const [phoneNumber, setPhoneNumber] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -144,10 +144,16 @@ export default function Contact() {
 
 
 
-                <div className="space-y-1">
-                  <Label htmlFor="message" className="text-slate-700 font-medium text-sm">Message</Label>
-                  <Textarea id="message" rows={2} value={formData.message} onChange={(e) => handleChange('message', e.target.value)} placeholder="Tell us about your property..." className={inputClass} />
-                </div>
+                <div className="grid md:grid-cols-2 gap-3">
+                   <div className="space-y-1">
+                     <Label htmlFor="num_devices" className="text-slate-700 font-medium text-sm">No of Devices *</Label>
+                     <Input id="num_devices" type="number" min="1" value={formData.num_devices} onChange={(e) => handleChange('num_devices', Math.max(1, parseInt(e.target.value) || 1))} className={inputClass} />
+                   </div>
+                   <div className="space-y-1">
+                     <Label htmlFor="message" className="text-slate-700 font-medium text-sm">Message</Label>
+                     <Textarea id="message" rows={2} value={formData.message} onChange={(e) => handleChange('message', e.target.value)} placeholder="Tell us about your property..." className={inputClass} />
+                   </div>
+                 </div>
 
                 <div className="flex items-end gap-3">
                   <div className="space-y-1 flex-1">
