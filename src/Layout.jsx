@@ -21,7 +21,7 @@ export default function Layout({ children }) {
           --card-foreground: 220 25% 10%;
           --popover: 0 0% 100%;
           --popover-foreground: 220 25% 10%;
-          --primary: 217 95% 54%;
+          --primary: 219 96% 49%;
           --primary-foreground: 0 0% 100%;
           --secondary: 210 20% 96%;
           --secondary-foreground: 220 25% 10%;
