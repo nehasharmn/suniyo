@@ -41,6 +41,56 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Customer Reviews */}
+      <section className="py-16 bg-slate-50">
+        <div className="container mx-auto px-6 max-w-5xl">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-3">Trusted by Hotel Leaders</h2>
+            <p className="text-lg text-slate-600">See what properties are already seeing results.</p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="bg-white rounded-2xl p-8 shadow-sm border border-slate-100">
+              <div className="flex gap-1 mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <span key={i} className="text-yellow-400 text-lg">★</span>
+                ))}
+              </div>
+              <p className="text-slate-700 mb-4 leading-relaxed">
+                "Suniyo transformed how we manage front desk performance. Our guest satisfaction scores jumped 23% in the first month."
+              </p>
+              <p className="font-semibold text-slate-900">Sarah Chen</p>
+              <p className="text-sm text-slate-600">Director of Operations, Marriott Properties</p>
+            </div>
+
+            <div className="bg-white rounded-2xl p-8 shadow-sm border border-slate-100">
+              <div className="flex gap-1 mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <span key={i} className="text-yellow-400 text-lg">★</span>
+                ))}
+              </div>
+              <p className="text-slate-700 mb-4 leading-relaxed">
+                "Real-time feedback keeps our team engaged. Associates love the rewards system—turnover is down significantly."
+              </p>
+              <p className="font-semibold text-slate-900">Marcus Rodriguez</p>
+              <p className="text-sm text-slate-600">General Manager, Hilton Miami</p>
+            </div>
+
+            <div className="bg-white rounded-2xl p-8 shadow-sm border border-slate-100">
+              <div className="flex gap-1 mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <span key={i} className="text-yellow-400 text-lg">★</span>
+                ))}
+              </div>
+              <p className="text-slate-700 mb-4 leading-relaxed">
+                "The ROI was clear within weeks. Better service = higher reviews = more bookings. It's a game changer."
+              </p>
+              <p className="font-semibold text-slate-900">Jessica Liu</p>
+              <p className="text-sm text-slate-600">Owner, Boutique Hotel Group</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Banner */}
       <section className="py-20 bg-gradient-to-br from-teal-500 to-cyan-500 mt-16">
         <div className="container mx-auto px-6 text-center">
