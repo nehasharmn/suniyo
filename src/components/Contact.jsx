@@ -6,9 +6,10 @@ import { Textarea } from '@/components/ui/textarea';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Send, CheckCircle } from 'lucide-react';
+import { Send } from 'lucide-react';
 import { PilotRequest } from '@/entities/PilotRequest';
 import { SendEmail } from '@/integrations/Core';
+import PaymentStep from './PaymentStep';
 
 const solutionGoalOptions = [
   { value: 'improve_guest_satisfaction', label: 'Improve Guest Satisfaction' },
@@ -91,21 +92,16 @@ export default function Contact() {
     return (
       <section className="py-16 bg-white">
         <div className="container mx-auto px-6">
-          <div id="contact" className="max-w-lg mx-auto text-center">
-            <div className="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center mx-auto mb-6">
-              <CheckCircle className="w-8 h-8 text-green-500" />
-            </div>
-            <h2 className="text-2xl font-bold text-slate-900 mb-3">Thank You!</h2>
-            <p className="text-slate-500 leading-relaxed mb-6">
-              We've received your pilot program request and will reach out soon to discuss how our platform can help your property.
-            </p>
-            <div className="bg-slate-50 rounded-xl p-6 border border-slate-100 text-left">
-              <p className="text-slate-700 font-semibold mb-2">What's Next:</p>
-              <ul className="text-slate-500 text-sm space-y-1">
-                <li>• We'll contact you to schedule a brief discovery call</li>
-                <li>• You'll receive a customized pilot program proposal</li>
-              </ul>
-            </div>
+          <div className="max-w-2xl mx-auto text-center mb-8">
+            <h2 className="text-3xl font-extrabold text-teal-500 mb-2 tracking-tight">Subscribe</h2>
+            <p className="text-base text-slate-500">Almost there! Select your plan and complete your subscription.</p>
+          </div>
+          <div className="max-w-2xl mx-auto">
+            <Card className="border border-slate-100 shadow-lg bg-white">
+              <CardContent className="px-8 py-8">
+                <PaymentStep formData={formData} />
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
