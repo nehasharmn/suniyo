@@ -12,11 +12,11 @@ export default function Home() {
       <MeetKelly />
 
       {/* Video Section */}
-      <section className="py-16 bg-white">
+      <section className="py-6 bg-white">
         <div className="container mx-auto px-6 max-w-4xl">
           <div className="rounded-2xl overflow-hidden shadow-2xl aspect-video">
             <iframe
-              src="https://player.vimeo.com/video/1180320975?h=d3351a77b4&autoplay=1&muted=0"
+              src="https://player.vimeo.com/video/1180320975?h=d3351a77b4&autoplay=1"
               width="100%"
               height="100%"
               allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
