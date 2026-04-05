@@ -112,27 +112,7 @@ export default function Pricing() {
           </div>
         </div>
 
-        {/* Summary */}
-        <div className="bg-slate-900 text-white rounded-2xl p-6 text-center">
-          <h3 className="text-lg font-extrabold mb-1">Total to Get Started</h3>
-          <p className="text-slate-400 text-sm mb-4">Hardware + your chosen subscription</p>
-          <div className="flex flex-col sm:flex-row justify-center gap-6 mb-6">
-            <div>
-              <p className="text-slate-400 text-xs uppercase tracking-widest mb-1">Month to Month</p>
-              <p className="text-2xl font-extrabold text-white">$500 <span className="text-teal-400">+</span> $350<span className="text-sm text-slate-400">/mo</span></p>
-            </div>
-            <div className="hidden sm:block w-px bg-slate-700" />
-            <div>
-              <p className="text-slate-400 text-xs uppercase tracking-widest mb-1">Annual (Best Value)</p>
-              <p className="text-2xl font-extrabold text-white">$500 <span className="text-teal-400">+</span> $3,000<span className="text-sm text-slate-400">/yr</span></p>
-            </div>
-          </div>
-          <Link to="/Subscribe">
-            <button className="bg-teal-500 hover:bg-teal-400 text-white font-bold px-8 py-3 rounded-full text-sm transition-colors">
-              Subscribe →
-            </button>
-          </Link>
-        </div>
+
 
       </div>
     </div>
