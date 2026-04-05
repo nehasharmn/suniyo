@@ -6,7 +6,7 @@ import { createCheckout } from '@/functions/createCheckout';
 
 const DISCOUNT_CODES = {
   AAHOACON26: 'aahoacon26',
-  BAHUBALI: 'bahubali',
+  BAHUBALI26: 'bahubali',
 };
 
 const hardwareItems = 'Mobile Phone · Phone Stand · Preinstalled App · Activated eSIM · Shipping';
@@ -72,7 +72,7 @@ export default function PaymentStep() {
 
   const plans = getPlans(discountApplied);
   const activePlan = plans.find(p => p.id === selectedPlan);
-  const hardwarePrice = discountApplied === 'bahubali' ? 'Free' : discountApplied === 'aahoacon26' ? '$350' : '$500';
+  const hardwarePrice = discountApplied === 'bahubali' ? '$1' : discountApplied === 'aahoacon26' ? '$350' : '$500';
 
   const handleCheckout = async () => {
     const isInIframe = window.self !== window.top;
@@ -118,7 +118,7 @@ export default function PaymentStep() {
             Apply
           </Button>
         </div>
-        {discountApplied === 'bahubali' && <p className="text-xs text-teal-600 font-semibold mt-1">✓ Bahubali deal applied! Free hardware + 3 months free trial.</p>}
+        {discountApplied === 'bahubali' && <p className="text-xs text-teal-600 font-semibold mt-1">✓ Deal applied! Pay $1 to start your pilot — 3 months free, then $200/mo.</p>}
         {discountApplied === 'aahoacon26' && <p className="text-xs text-teal-600 font-semibold mt-1">✓ Discount applied!</p>}
         {discountError && <p className="text-xs text-red-500 mt-1">{discountError}</p>}
       </div>
@@ -165,7 +165,7 @@ export default function PaymentStep() {
               </div>
               <div className="text-right whitespace-nowrap">
                 {discountApplied && <p className="text-xs line-through text-slate-400">$500</p>}
-                <span className={`text-base font-extrabold ${discountApplied === 'bahubali' ? 'text-teal-600' : 'text-slate-900'}`}>{hardwarePrice}</span>
+                <span className="text-base font-extrabold text-teal-600">{hardwarePrice}</span>
               </div>
             </div>
           </div>
@@ -189,7 +189,7 @@ export default function PaymentStep() {
         className="w-full py-3 font-semibold bg-teal-500 hover:bg-teal-600 text-white rounded-full shadow-md border-0 transition-all duration-300"
       >
         <CreditCard className="mr-2 w-4 h-4" />
-        {isLoading ? 'Redirecting...' : 'Proceed to Secure Checkout'}
+        {isLoading ? 'Redirecting...' : discountApplied === 'bahubali' ? 'Pay $1 to Start the Pilot' : 'Proceed to Secure Checkout'}
       </Button>
 
       <p className="text-center text-xs text-slate-400">Powered by Stripe · No card info stored on our servers</p>
