@@ -22,14 +22,10 @@ export default function MeetKelly() {
                 className="relative w-48 h-48 object-cover rounded-full border-4 border-white shadow-xl" style={{objectPosition: '50% 15%'}}
               />
             </div>
-            <div className="mt-2 inline-flex items-center gap-2 bg-teal-50 border border-teal-200 text-teal-700 text-xs font-semibold px-3 py-1 rounded-full">
-              <span className="w-2 h-2 bg-teal-400 rounded-full animate-pulse" />
-              AI Agent · Always On
-            </div>
+
           </div>
 
           <div className="flex-1 text-center md:text-left">
-            <p className="text-teal-600 font-semibold text-xs uppercase tracking-widest mb-1">Meet Your DeskBuddy</p>
             <h2 className="text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight mb-2">
               Meet <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-cyan-500">Kelly</span>, the Hotel DeskBuddy
             </h2>

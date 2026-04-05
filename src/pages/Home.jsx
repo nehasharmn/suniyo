@@ -14,9 +14,6 @@ export default function Home() {
       {/* Challenge + Solution Cards */}
       <section className="py-4 bg-slate-50">
         <div className="container mx-auto px-6 max-w-5xl">
-          <div className="text-center mb-10">
-            <h2 className="text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight">The Problem & Our Solution</h2>
-          </div>
           <div className="grid md:grid-cols-2 gap-6">
             <div className="bg-white rounded-2xl border border-rose-100 shadow-sm p-8 flex flex-col gap-4">
               <div className="w-12 h-12 bg-rose-50 rounded-2xl flex items-center justify-center">
