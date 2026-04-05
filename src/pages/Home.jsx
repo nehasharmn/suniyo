@@ -50,7 +50,7 @@ export default function Home() {
       <BrandCarousel />
 
       {/* CTA Banner */}
-      <section className="py-20 bg-gradient-to-br from-teal-500 to-cyan-500 mt-16">
+      <section className="py-20 bg-gradient-to-br from-primary to-teal-500 mt-16">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4 tracking-tight">
             Ready to See the Difference?
