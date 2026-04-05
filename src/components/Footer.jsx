@@ -11,7 +11,7 @@ export default function Footer() {
             <img
               src="https://media.base44.com/images/public/68ceff2e17a02290721df37f/e18c4d4d6_suniyo_logo_darker_only.png"
               alt="Logo"
-              className="h-10 w-auto object-contain mb-3" style={{filter: 'hue-rotate(150deg) saturate(1.5) brightness(0.85)'}}
+              className="h-10 w-auto object-contain mb-3"
             />
             
             <p className="text-sm text-slate-500">Where Service Gets Rewarded.</p>
