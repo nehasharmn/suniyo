@@ -27,24 +27,26 @@ export default function BrandCarousel() {
           </p>
         </div>
 
-        <Carousel opts={{ align: "center", loop: true }} className="w-full max-w-4xl mx-auto">
-          <CarouselContent>
-            {quotes.map((item, index) => (
-              <CarouselItem key={index} className="md:basis-1/2 lg:basis-2/3">
-                <div className="p-1 h-full">
-                  <Card className="h-full bg-white border border-slate-100 shadow-sm">
-                    <CardContent className="p-8 text-center">
-                      <p className="text-sm font-bold text-teal-600 mb-3">{item.brand}</p>
-                      <blockquote className="text-base text-slate-500 italic leading-relaxed">"{item.quote}"</blockquote>
-                    </CardContent>
-                  </Card>
-                </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious className="bg-white border-slate-200 text-slate-600 hover:bg-slate-50" />
-          <CarouselNext className="bg-white border-slate-200 text-slate-600 hover:bg-slate-50" />
-        </Carousel>
+        <div className="flex justify-center">
+          <Carousel opts={{ align: "center", loop: true }} className="w-full max-w-4xl">
+            <CarouselContent>
+              {quotes.map((item, index) => (
+                <CarouselItem key={index} className="md:basis-1/2 lg:basis-2/3">
+                  <div className="p-1 h-full">
+                    <Card className="h-full bg-white border border-slate-100 shadow-sm">
+                      <CardContent className="p-8 text-center">
+                        <p className="text-sm font-bold text-teal-600 mb-3">{item.brand}</p>
+                        <blockquote className="text-base text-slate-500 italic leading-relaxed">"{item.quote}"</blockquote>
+                      </CardContent>
+                    </Card>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="bg-white border-slate-200 text-slate-600 hover:bg-slate-50" />
+            <CarouselNext className="bg-white border-slate-200 text-slate-600 hover:bg-slate-50" />
+          </Carousel>
+        </div>
       </div>
     </section>
   );
