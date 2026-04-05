@@ -65,12 +65,7 @@ export default function Contact() {
       } catch (emailError) {
         console.error('Email notification failed:', emailError);
       }
-      const isInIframe = window.self !== window.top;
-      if (isInIframe) {
-        alert('Checkout is only available from the published app. Please open the app directly.');
-      } else {
-        window.location.href = 'https://buy.stripe.com/aFadRadVZcMab3L5Ai0co01';
-      }
+      setIsSubmitted(true);
     } catch (error) {
       console.error('Error submitting form:', error);
       alert('There was an error submitting your request. Please try again.');
