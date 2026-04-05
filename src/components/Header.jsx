@@ -6,8 +6,7 @@ import { ArrowRight, Menu, X } from 'lucide-react';
 
 const navLinks = [
   { href: createPageUrl('Home'), label: 'Home' },
-  { href: createPageUrl('TheChallenge'), label: 'The Challenge' },
-  { href: createPageUrl('OurSolution'), label: 'Our Solution' },
+  { href: '/Product', label: 'Product' },
   { href: '/Pricing', label: 'Pricing' },
   { href: '/Subscribe', label: 'Subscribe' },
 ];
