@@ -4,49 +4,75 @@ import { Input } from '@/components/ui/input';
 import { CreditCard, Check, Tag } from 'lucide-react';
 import { createCheckout } from '@/functions/createCheckout';
 
-const DISCOUNT_CODE = 'AAHOACON26';
+const DISCOUNT_CODES = {
+  AAHOACON26: 'aahoacon26',
+  BAHUBALI: 'bahubali',
+};
 
 const hardwareItems = 'Mobile Phone · Phone Stand · Preinstalled App · Activated eSIM · Shipping';
 
-const getPlans = (discounted) => [
-  {
-    id: 'monthly',
-    label: 'Monthly',
-    badge: null,
-    subscriptionPrice: discounted ? '$200' : '$350',
-    subscriptionPeriod: '/mo',
-    subscriptionNote: 'Billed monthly',
-  },
-  {
-    id: 'annual',
-    label: 'Annual',
-    badge: 'Save $1,200',
-    subscriptionPrice: discounted ? '$2,100' : '$3,000',
-    subscriptionPeriod: '/yr',
-    subscriptionNote: discounted ? '~$175/mo · billed yearly' : '~$250/mo · billed yearly',
-  },
-];
+const getPlans = (discountType) => {
+  if (discountType === 'bahubali') {
+    return [
+      {
+        id: 'monthly',
+        label: 'Monthly',
+        badge: '3 Months Free',
+        subscriptionPrice: '$200',
+        subscriptionPeriod: '/mo',
+        subscriptionNote: 'Free for 3 months, then $200/mo',
+      },
+      {
+        id: 'annual',
+        label: 'Annual',
+        badge: 'Save $1,200',
+        subscriptionPrice: '$2,100',
+        subscriptionPeriod: '/yr',
+        subscriptionNote: '~$175/mo · billed yearly',
+      },
+    ];
+  }
+  return [
+    {
+      id: 'monthly',
+      label: 'Monthly',
+      badge: null,
+      subscriptionPrice: discountType === 'aahoacon26' ? '$200' : '$350',
+      subscriptionPeriod: '/mo',
+      subscriptionNote: 'Billed monthly',
+    },
+    {
+      id: 'annual',
+      label: 'Annual',
+      badge: 'Save $1,200',
+      subscriptionPrice: discountType === 'aahoacon26' ? '$2,100' : '$3,000',
+      subscriptionPeriod: '/yr',
+      subscriptionNote: discountType === 'aahoacon26' ? '~$175/mo · billed yearly' : '~$250/mo · billed yearly',
+    },
+  ];
+};
 
 export default function PaymentStep() {
   const [selectedPlan, setSelectedPlan] = useState('monthly');
   const [isLoading, setIsLoading] = useState(false);
   const [discountCode, setDiscountCode] = useState('');
-  const [discountApplied, setDiscountApplied] = useState(false);
+  const [discountApplied, setDiscountApplied] = useState(null); // null | 'aahoacon26' | 'bahubali'
   const [discountError, setDiscountError] = useState('');
 
   const handleApplyDiscount = () => {
-    if (discountCode.trim().toUpperCase() === DISCOUNT_CODE) {
-      setDiscountApplied(true);
+    const code = discountCode.trim().toUpperCase();
+    if (DISCOUNT_CODES[code]) {
+      setDiscountApplied(DISCOUNT_CODES[code]);
       setDiscountError('');
     } else {
       setDiscountError('Invalid discount code.');
-      setDiscountApplied(false);
+      setDiscountApplied(null);
     }
   };
 
   const plans = getPlans(discountApplied);
   const activePlan = plans.find(p => p.id === selectedPlan);
-  const hardwarePrice = discountApplied ? '$350' : '$500';
+  const hardwarePrice = discountApplied === 'bahubali' ? 'Free' : discountApplied === 'aahoacon26' ? '$350' : '$500';
 
   const handleCheckout = async () => {
     const isInIframe = window.self !== window.top;
@@ -79,7 +105,7 @@ export default function PaymentStep() {
         <div className="flex gap-2">
           <Input
             value={discountCode}
-            onChange={e => { setDiscountCode(e.target.value); setDiscountError(''); setDiscountApplied(false); }}
+            onChange={e => { setDiscountCode(e.target.value); setDiscountError(''); setDiscountApplied(null); }}
             placeholder="Enter code"
             className="bg-white border-slate-200 text-slate-900 uppercase text-sm"
           />
@@ -92,7 +118,8 @@ export default function PaymentStep() {
             Apply
           </Button>
         </div>
-        {discountApplied && <p className="text-xs text-teal-600 font-semibold mt-1">✓ Discount applied!</p>}
+        {discountApplied === 'bahubali' && <p className="text-xs text-teal-600 font-semibold mt-1">✓ Bahubali deal applied! Free hardware + 3 months free trial.</p>}
+        {discountApplied === 'aahoacon26' && <p className="text-xs text-teal-600 font-semibold mt-1">✓ Discount applied!</p>}
         {discountError && <p className="text-xs text-red-500 mt-1">{discountError}</p>}
       </div>
 
@@ -138,7 +165,7 @@ export default function PaymentStep() {
               </div>
               <div className="text-right whitespace-nowrap">
                 {discountApplied && <p className="text-xs line-through text-slate-400">$500</p>}
-                <span className="text-base font-extrabold text-slate-900">{hardwarePrice}</span>
+                <span className={`text-base font-extrabold ${discountApplied === 'bahubali' ? 'text-teal-600' : 'text-slate-900'}`}>{hardwarePrice}</span>
               </div>
             </div>
           </div>
