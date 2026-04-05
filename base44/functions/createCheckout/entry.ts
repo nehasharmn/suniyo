@@ -4,7 +4,26 @@ const stripe = new Stripe(Deno.env.get('STRIPE_SECRET_KEY'));
 
 Deno.serve(async (req) => {
   try {
-    const { plan, successUrl, cancelUrl } = await req.json();
+    const { plan, successUrl, cancelUrl, discountCode } = await req.json();
+
+    // Bahubali26: $1 one-time pilot start fee
+    if (discountCode === 'bahubali') {
+      const session = await stripe.checkout.sessions.create({
+        payment_method_types: ['card'],
+        line_items: [
+          { price: 'price_1TIw1aRVSiGowRJkKaSU7SGQ', quantity: 1 }, // $1 pilot start fee
+        ],
+        mode: 'payment',
+        success_url: successUrl,
+        cancel_url: cancelUrl,
+        metadata: {
+          base44_app_id: Deno.env.get('BASE44_APP_ID'),
+          plan,
+          discount_code: discountCode,
+        },
+      });
+      return Response.json({ url: session.url });
+    }
 
     // Monthly: $350/mo recurring + $500 device one-time
     // Annual: $3000/yr recurring + $500 device one-time

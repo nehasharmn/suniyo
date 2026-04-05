@@ -83,7 +83,7 @@ export default function PaymentStep() {
     setIsLoading(true);
     const successUrl = `${window.location.origin}/Subscribe?success=true`;
     const cancelUrl = window.location.href;
-    const res = await createCheckout({ plan: selectedPlan, successUrl, cancelUrl });
+    const res = await createCheckout({ plan: selectedPlan, successUrl, cancelUrl, discountCode: discountApplied });
     if (res.data?.url) {
       window.location.href = res.data.url;
     } else {
