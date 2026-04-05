@@ -30,7 +30,7 @@ export default function Pricing() {
           <div className="flex-1 text-center md:text-left">
             <p className="text-xs font-semibold text-teal-600 uppercase tracking-widest mb-1">One-Time Purchase</p>
             <h2 className="text-xl font-extrabold text-slate-900 mb-1">AI-Enabled Hardware Device</h2>
-            <p className="text-slate-500 text-sm">Cellular-enabled device pre-configured with Kelly AI. Ready to deploy on day one — no IT setup required.</p>
+            <p className="text-slate-500 text-sm">Mobile device with preinstalled app, stand, activated eSIM, and shipping. Ready to deploy on day one — no IT setup required.</p>
           </div>
           <div className="text-center md:text-right flex-shrink-0">
             <span className="text-4xl font-extrabold text-slate-900">$500</span>
