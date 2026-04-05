@@ -48,25 +48,25 @@ Deno.serve(async (req) => {
 
     const hardwareAmount = isAahoa ? 35000 : 50000; // $350 or $500 in cents
 
+    const lineItems = [
+      subscriptionLineItem,
+      {
+        price_data: {
+          currency: 'usd',
+          product_data: {
+            name: 'One-Time Hardware Fee',
+            description: 'Mobile Phone · Phone Stand · Preinstalled App · Activated eSIM · Shipping',
+          },
+          unit_amount: hardwareAmount,
+        },
+        quantity: 1,
+      },
+    ];
+
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],
-      line_items: [subscriptionLineItem],
+      line_items: lineItems,
       mode: 'subscription',
-      subscription_data: {
-        add_invoice_items: [
-          {
-            price_data: {
-              currency: 'usd',
-              product_data: {
-                name: 'One-Time Hardware Fee',
-                description: 'Mobile Phone · Phone Stand · Preinstalled App · Activated eSIM · Shipping',
-              },
-              unit_amount: hardwareAmount,
-            },
-            quantity: 1,
-          },
-        ],
-      },
       success_url: successUrl,
       cancel_url: cancelUrl,
       metadata: {
