@@ -79,8 +79,8 @@ export default function UseCases() {
         </div>
 
         <div className="max-w-2xl mx-auto bg-slate-50 rounded-2xl p-10 text-center border border-slate-100">
-          <blockquote className="text-xl md:text-2xl font-bold text-slate-800 leading-relaxed">
-            "Customers earn reward points, managers get paid well, owners make profits. What does an associate get?"
+          <blockquote className="text-sm md:text-base font-bold text-slate-800 leading-relaxed">
+            Where Service Gets Rewarded.
           </blockquote>
         </div>
       </div>
