@@ -39,9 +39,6 @@ export default function Product() {
       {/* Product Teaser */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-6 max-w-3xl text-center">
-          <div className="inline-flex items-center gap-2 bg-teal-100 text-teal-700 text-sm font-medium px-4 py-1.5 rounded-full mb-4">
-            Meet Suniyo
-          </div>
           <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-4">
             See How We Solve It
           </h2>
