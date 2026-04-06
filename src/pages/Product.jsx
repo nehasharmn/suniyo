@@ -206,22 +206,11 @@ export default function Product() {
           <p className="text-lg text-slate-400 mb-10 max-w-xl mx-auto leading-relaxed">
             Join select-service hotel owners who are replacing guesswork with clarity — one shift at a time.
           </p>
-          <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-            <Input
-              type="email"
-              placeholder="your@email.com"
-              value={demoEmail}
-              onChange={(e) => setDemoEmail(e.target.value)}
-              className="bg-white/10 border-white/20 text-white placeholder:text-slate-400 rounded-full px-5 focus:border-blue-400 focus:ring-blue-400"
-            />
-            <Button 
-              onClick={handleGetInTouch}
-              disabled={isLoading || !demoEmail}
-              className="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-7 py-3 rounded-full border-0 whitespace-nowrap transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              {isLoading ? 'Sending...' : 'Get in Touch'}
+          <Link to="/Subscribe">
+            <Button className="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-7 py-3 rounded-full border-0 whitespace-nowrap transition-all duration-200">
+              Subscribe
             </Button>
-          </div>
+          </Link>
         </div>
       </section>
 
