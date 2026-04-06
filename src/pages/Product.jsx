@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useToast } from '@/components/ui/use-toast';
-import { ArrowRight, Mic, BarChart2, Star, Eye, TrendingUp, Users, AlertTriangle, Award, CheckCircle } from 'lucide-react';
+import { ArrowRight, Mic, BarChart2, Star, Eye, TrendingUp, Users, AlertTriangle, Award, CheckCircle, Facebook } from 'lucide-react';
 import { base44 } from '@/api/base44Client';
 import RevenueEstimator from '../components/RevenueEstimator';
 import ProductShowcase from '../components/ProductShowcase';
@@ -206,11 +206,16 @@ export default function Product() {
           <p className="text-lg text-slate-400 mb-10 max-w-xl mx-auto leading-relaxed">
             Join select-service hotel owners who are replacing guesswork with clarity — one shift at a time.
           </p>
-          <Link to="/Subscribe">
-            <Button className="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-7 py-3 rounded-full border-0 whitespace-nowrap transition-all duration-200">
-              Subscribe
-            </Button>
-          </Link>
+          <div className="flex flex-col items-center gap-6">
+            <Link to="/Subscribe">
+              <Button className="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-7 py-3 rounded-full border-0 whitespace-nowrap transition-all duration-200">
+                Subscribe
+              </Button>
+            </Link>
+            <a href="https://www.facebook.com/profile.php?id=61574741363578" target="_blank" rel="noopener noreferrer" className="text-white hover:text-blue-300 transition-colors duration-200">
+              <Facebook className="w-6 h-6" />
+            </a>
+          </div>
         </div>
       </section>
 
