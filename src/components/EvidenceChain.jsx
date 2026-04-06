@@ -1,41 +1,41 @@
 export default function EvidenceChain() {
   const evidence = [
-    {
-      number: 1,
-      metric: '12%',
-      metricLabel: 'productivity uplift',
-      title: 'Rewarded staff work harder — and stay',
-      details: 'Incentive programs also reduce staff turnover by 17%, preserving service quality and cutting hiring costs.'
-    },
-    {
-      number: 2,
-      metric: '+79',
-      metricLabel: 'pts above industry avg',
-      title: 'Engaged staff push guests above satisfaction threshold',
-      details: '81.8% of highly satisfied guests plan to return — scores are a leading indicator of repeat revenue.'
-    },
-    {
-      number: 3,
-      metric: '+13.5%',
-      metricLabel: 'booking likelihood per +1 star',
-      title: 'Better reviews attract more guests at higher rates',
-      details: 'Impact reaches corporate negotiated rates and group bookings — not just OTA conversions.'
-    },
-    {
-      number: 4,
-      metric: '+1.42%',
-      metricLabel: 'RevPAR per reputation point',
-      title: 'Every point gained compounds into rate and occupancy',
-      details: '+0.89% ADR and +0.54% occupancy move simultaneously. Effect is largest at midscale properties.'
-    },
-    {
-      number: 5,
-      metric: '25:1',
-      metricLabel: 'average ROI on incentive programs',
-      title: 'Every $1 in incentives returns $25 in high-margin upsell revenue',
-      details: 'Upsell revenue delivers 5–10× more gross operating profit than an incremental reservation.'
-    }
-  ];
+  {
+    number: 1,
+    metric: '12%',
+    metricLabel: 'productivity uplift',
+    title: 'Rewarded staff work harder — and stay',
+    details: 'Incentive programs also reduce staff turnover by 17%, preserving service quality and cutting hiring costs.'
+  },
+  {
+    number: 2,
+    metric: '+79',
+    metricLabel: 'pts above industry avg',
+    title: 'Engaged staff push guests above satisfaction threshold',
+    details: '81.8% of highly satisfied guests plan to return — scores are a leading indicator of repeat revenue.'
+  },
+  {
+    number: 3,
+    metric: '+13.5%',
+    metricLabel: 'booking likelihood per +1 star',
+    title: 'Better reviews attract more guests at higher rates',
+    details: 'Impact reaches corporate negotiated rates and group bookings — not just OTA conversions.'
+  },
+  {
+    number: 4,
+    metric: '+1.42%',
+    metricLabel: 'RevPAR per reputation point',
+    title: 'Every point gained compounds into rate and occupancy',
+    details: '+0.89% ADR and +0.54% occupancy move simultaneously. Effect is largest at midscale properties.'
+  },
+  {
+    number: 5,
+    metric: '25:1',
+    metricLabel: 'average ROI on incentive programs',
+    title: 'Every $1 in incentives returns $25 in high-margin upsell revenue',
+    details: 'Upsell revenue delivers 5–10× more gross operating profit than an incremental reservation.'
+  }];
+
 
   const colors = ['teal', 'cyan', 'orange', 'pink', 'purple'];
 
@@ -45,10 +45,10 @@ export default function EvidenceChain() {
         <div className="max-w-4xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16">
-            <p className="text-sm font-semibold text-teal-600 tracking-widest uppercase mb-3">Research-Backed Framework</p>
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4" style={{fontFamily: "'Sora', sans-serif"}}>
+            <p className="text-[hsl(var(--sidebar-ring))] mb-3 text-sm font-semibold uppercase tracking-widest">RESEARCH-BACKED FRAMEWORK</p>
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4" style={{ fontFamily: "'Sora', sans-serif" }}>
               How front desk scoring<br />
-              <span className="text-teal-600">drives revenue</span>
+              <span className="text-[hsl(var(--sidebar-ring))]">drives revenue</span>
             </h2>
           </div>
 
@@ -88,8 +88,8 @@ export default function EvidenceChain() {
                     <h3 className="text-lg font-semibold text-slate-900 mb-2">{item.title}</h3>
                     <p className="text-slate-600 leading-relaxed">{item.details}</p>
                   </div>
-                </div>
-              );
+                </div>);
+
             })}
           </div>
 
@@ -99,6 +99,6 @@ export default function EvidenceChain() {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 }
