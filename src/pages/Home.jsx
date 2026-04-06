@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import BrandCarousel from '../components/BrandCarousel';
-import ProductShowcase from '../components/ProductShowcase';
 
 export default function Home() {
   return (
@@ -42,9 +41,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Product Showcase */}
-      <ProductShowcase />
 
       {/* Inspired by the Best in Service */}
       <BrandCarousel />
