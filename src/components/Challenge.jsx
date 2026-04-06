@@ -18,7 +18,7 @@ export default function Challenge() {
             The Challenge We're Solving
           </h2>
           <p className="text-sm text-slate-500 leading-relaxed">
-            The front desk is the first impression — and often where guest challenges surface. Yet most hotels operate blind.
+            The front desk is the first impression and often where guest challenges surface. Yet most hotels operate blind.
           </p>
         </div>
 
