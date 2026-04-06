@@ -41,7 +41,7 @@ const problems = [
   },
   {
     title: 'Hidden talent and high turnover',
-    description: 'Your best associates go unrecognized because there\'s no system to surface their performance. Without recognition, they leave — and you start over.',
+    description: 'Your best associates go unrecognized because there\'s no system to surface their performance. Without recognition, they leave and you start over.',
   },
 ];
 
