@@ -1,4 +1,5 @@
 import React from 'react';
+import Solution from '../components/Solution';
 import ProductShowcase from '../components/ProductShowcase';
 import UseCases from '../components/UseCases';
 import BrandCarousel from '../components/BrandCarousel';
@@ -18,6 +19,7 @@ export default function Solutions() {
         </div>
       </div>
       <ProductShowcase />
+      <Solution />
       <UseCases />
       <BrandCarousel />
     </div>
