@@ -46,7 +46,7 @@ export default function Header() {
                 to={link.href}
                 className={`px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${
                   isActive(link.href)
-                    ? 'bg-teal-50 text-teal-600'
+                    ? 'bg-blue-50 text-blue-600'
                     : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
                 }`}
               >
@@ -57,7 +57,7 @@ export default function Header() {
 
           <div className="flex items-center gap-3">
             <Link to="/Subscribe" className="hidden md:block">
-              <Button className="px-5 py-2 text-sm font-semibold bg-teal-500 hover:bg-teal-600 text-white rounded-full shadow-sm border-0 transition-all duration-200">
+              <Button className="px-5 py-2 text-sm font-semibold bg-blue-500 hover:bg-blue-600 text-white rounded-full shadow-sm border-0 transition-all duration-200">
                 Subscribe
                 <ArrowRight className="ml-2 w-4 h-4" />
               </Button>
@@ -82,14 +82,14 @@ export default function Header() {
                 to={link.href}
                 onClick={() => setIsOpen(false)}
                 className={`px-4 py-3 text-sm font-medium rounded-lg transition-all duration-200 ${
-                  isActive(link.href) ? 'bg-teal-50 text-teal-600' : 'text-slate-600 hover:bg-slate-50'
+                  isActive(link.href) ? 'bg-blue-50 text-blue-600' : 'text-slate-600 hover:bg-slate-50'
                 }`}
               >
                 {link.label}
               </Link>
             ))}
             <Link to="/Subscribe" className="mt-3">
-              <Button onClick={() => setIsOpen(false)} className="w-full bg-teal-500 hover:bg-teal-600 text-white font-semibold rounded-full">
+              <Button onClick={() => setIsOpen(false)} className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-full">
                 Subscribe
               </Button>
             </Link>
