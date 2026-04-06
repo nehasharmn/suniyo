@@ -9,13 +9,13 @@ const steps = [
   {
     number: '01',
     title: 'Always Listening',
-    description: 'A compact device captures every guest interaction 24/7 across all shifts — no manual input, no gaps, no blind spots.',
+    description: 'A compact device captures every guest interaction 24/7 across all shifts. no manual input, no gaps, no blind spots.',
     icon: Mic,
   },
   {
     number: '02',
     title: 'Next-Day Insights',
-    description: 'Managers receive a daily summary of missed upsells, service gaps, and standout moments — without watching hours of footage.',
+    description: 'Managers receive a daily summary of missed upsells, service gaps, and standout moments without watching hours of footage.',
     icon: BarChart2,
   },
   {
@@ -29,7 +29,7 @@ const steps = [
 const problems = [
   {
     title: 'Inconsistent service across shifts',
-    description: 'The morning crew performs differently than the night shift. Without visibility into every interaction, inconsistency becomes the norm — and guests notice before you do.',
+    description: 'The morning crew performs differently than the night shift. Without visibility into every interaction, inconsistency becomes the norm and guests notice before you do.',
   },
   {
     title: "You're always reacting, never preventing",
@@ -53,7 +53,7 @@ const features = [
   },
   {
     title: 'Daily Manager Reports',
-    description: 'Every morning, managers receive a concise digest of what happened at the front desk the day before — actionable, not overwhelming.',
+    description: 'Every morning, managers receive a concise digest of what happened at the front desk the day before.',
     icon: BarChart2,
   },
   {
@@ -63,7 +63,7 @@ const features = [
   },
   {
     title: 'Associate-Level Coaching',
-    description: 'Performance data is tied to individual associates, so coaching conversations are grounded in real examples — not guesswork.',
+    description: 'Performance data is tied to individual associates, so coaching conversations are grounded in real examples not guesswork.',
     icon: Users,
   },
   {
