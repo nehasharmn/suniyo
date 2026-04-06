@@ -10,7 +10,7 @@ export default function PullQuote() {
         >
           "The front desk is where revenue is won or lost. Most owners only find out which one happened after the fact."
         </blockquote>
-        <p className="text-xs font-bold uppercase tracking-widest text-amber-600">Suniyo changes that.</p>
+        <p className="text-xs font-bold uppercase tracking-widest text-blue-500">Suniyo changes that.</p>
       </div>
     </section>
   );

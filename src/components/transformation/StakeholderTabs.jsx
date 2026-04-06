@@ -45,7 +45,7 @@ export default function StakeholderTabs() {
     <section id="who-it-helps" className="py-24 bg-slate-50">
       <div className="container mx-auto px-6">
         <div className="text-center mb-12">
-          <p className="text-xs font-bold uppercase tracking-widest text-amber-500 mb-3">Who It Helps</p>
+          <p className="text-xs font-bold uppercase tracking-widest text-blue-400 mb-3">Who It Helps</p>
           <h2 className="text-3xl md:text-5xl font-bold text-slate-900" style={{ fontFamily: 'Sora, sans-serif' }}>
             Built for every role
           </h2>

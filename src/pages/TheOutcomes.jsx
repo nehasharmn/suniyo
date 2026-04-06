@@ -10,7 +10,7 @@ export default function TheOutcomes() {
       {/* Hero */}
       <div className="bg-slate-900 pt-36 pb-24 text-center">
         <div className="container mx-auto px-6 max-w-3xl">
-          <p className="text-xs font-bold uppercase tracking-widest text-amber-400 mb-5">Outcomes</p>
+          <p className="text-xs font-bold uppercase tracking-widest text-blue-400 mb-5">Outcomes</p>
           <h1
             className="text-4xl md:text-6xl font-bold text-white leading-tight mb-6"
             style={{ fontFamily: 'Sora, sans-serif' }}

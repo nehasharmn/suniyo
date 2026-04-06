@@ -28,7 +28,7 @@ export default function FourLevers() {
     <section id="revenue-outcomes" className="py-24 bg-white">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <p className="text-xs font-bold uppercase tracking-widest text-amber-500 mb-3">Revenue Outcomes</p>
+          <p className="text-xs font-bold uppercase tracking-widest text-blue-400 mb-3">Revenue Outcomes</p>
           <h2 className="text-3xl md:text-5xl font-bold text-slate-900" style={{ fontFamily: 'Sora, sans-serif' }}>
             Four Levers
           </h2>
