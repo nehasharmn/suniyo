@@ -1,6 +1,6 @@
 import React from 'react';
 import Challenge from '../components/Challenge';
-import Revenue from '../components/Revenue';
+
 import RevenueEstimator from '../components/RevenueEstimator';
 import { Link } from 'react-router-dom';
 
@@ -21,9 +21,6 @@ export default function Product() {
 
       {/* Current Challenges */}
       <Challenge />
-
-      {/* Revenue Impact */}
-      <Revenue />
 
       {/* Revenue Estimator */}
       <section className="py-16 bg-slate-50">

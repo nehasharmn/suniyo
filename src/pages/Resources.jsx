@@ -1,5 +1,6 @@
 import React from 'react';
 import EvidenceChain from '../components/EvidenceChain';
+import Revenue from '../components/Revenue';
 
 export default function Resources() {
   return (
@@ -18,6 +19,7 @@ export default function Resources() {
           </p>
         </div>
       </div>
+      <Revenue />
       <EvidenceChain />
     </div>
   );
