@@ -17,7 +17,7 @@ export default function Home() {
 
           </p>
           <Link to="/Pricing">
-            <Button className="px-8 py-6 text-lg font-semibold bg-teal-500 hover:bg-teal-600 text-white rounded-full shadow-lg transition-all duration-300">
+            <Button className="px-8 py-6 text-lg font-semibold bg-blue-500 hover:bg-teal-600 text-white rounded-full shadow-lg transition-all duration-300">
               Get Started
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
