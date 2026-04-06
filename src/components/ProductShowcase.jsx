@@ -1,4 +1,5 @@
 import React from 'react';
+import { BarChart2, Clock, Lightbulb } from 'lucide-react';
 
 export default function ProductShowcase() {
   return (
@@ -16,7 +17,7 @@ export default function ProductShowcase() {
             <div className="space-y-4">
               <div className="flex gap-4">
                 <div className="flex-shrink-0 w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center">
-                  <span className="text-teal-600 font-bold">📊</span>
+                  <BarChart2 className="w-5 h-5 text-teal-600" />
                 </div>
                 <div>
                   <h3 className="font-semibold text-slate-900 mb-1">Performance Tracking</h3>
@@ -25,7 +26,7 @@ export default function ProductShowcase() {
               </div>
               <div className="flex gap-4">
                 <div className="flex-shrink-0 w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center">
-                  <span className="text-teal-600 font-bold">📈</span>
+                  <Clock className="w-5 h-5 text-teal-600" />
                 </div>
                 <div>
                   <h3 className="font-semibold text-slate-900 mb-1">Shift Analytics</h3>
@@ -34,7 +35,7 @@ export default function ProductShowcase() {
               </div>
               <div className="flex gap-4">
                 <div className="flex-shrink-0 w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center">
-                  <span className="text-teal-600 font-bold">🎯</span>
+                  <Lightbulb className="w-5 h-5 text-teal-600" />
                 </div>
                 <div>
                   <h3 className="font-semibold text-slate-900 mb-1">Actionable Insights</h3>
