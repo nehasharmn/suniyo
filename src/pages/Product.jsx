@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { ArrowRight, Mic, BarChart2, Star, Eye, TrendingUp, Users, AlertTriangle, Award, CheckCircle } from 'lucide-react';
+import { base44 } from '@/api/base44Client';
 import RevenueEstimator from '../components/RevenueEstimator';
 import ProductShowcase from '../components/ProductShowcase';
 
@@ -81,6 +82,27 @@ const features = [
 
 export default function Product() {
   const [demoEmail, setDemoEmail] = useState('');
+  const [emailSent, setEmailSent] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleGetInTouch = async () => {
+    if (!demoEmail) return;
+    setIsLoading(true);
+    try {
+      await base44.integrations.Core.SendEmail({
+        to: 'sanjay@sunio.ai',
+        subject: 'New Demo Request from Suniyo',
+        body: `Someone requested a demo.\n\nEmail: ${demoEmail}`
+      });
+      setEmailSent(true);
+      setDemoEmail('');
+      setTimeout(() => setEmailSent(false), 5000);
+    } catch (error) {
+      console.error('Error sending email:', error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   return (
     <div className="bg-white">
@@ -186,10 +208,19 @@ export default function Product() {
               onChange={(e) => setDemoEmail(e.target.value)}
               className="bg-white/10 border-white/20 text-white placeholder:text-slate-400 rounded-full px-5 focus:border-blue-400 focus:ring-blue-400"
             />
-            <Button className="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-7 py-3 rounded-full border-0 whitespace-nowrap transition-all duration-200">
-              Get a Demo
+            <Button 
+              onClick={handleGetInTouch}
+              disabled={isLoading || !demoEmail}
+              className="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-7 py-3 rounded-full border-0 whitespace-nowrap transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              {isLoading ? 'Sending...' : 'Get in Touch'}
             </Button>
           </div>
+          {emailSent && (
+            <p className="text-green-400 mt-4 font-semibold animate-pulse">
+              Thanks! We'll be in touch soon.
+            </p>
+          )}
         </div>
       </section>
 
