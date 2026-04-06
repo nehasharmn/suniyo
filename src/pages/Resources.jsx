@@ -7,9 +7,6 @@ export default function Resources() {
       {/* Page Hero */}
       <div className="bg-gradient-to-br from-blue-50 via-white to-indigo-50 pt-36 pb-20 text-center">
         <div className="container mx-auto px-6">
-          <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 text-sm font-medium px-4 py-1.5 rounded-full mb-6">
-            Research & Insights
-          </div>
           <h1 className="text-4xl md:text-6xl font-extrabold text-slate-900 tracking-tight mb-4">
             Resources
           </h1>
