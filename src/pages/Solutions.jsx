@@ -1,7 +1,6 @@
 import React from 'react';
 import Solution from '../components/Solution';
 import ProductShowcase from '../components/ProductShowcase';
-import HowItWorks from '../components/HowItWorks';
 import UseCases from '../components/UseCases';
 import BrandCarousel from '../components/BrandCarousel';
 
@@ -24,7 +23,6 @@ export default function Solutions() {
       </div>
       <ProductShowcase />
       <Solution />
-      <HowItWorks />
       <UseCases />
       <BrandCarousel />
     </div>
