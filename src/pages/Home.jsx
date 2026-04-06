@@ -40,6 +40,7 @@ export default function Home() {
               </iframe>
             </div>
           </div>
+          <p className="text-center text-slate-600 mt-4">Customer feedback from Wisconsin</p>
         </div>
       </section>
 
