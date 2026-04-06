@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { useToast } from '@/components/ui/use-toast';
 import { ArrowRight, Mic, BarChart2, Star, Eye, TrendingUp, Users, AlertTriangle, Award, CheckCircle } from 'lucide-react';
 import { base44 } from '@/api/base44Client';
 import RevenueEstimator from '../components/RevenueEstimator';
@@ -82,8 +83,8 @@ const features = [
 
 export default function Product() {
   const [demoEmail, setDemoEmail] = useState('');
-  const [emailSent, setEmailSent] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const { toast } = useToast();
 
   const handleGetInTouch = async () => {
     if (!demoEmail) return;
@@ -94,11 +95,20 @@ export default function Product() {
         subject: 'New Demo Request from Suniyo',
         body: `Someone requested a demo.\n\nEmail: ${demoEmail}`
       });
-      setEmailSent(true);
+      toast({
+        title: "Thanks!",
+        description: "We'll be in touch soon.",
+        duration: 5000,
+      });
       setDemoEmail('');
-      setTimeout(() => setEmailSent(false), 5000);
     } catch (error) {
       console.error('Error sending email:', error);
+      toast({
+        title: "Error",
+        description: "Failed to send email. Please try again.",
+        variant: "destructive",
+        duration: 5000,
+      });
     } finally {
       setIsLoading(false);
     }
@@ -216,11 +226,6 @@ export default function Product() {
               {isLoading ? 'Sending...' : 'Get in Touch'}
             </Button>
           </div>
-          {emailSent && (
-            <p className="text-green-400 mt-4 font-semibold animate-pulse">
-              Thanks! We'll be in touch soon.
-            </p>
-          )}
         </div>
       </section>
 
