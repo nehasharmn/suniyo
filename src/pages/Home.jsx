@@ -31,7 +31,7 @@ export default function Home() {
           <div className="rounded-2xl overflow-hidden shadow-2xl">
             <div style={{paddingBottom: '56.25%', position: 'relative', height: 0}}>
               <iframe
-                src="https://player.vimeo.com/video/1180379751?h=441414c8f1&badge=0&autopause=0&player_id=0&app_id=58479"
+                src="https://player.vimeo.com/video/1180379751?h=441414c8f1&badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=0"
                 frameBorder="0"
                 allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
                 referrerPolicy="strict-origin-when-cross-origin"
