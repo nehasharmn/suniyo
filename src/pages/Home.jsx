@@ -50,7 +50,7 @@ export default function Home() {
       <BrandCarousel />
 
       {/* CTA Banner */}
-      <section className="py-20 bg-gradient-to-br from-blue-500 to-cyan-500 mt-16">
+      <section className="py-20 mt-16" style={{ backgroundColor: '#0e172a' }}>
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4 tracking-tight">
             Ready to See the Difference?
@@ -59,7 +59,7 @@ export default function Home() {
             Join hospitality leaders who are already transforming guest satisfaction and revenue.
           </p>
           <Link to="/Pricing">
-            <Button className="px-10 py-6 text-base font-semibold bg-white text-blue-600 hover:bg-blue-50 rounded-full shadow-lg transition-all duration-300 border-0 hover:scale-105">
+            <Button className="px-10 py-6 text-base font-semibold bg-white text-slate-900 hover:bg-slate-100 rounded-full shadow-lg transition-all duration-300 border-0 hover:scale-105">
               Subscribe Now
               <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
