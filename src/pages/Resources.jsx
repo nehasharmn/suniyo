@@ -27,7 +27,7 @@ export default function Resources() {
           <p className="text-slate-500 mb-10 max-w-xl mx-auto">
             See how Suniyo fits naturally into a real hotel's daily operations through Kelly's story.
           </p>
-          <div className="rounded-2xl overflow-hidden shadow-2xl aspect-video">
+          <div className="rounded-2xl overflow-hidden shadow-2xl aspect-[9/16] max-w-sm mx-auto">
             <iframe
               src="https://player.vimeo.com/video/1180360067?h=df0763725f&autoplay=0"
               width="100%"
