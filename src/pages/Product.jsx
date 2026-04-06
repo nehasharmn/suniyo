@@ -84,31 +84,7 @@ export default function Product() {
   return (
     <div className="bg-white">
 
-      {/* Hero */}
-      <section id="hero" className="bg-gradient-to-br from-slate-900 via-slate-800 to-blue-900 pt-32 pb-24 text-center">
-        <div className="container mx-auto px-6 max-w-4xl">
-          <h1 className="text-5xl md:text-7xl font-extrabold text-white tracking-tight mb-6 leading-tight">
-            See Your Front Desk<br />
-            <span className="text-blue-400">Like Never Before</span>
-          </h1>
-          <p className="text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed mb-10">
-            Suniyo listens to every front desk interaction at select-service hotels, surfaces what managers can't see, and helps teams deliver consistent service every shift.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link to="/Subscribe">
-              <Button className="px-8 py-6 text-base font-semibold bg-blue-500 hover:bg-blue-600 text-white rounded-full shadow-lg border-0 transition-all duration-200">
-                Book a Demo
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-            </Link>
-            <a href="#calculator">
-              <Button variant="outline" className="px-8 py-6 text-base font-semibold bg-transparent border-white/30 text-white hover:bg-white/10 rounded-full transition-all duration-200">
-                See Your Revenue Potential
-              </Button>
-            </a>
-          </div>
-        </div>
-      </section>
+
 
       {/* How It Works */}
       <section id="how-it-works" className="py-24 bg-white">
