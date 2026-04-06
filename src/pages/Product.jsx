@@ -87,9 +87,6 @@ export default function Product() {
       {/* Hero */}
       <section id="hero" className="bg-gradient-to-br from-slate-900 via-slate-800 to-blue-900 pt-32 pb-24 text-center">
         <div className="container mx-auto px-6 max-w-4xl">
-          <div className="inline-flex items-center gap-2 bg-blue-500/20 text-blue-300 text-sm font-medium px-4 py-1.5 rounded-full mb-8 border border-blue-500/30">
-            Select-Service Hotels
-          </div>
           <h1 className="text-5xl md:text-7xl font-extrabold text-white tracking-tight mb-6 leading-tight">
             See Your Front Desk<br />
             <span className="text-blue-400">Like Never Before</span>
