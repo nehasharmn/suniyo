@@ -11,9 +11,6 @@ export default function OurSolution() {
       {/* Page Hero */}
       <div className="bg-gradient-to-br from-teal-50 via-white to-cyan-50 pt-36 pb-20 text-center">
         <div className="container mx-auto px-6">
-          <div className="inline-flex items-center gap-2 bg-teal-100 text-teal-700 text-sm font-medium px-4 py-1.5 rounded-full mb-6">
-            How It Works
-          </div>
           <h1 className="text-4xl md:text-6xl font-extrabold text-slate-900 tracking-tight mb-4">
             Our Solution
           </h1>
