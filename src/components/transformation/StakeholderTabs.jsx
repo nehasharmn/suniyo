@@ -71,7 +71,7 @@ export default function StakeholderTabs() {
         {/* Tab content */}
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 bg-white rounded-2xl p-10 shadow-sm border border-slate-100">
           <div>
-            <h3 className="text-2xl font-bold text-slate-900 mb-5 leading-snug" style={{ fontFamily: 'Sora, sans-serif' }}>
+            <h3 className="text-2xl text-center font-bold text-slate-900 mb-5 leading-snug" style={{ fontFamily: 'Sora, sans-serif' }}>
               {tab.headline}
             </h3>
             <p className="text-slate-500 leading-relaxed text-sm">{tab.body}</p>
