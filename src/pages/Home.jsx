@@ -8,15 +8,24 @@ export default function Home() {
   const [currentVideoId, setCurrentVideoId] = useState('1180379751');
 
   useEffect(() => {
-    const handleVideoEnd = () => {
-      setCurrentVideoId('1180379848');
+    // Load Vimeo Player API
+    const script = document.createElement('script');
+    script.src = 'https://player.vimeo.com/api/player.js';
+    document.body.appendChild(script);
+
+    script.onload = () => {
+      const iframe = document.querySelector('iframe');
+      if (iframe && window.Vimeo) {
+        const player = new window.Vimeo.Player(iframe);
+        player.on('ended', () => {
+          setCurrentVideoId('1180379848');
+        });
+      }
     };
 
-    const iframe = document.querySelector('iframe');
-    if (iframe) {
-      iframe.addEventListener('ended', handleVideoEnd);
-      return () => iframe.removeEventListener('ended', handleVideoEnd);
-    }
+    return () => {
+      document.body.removeChild(script);
+    };
   }, []);
 
   return (
