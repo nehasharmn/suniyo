@@ -11,7 +11,7 @@ export default function Subscribe() {
       <section className="py-24 bg-white min-h-screen flex items-center">
         <div className="container mx-auto px-6">
           <div className="max-w-lg mx-auto text-center">
-            <div className="w-20 h-20 bg-teal-50 rounded-full flex items-center justify-center mx-auto mb-6">
+            <div className="w-20 h-20 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-6">
               <CheckCircle className="w-10 h-10 text-teal-500" />
             </div>
             <h2 className="text-3xl font-extrabold text-slate-900 mb-3">Welcome to Suniyo!</h2>
