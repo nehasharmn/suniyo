@@ -4,7 +4,6 @@ import ProductShowcase from '../components/ProductShowcase';
 import HowItWorks from '../components/HowItWorks';
 import UseCases from '../components/UseCases';
 import BrandCarousel from '../components/BrandCarousel';
-import EvidenceChain from '../components/EvidenceChain';
 
 export default function Solutions() {
   return (
@@ -25,7 +24,6 @@ export default function Solutions() {
       </div>
       <ProductShowcase />
       <Solution />
-      <EvidenceChain />
       <HowItWorks />
       <UseCases />
       <BrandCarousel />

@@ -8,6 +8,7 @@ const navLinks = [
   { href: createPageUrl('Home'), label: 'Home' },
   { href: '/Product', label: 'Product' },
   { href: '/Solutions', label: 'Solutions' },
+  { href: '/Resources', label: 'Resources' },
   { href: '/Pricing', label: 'Pricing' },
 ];
 

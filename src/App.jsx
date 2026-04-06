@@ -12,6 +12,7 @@ import ChecklistBuilder from './pages/ChecklistBuilder';
 import Subscribe from './pages/Subscribe';
 import Product from './pages/Product';
 import Solutions from './pages/Solutions';
+import Resources from './pages/Resources';
 import TheChallenge from './pages/TheChallenge';
 import OurSolution from './pages/OurSolution';
 
@@ -71,6 +72,7 @@ const AuthenticatedApp = () => {
       <Route path="/Subscribe" element={<LayoutWrapper currentPageName="Subscribe"><Subscribe /></LayoutWrapper>} />
       <Route path="/Product" element={<LayoutWrapper currentPageName="Product"><Product /></LayoutWrapper>} />
       <Route path="/Solutions" element={<LayoutWrapper currentPageName="Solutions"><Solutions /></LayoutWrapper>} />
+      <Route path="/Resources" element={<LayoutWrapper currentPageName="Resources"><Resources /></LayoutWrapper>} />
       <Route path="/TheChallenge" element={<LayoutWrapper currentPageName="TheChallenge"><TheChallenge /></LayoutWrapper>} />
       <Route path="/OurSolution" element={<LayoutWrapper currentPageName="OurSolution"><OurSolution /></LayoutWrapper>} />
       <Route path="*" element={<PageNotFound />} />
