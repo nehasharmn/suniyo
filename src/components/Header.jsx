@@ -27,7 +27,7 @@ export default function Header() {
   const isActive = (path) => location.pathname === path;
 
   return (
-    <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-sm' : 'bg-white/80 backdrop-blur-sm'}`}>
+    <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-sm border-b border-slate-100' : 'bg-white'}`}>
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-16 py-2">
           {/* Logo */}
