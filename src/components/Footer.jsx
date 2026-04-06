@@ -26,8 +26,12 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-            <h4 className="font-semibold text-slate-800 mb-4 text-sm uppercase tracking-wide">Ready to boost revenue?</h4>
-            <p className="text-sm leading-relaxed">Subscribe and see the difference data-driven service coaching can make for your property.</p>
+            <h4 className="font-semibold text-slate-800 mb-4 text-sm uppercase tracking-wide">Contact</h4>
+            <ul className="space-y-2 text-sm">
+              <li><a href="tel:919-230-1401" className="hover:text-teal-600 transition-colors">919-230-1401</a></li>
+              <li><a href="mailto:sales@suniyo.ai" className="hover:text-teal-600 transition-colors">sales@suniyo.ai</a></li>
+              <li className="text-xs leading-relaxed">11010 Lake Grove Blvd, Suite 100<br />Morrisville, NC 27560</li>
+            </ul>
           </div>
         </div>
         <div className="mt-6 pt-4 border-t border-slate-200 text-center text-xs text-slate-400">
