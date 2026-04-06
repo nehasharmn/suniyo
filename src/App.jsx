@@ -15,6 +15,7 @@ import Solutions from './pages/Solutions';
 import Resources from './pages/Resources';
 import TheChallenge from './pages/TheChallenge';
 import OurSolution from './pages/OurSolution';
+import TheOutcomes from './pages/TheOutcomes';
 
 const { Pages, Layout, mainPage } = pagesConfig;
 const mainPageKey = mainPage ?? Object.keys(Pages)[0];
@@ -75,6 +76,7 @@ const AuthenticatedApp = () => {
       <Route path="/Resources" element={<LayoutWrapper currentPageName="Resources"><Resources /></LayoutWrapper>} />
       <Route path="/TheChallenge" element={<LayoutWrapper currentPageName="TheChallenge"><TheChallenge /></LayoutWrapper>} />
       <Route path="/OurSolution" element={<LayoutWrapper currentPageName="OurSolution"><OurSolution /></LayoutWrapper>} />
+      <Route path="/TheOutcomes" element={<LayoutWrapper currentPageName="TheOutcomes"><TheOutcomes /></LayoutWrapper>} />
       <Route path="*" element={<PageNotFound />} />
     </Routes>
   );
