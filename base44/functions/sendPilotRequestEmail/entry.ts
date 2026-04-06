@@ -1,12 +1,19 @@
 Deno.serve(async (req) => {
   try {
-    const { event, data } = await req.json();
+    const payload = await req.json();
+    const data = payload.data;
 
-    if (event.type !== 'create') {
-      return Response.json({ success: true });
+    if (!data || !data.name || !data.email || !data.hotel_company) {
+      console.error('Invalid payload:', payload);
+      return Response.json({ error: 'Missing required fields' }, { status: 400 });
     }
 
     const apiKey = Deno.env.get('RESEND_API_KEY');
+    if (!apiKey) {
+      console.error('RESEND_API_KEY not set');
+      return Response.json({ error: 'API key missing' }, { status: 500 });
+    }
+
     const emails = ['psharma@suniyo.ai', 'sanjay@suniyo.ai'];
 
     await Promise.all(
@@ -29,7 +36,7 @@ Deno.serve(async (req) => {
 
     return Response.json({ success: true });
   } catch (error) {
-    console.error('Error:', error);
+    console.error('Error:', error.message);
     return Response.json({ error: error.message }, { status: 500 });
   }
 });
