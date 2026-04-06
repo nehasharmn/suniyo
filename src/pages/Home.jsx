@@ -1,10 +1,24 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import BrandCarousel from '../components/BrandCarousel';
 
 export default function Home() {
+  const [currentVideoId, setCurrentVideoId] = useState('1180379751');
+
+  useEffect(() => {
+    const handleVideoEnd = () => {
+      setCurrentVideoId('1180379848');
+    };
+
+    const iframe = document.querySelector('iframe');
+    if (iframe) {
+      iframe.addEventListener('ended', handleVideoEnd);
+      return () => iframe.removeEventListener('ended', handleVideoEnd);
+    }
+  }, []);
+
   return (
     <div className="bg-white">
       {/* Hero */}
@@ -31,7 +45,10 @@ export default function Home() {
           <div className="rounded-2xl overflow-hidden shadow-2xl">
             <div style={{paddingBottom: '56.25%', position: 'relative', height: 0}}>
               <iframe
-                src="https://player.vimeo.com/video/1180379751?h=441414c8f1&badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1"
+                key={currentVideoId}
+                src={currentVideoId === '1180379751' 
+                  ? "https://player.vimeo.com/video/1180379751?h=441414c8f1&badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1"
+                  : "https://player.vimeo.com/video/1180379848?h=f7915c583a&badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1"}
                 frameBorder="0"
                 allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
                 referrerPolicy="strict-origin-when-cross-origin"
