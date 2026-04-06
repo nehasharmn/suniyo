@@ -1,5 +1,4 @@
 import React from 'react';
-import TransformationSection from '../components/transformation/TransformationSection';
 import StakeholderTabs from '../components/transformation/StakeholderTabs';
 import FourLevers from '../components/transformation/FourLevers';
 import PullQuote from '../components/transformation/PullQuote';
@@ -24,7 +23,6 @@ export default function TheOutcomes() {
         </div>
       </div>
 
-      <TransformationSection />
       <StakeholderTabs />
       <FourLevers />
       <PullQuote />
