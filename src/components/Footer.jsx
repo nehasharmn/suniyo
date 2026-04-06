@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Facebook } from 'lucide-react';
 import { createPageUrl } from '@/utils';
 
 export default function Footer() {
@@ -31,6 +32,11 @@ export default function Footer() {
               <li><a href="tel:919-230-1401" className="hover:text-teal-600 transition-colors">919-230-1401</a></li>
               <li><a href="mailto:sales@suniyo.ai" className="hover:text-teal-600 transition-colors">sales@suniyo.ai</a></li>
               <li className="text-xs leading-relaxed">11010 Lake Grove Blvd, Suite 100<br />Morrisville, NC 27560</li>
+              <li className="pt-2">
+                <a href="https://www.facebook.com/profile.php?id=61574741363578" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-teal-600 transition-colors inline-block">
+                  <Facebook className="w-5 h-5" />
+                </a>
+              </li>
             </ul>
           </div>
         </div>
