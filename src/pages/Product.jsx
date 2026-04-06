@@ -94,7 +94,7 @@ export default function Product() {
               How Suniyo Works
             </h2>
             <p className="text-lg text-slate-500 max-w-xl mx-auto">
-              Three simple steps — from passive capture to measurable improvement.
+              Three simple steps from passive capture to measurable improvement.
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
