@@ -38,13 +38,13 @@ export default function RevenueEstimator() {
   const totalRevenue = (parseFloat(currentRevenue) || 0) + revenueIncrease;
   const overallIncreasePercent = currentRevenue && parseFloat(currentRevenue) !== 0 ? (revenueIncrease / parseFloat(currentRevenue)) * 100 : 0;
 
-  const inputClass = "bg-white border-slate-200 text-slate-900 focus:border-teal-400 focus:ring-teal-400";
+  const inputClass = "bg-white border-slate-200 text-slate-900 focus:border-blue-400 focus:ring-blue-400";
 
   return (
     <Card className="max-w-4xl mx-auto shadow-md bg-white border border-slate-100">
       <CardHeader className="text-center pb-4 pt-8">
-        <div className="w-12 h-12 bg-teal-50 rounded-xl flex items-center justify-center mb-3 mx-auto">
-          <TrendingUp className="w-6 h-6 text-teal-500" />
+        <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-3 mx-auto">
+          <TrendingUp className="w-6 h-6 text-blue-500" />
         </div>
         <CardTitle className="text-2xl font-extrabold text-slate-900 tracking-tight">Revenue Growth Estimator</CardTitle>
         <CardDescription className="text-slate-500 pt-1">
@@ -101,7 +101,7 @@ export default function RevenueEstimator() {
               <div className="space-y-6 text-center">
                 <div>
                   <p className="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-1">Estimated Annual Revenue Increase</p>
-                  <p className="text-4xl font-extrabold text-teal-600">{formatCurrency(revenueIncrease)}</p>
+                  <p className="text-4xl font-extrabold text-blue-600">{formatCurrency(revenueIncrease)}</p>
                 </div>
                 <div>
                   <p className="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-1">Overall Revenue Increase</p>
@@ -114,8 +114,8 @@ export default function RevenueEstimator() {
               </div>
             ) : (
               <div className="text-center">
-                <div className="w-16 h-16 bg-teal-50 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Calculator className="w-8 h-8 text-teal-400" />
+                <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Calculator className="w-8 h-8 text-blue-400" />
                 </div>
                 <p className="font-semibold text-slate-800 mb-1">Your Growth Potential</p>
                 <p className="text-sm text-slate-400">Fill out the form and click calculate.</p>
@@ -125,7 +125,7 @@ export default function RevenueEstimator() {
         </div>
       </CardContent>
       <CardFooter className="flex-col gap-3 px-8 pb-8 pt-0">
-        <Button onClick={handleCalculate} size="lg" className="w-full py-5 text-base font-semibold bg-teal-500 hover:bg-teal-600 text-white rounded-full border-0 shadow-sm transition-all duration-300">
+        <Button onClick={handleCalculate} size="lg" className="w-full py-5 text-base font-semibold bg-blue-500 hover:bg-blue-600 text-white rounded-full border-0 shadow-sm transition-all duration-300">
           <Calculator className="mr-2 h-5 w-5" />
           Calculate My Revenue Growth
         </Button>
