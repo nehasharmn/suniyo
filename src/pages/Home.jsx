@@ -17,7 +17,7 @@ export default function Home() {
 
           </p>
           <Link to="/Pricing">
-            <Button className="px-8 py-6 text-lg font-semibold bg-blue-500 hover:bg-teal-600 text-white rounded-full shadow-lg transition-all duration-300">
+            <Button className="px-8 py-6 text-lg font-semibold bg-blue-500 hover:bg-blue-600 text-white rounded-full shadow-lg transition-all duration-300">
               Get Started
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
@@ -46,16 +46,16 @@ export default function Home() {
       <BrandCarousel />
 
       {/* CTA Banner */}
-      <section className="py-20 bg-gradient-to-br from-primary to-teal-500 mt-16">
+      <section className="py-20 bg-gradient-to-br from-primary to-blue-500 mt-16">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4 tracking-tight">
             Ready to See the Difference?
           </h2>
-          <p className="text-lg text-teal-100 mb-8 max-w-2xl mx-auto">
+          <p className="text-lg text-blue-100 mb-8 max-w-2xl mx-auto">
             Join hospitality leaders who are already transforming guest satisfaction and revenue.
           </p>
           <Link to="/Pricing">
-            <Button className="px-10 py-6 text-base font-semibold bg-white text-teal-600 hover:bg-teal-50 rounded-full shadow-lg transition-all duration-300 border-0 hover:scale-105">
+            <Button className="px-10 py-6 text-base font-semibold bg-white text-blue-600 hover:bg-blue-50 rounded-full shadow-lg transition-all duration-300 border-0 hover:scale-105">
               Subscribe Now
               <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
