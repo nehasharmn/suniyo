@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { ArrowRight, Mic, BarChart2, Star, Eye, TrendingUp, Users, AlertTriangle, Award, CheckCircle } from 'lucide-react';
 import RevenueEstimator from '../components/RevenueEstimator';
+import ProductShowcase from '../components/ProductShowcase';
 
 const steps = [
   {
@@ -114,6 +115,30 @@ export default function Product() {
           </div>
         </div>
       </section>
+
+      {/* Video Section */}
+      <section className="py-10 bg-white">
+        <div className="container mx-auto px-6 max-w-3xl">
+          <div className="text-center mb-4">
+            <h2 className="text-xl font-extrabold text-slate-900 tracking-tight mb-1">See It in Action</h2>
+            <p className="text-slate-500 text-sm">Watch how Suniyo transforms front desk service into measurable results.</p>
+          </div>
+          <div className="rounded-2xl overflow-hidden shadow-2xl aspect-video">
+            <iframe
+              src="https://player.vimeo.com/video/1179238131?h=1005580fcf&autoplay=1&muted=0"
+              width="100%"
+              height="100%"
+              allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
+              allowFullScreen
+              style={{ border: 0 }}
+              className="w-full h-full"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Performance Visibility */}
+      <ProductShowcase />
 
       {/* The Problem */}
       <section id="problem" className="py-24 bg-slate-50">
