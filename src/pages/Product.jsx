@@ -190,34 +190,6 @@ export default function Product() {
         </div>
       </section>
 
-      {/* What You Get */}
-      <section id="features" className="py-24 bg-slate-50">
-        <div className="container mx-auto px-6 max-w-5xl">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
-              What You Get
-            </h2>
-            <p className="text-lg text-slate-500 max-w-xl mx-auto">
-              Everything you need to run a consistent, high-performing front desk operation.
-            </p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-6">
-            {features.map((feature, i) => {
-              const Icon = feature.icon;
-              return (
-                <div key={i} className="bg-white border border-slate-100 rounded-2xl p-7 shadow-sm hover:shadow-md transition-shadow duration-200">
-                  <div className="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center mb-4">
-                    <Icon className="w-5 h-5 text-blue-600" />
-                  </div>
-                  <h3 className="text-base font-bold text-slate-900 mb-2">{feature.title}</h3>
-                  <p className="text-sm text-slate-500 leading-relaxed">{feature.description}</p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
       {/* CTA */}
       <section className="py-24 bg-slate-900">
         <div className="container mx-auto px-6 max-w-3xl text-center">
