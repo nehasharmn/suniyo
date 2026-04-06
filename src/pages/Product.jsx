@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useToast } from '@/components/ui/use-toast';
 import { ArrowRight, Mic, BarChart2, Star, Eye, TrendingUp, Users, AlertTriangle, Award, CheckCircle } from 'lucide-react';
-import { base44 } from '@/api/base44Client';
+import { sendDemoRequest } from '@/functions/sendDemoRequest';
 import RevenueEstimator from '../components/RevenueEstimator';
 import ProductShowcase from '../components/ProductShowcase';
 
@@ -90,11 +90,7 @@ export default function Product() {
     if (!demoEmail) return;
     setIsLoading(true);
     try {
-      await base44.integrations.Core.SendEmail({
-        to: 'sanjay@sunio.ai',
-        subject: 'New Demo Request from Suniyo',
-        body: `Someone requested a demo.\n\nEmail: ${demoEmail}`
-      });
+      await sendDemoRequest({ email: demoEmail });
       toast({
         title: "Thanks!",
         description: "We'll be in touch soon.",
