@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useToast } from '@/components/ui/use-toast';
 import { ArrowRight, Mic, BarChart2, Star, Eye, TrendingUp, Users, AlertTriangle, Award, CheckCircle } from 'lucide-react';
-import { sendDemoRequest } from '@/functions/sendDemoRequest';
+import { base44 } from '@/api/base44Client';
 import RevenueEstimator from '../components/RevenueEstimator';
 import ProductShowcase from '../components/ProductShowcase';
 
@@ -90,7 +90,7 @@ export default function Product() {
     if (!demoEmail) return;
     setIsLoading(true);
     try {
-      await sendDemoRequest({ email: demoEmail });
+      await base44.entities.DemoRequest.create({ email: demoEmail });
       toast({
         title: "Thanks!",
         description: "We'll be in touch soon.",
@@ -98,10 +98,10 @@ export default function Product() {
       });
       setDemoEmail('');
     } catch (error) {
-      console.error('Error sending email:', error);
+      console.error('Error submitting request:', error);
       toast({
         title: "Error",
-        description: "Failed to send email. Please try again.",
+        description: "Failed to submit request. Please try again.",
         variant: "destructive",
         duration: 5000,
       });

@@ -1,0 +1,14 @@
+{
+  "name": "DemoRequest",
+  "type": "object",
+  "properties": {
+    "email": {
+      "type": "string",
+      "format": "email",
+      "description": "Email address of the requester"
+    }
+  },
+  "required": [
+    "email"
+  ]
+}
