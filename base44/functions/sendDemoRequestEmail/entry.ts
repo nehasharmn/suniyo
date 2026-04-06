@@ -9,11 +9,18 @@ Deno.serve(async (req) => {
       return Response.json({ success: true });
     }
 
-    await base44.integrations.Core.SendEmail({
-      to: 'sanjay@sunio.ai',
-      subject: 'New Demo Request from Suniyo',
-      body: `Someone requested a demo.\n\nEmail: ${data.email}`
-    });
+    await Promise.all([
+      base44.integrations.Core.SendEmail({
+        to: 'sanjay@suniyo.ai',
+        subject: 'New Demo Request from Suniyo',
+        body: `Someone requested a demo.\n\nEmail: ${data.email}`
+      }),
+      base44.integrations.Core.SendEmail({
+        to: 'psharma@suniyo.ai',
+        subject: 'New Demo Request from Suniyo',
+        body: `Someone requested a demo.\n\nEmail: ${data.email}`
+      })
+    ]);
 
     return Response.json({ success: true });
   } catch (error) {
