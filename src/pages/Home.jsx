@@ -30,7 +30,7 @@ export default function Home() {
         <div className="container mx-auto px-6 max-w-5xl">
           <div className="rounded-2xl overflow-hidden shadow-2xl aspect-video">
             <iframe
-              src="https://player.vimeo.com/video/1180379751/441414c8f1"
+              src="https://player.vimeo.com/video/1180379751/441414c8f1?h=441414c8f1"
               width="100%"
               height="100%"
               allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
