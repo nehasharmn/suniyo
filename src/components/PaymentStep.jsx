@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { CreditCard, Check, Tag } from 'lucide-react';
-import { createCheckout } from '@/functions/createCheckout';
+
+const PAYMENT_LINK = 'https://buy.stripe.com/aFadRadVZcMab3L5Ai0co01';
 
 const DISCOUNT_CODES = {
   AAHOACON26: 'aahoacon26',
@@ -77,22 +78,13 @@ export default function PaymentStep({ formData }) {
   const baseHardware = discountApplied === 'bahubali' ? 1 : discountApplied === 'aahoacon26' ? 350 : 500;
   const hardwarePrice = `$${baseHardware * numDevices}`;
 
-  const handleCheckout = async () => {
+  const handleCheckout = () => {
     const isInIframe = window.self !== window.top;
     if (isInIframe) {
       alert('Checkout is only available from the published app. Please open the app directly.');
       return;
     }
-    setIsLoading(true);
-    const successUrl = `${window.location.origin}/Subscribe?success=true`;
-    const cancelUrl = window.location.href;
-    const res = await createCheckout({ plan: selectedPlan, successUrl, cancelUrl, discountCode: discountApplied, formData });
-    if (res.data?.url) {
-      window.location.href = res.data.url;
-    } else {
-      alert('Could not initiate checkout. Please try again.');
-      setIsLoading(false);
-    }
+    window.location.href = PAYMENT_LINK;
   };
 
   return (
@@ -183,16 +175,26 @@ export default function PaymentStep({ formData }) {
               </span>
             </div>
           </div>
+          <div className="px-4 py-4 bg-slate-50">
+            <div className="flex items-center justify-between gap-4">
+              <div>
+                <p className="text-sm font-bold text-slate-900">Total Due Today</p>
+                <p className="text-xs text-slate-500">Hardware + first {activePlan.id === 'annual' ? 'year' : 'month'} subscription</p>
+              </div>
+              <span className="text-xl font-extrabold text-slate-900 whitespace-nowrap">
+                ${(baseHardware * numDevices) + parseInt(activePlan.subscriptionPrice.replace(/[^0-9]/g, ''))}
+              </span>
+            </div>
+          </div>
         </div>
       </div>
 
       <Button
         onClick={handleCheckout}
-        disabled={isLoading}
         className="w-full py-3 font-semibold bg-teal-500 hover:bg-teal-600 text-white rounded-full shadow-md border-0 transition-all duration-300"
       >
         <CreditCard className="mr-2 w-4 h-4" />
-        {isLoading ? 'Redirecting...' : discountApplied === 'bahubali' ? 'Pay $1 to Start the Pilot' : 'Proceed to Secure Checkout'}
+        {discountApplied === 'bahubali' ? 'Pay $1 to Start the Pilot' : 'Proceed to Secure Checkout'}
       </Button>
 
       <p className="text-center text-xs text-slate-400">Powered by Stripe · No card info stored on our servers</p>
