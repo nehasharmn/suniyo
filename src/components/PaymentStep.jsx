@@ -78,13 +78,16 @@ export default function PaymentStep({ formData }) {
   const baseHardware = discountApplied === 'bahubali' ? 1 : discountApplied === 'aahoacon26' ? 350 : 500;
   const hardwarePrice = `$${baseHardware * numDevices}`;
 
+  const totalDollars = (baseHardware * numDevices) + parseInt(activePlan.subscriptionPrice.replace(/[^0-9]/g, ''));
+  const totalCents = totalDollars * 100;
+
   const handleCheckout = () => {
     const isInIframe = window.self !== window.top;
     if (isInIframe) {
       alert('Checkout is only available from the published app. Please open the app directly.');
       return;
     }
-    window.location.href = PAYMENT_LINK;
+    window.location.href = `${PAYMENT_LINK}?prefilled_amount=${totalCents}`;
   };
 
   return (
@@ -182,7 +185,7 @@ export default function PaymentStep({ formData }) {
                 <p className="text-xs text-slate-500">Hardware + first {activePlan.id === 'annual' ? 'year' : 'month'} subscription</p>
               </div>
               <span className="text-xl font-extrabold text-slate-900 whitespace-nowrap">
-                ${(baseHardware * numDevices) + parseInt(activePlan.subscriptionPrice.replace(/[^0-9]/g, ''))}
+                ${totalDollars}
               </span>
             </div>
           </div>
