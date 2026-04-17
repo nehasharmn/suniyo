@@ -1,10 +1,24 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import Contact from '../components/Contact';
 import { CheckCircle } from 'lucide-react';
+import { sendAuthLink } from '@/functions/sendAuthLink';
 
 export default function Subscribe() {
   const params = new URLSearchParams(window.location.search);
   const success = params.get('success') === 'true';
+  const email = params.get('email') || '';
+  const firstName = params.get('first_name') || '';
+  const hasSentRef = useRef(false);
+
+  useEffect(() => {
+    if (success && email && !hasSentRef.current) {
+      hasSentRef.current = true;
+      const appUrl = window.location.origin;
+      sendAuthLink({ email, first_name: firstName, appUrl }).catch(err => {
+        console.warn('Auth link email failed:', err);
+      });
+    }
+  }, [success, email, firstName]);
 
   if (success) {
     return (
@@ -16,9 +30,9 @@ export default function Subscribe() {
             </div>
             <h2 className="text-3xl font-extrabold text-slate-900 mb-3">Welcome to Suniyo!</h2>
             <p className="text-slate-500 leading-relaxed mb-4">
-              Your subscription is confirmed. We'll be in touch shortly to get your AI DeskBuddy device shipped and your account set up.
+              Your subscription is confirmed. We've sent an account setup link to <strong>{email || 'your email'}</strong>. Click it to create your password and finish setting up your account.
             </p>
-            <p className="text-sm text-slate-400">Check your email for a confirmation receipt.</p>
+            <p className="text-sm text-slate-400">Didn't receive it? Check your spam folder.</p>
           </div>
         </div>
       </section>

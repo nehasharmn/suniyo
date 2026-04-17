@@ -87,7 +87,10 @@ export default function PaymentStep({ formData }) {
       alert('Checkout is only available from the published app. Please open the app directly.');
       return;
     }
-    window.location.href = `${PAYMENT_LINK}?prefilled_amount=${totalCents}`;
+    const email = formData?.email || '';
+    const firstName = formData?.first_name || '';
+    const returnBase = `${window.location.origin}/Subscribe?success=true&email=${encodeURIComponent(email)}&first_name=${encodeURIComponent(firstName)}`;
+    window.location.href = `${PAYMENT_LINK}?prefilled_amount=${totalCents}&prefilled_email=${encodeURIComponent(email)}&success_url=${encodeURIComponent(returnBase)}`;
   };
 
   return (

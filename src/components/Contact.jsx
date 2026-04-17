@@ -6,7 +6,6 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Card, CardContent } from '@/components/ui/card';
 import { Send, Mail } from 'lucide-react';
 import { base44 } from '@/api/base44Client';
-import { sendAuthLink } from '@/functions/sendAuthLink';
 import PaymentStep from './PaymentStep';
 
 export default function Contact() {
@@ -50,11 +49,6 @@ export default function Contact() {
       const fullPhoneNumber = phoneNumber.trim() ? `${countryCode} ${phoneNumber}` : '';
       const name = `${formData.first_name} ${formData.last_name}`.trim();
       await base44.entities.PilotRequest.create({ ...formData, name, phone: fullPhoneNumber });
-      // Send authentication link email (non-blocking)
-      const appUrl = window.location.origin;
-      sendAuthLink({ email: formData.email, first_name: formData.first_name, appUrl }).catch(err => {
-        console.warn('Auth link email failed (non-blocking):', err);
-      });
       setIsSubmitted(true);
     } catch (error) {
       console.error('Error submitting form:', error);
