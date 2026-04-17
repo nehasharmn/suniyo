@@ -4,8 +4,9 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Card, CardContent } from '@/components/ui/card';
-import { Send } from 'lucide-react';
+import { Send, Mail } from 'lucide-react';
 import { base44 } from '@/api/base44Client';
+import { sendAuthLink } from '@/functions/sendAuthLink';
 import PaymentStep from './PaymentStep';
 
 export default function Contact() {
@@ -49,6 +50,9 @@ export default function Contact() {
       const fullPhoneNumber = phoneNumber.trim() ? `${countryCode} ${phoneNumber}` : '';
       const name = `${formData.first_name} ${formData.last_name}`.trim();
       await base44.entities.PilotRequest.create({ ...formData, name, phone: fullPhoneNumber });
+      // Send authentication link email
+      const appUrl = window.location.origin;
+      await sendAuthLink({ email: formData.email, first_name: formData.first_name, appUrl });
       setIsSubmitted(true);
     } catch (error) {
       console.error('Error submitting form:', error);
@@ -67,18 +71,17 @@ export default function Contact() {
 
   if (isSubmitted) {
     return (
-      <section className="py-16 bg-white">
+      <section className="py-24 bg-white min-h-[60vh] flex items-center">
         <div className="container mx-auto px-6">
-          <div className="max-w-2xl mx-auto text-center mb-8">
-            <h2 className="text-3xl font-extrabold text-teal-500 mb-2 tracking-tight">Subscribe</h2>
-            <p className="text-base text-slate-500">Almost there! Select your plan and complete your subscription.</p>
-          </div>
-          <div className="max-w-2xl mx-auto">
-            <Card className="border border-slate-100 shadow-lg bg-white">
-              <CardContent className="px-8 py-8">
-                <PaymentStep formData={formData} />
-              </CardContent>
-            </Card>
+          <div className="max-w-lg mx-auto text-center">
+            <div className="w-20 h-20 bg-teal-50 rounded-full flex items-center justify-center mx-auto mb-6">
+              <Mail className="w-10 h-10 text-teal-500" />
+            </div>
+            <h2 className="text-3xl font-extrabold text-slate-900 mb-3">Check Your Email</h2>
+            <p className="text-slate-500 leading-relaxed mb-4">
+              We've sent an account setup link to <strong>{formData.email}</strong>. Click the link in the email to create your password and finish setting up your account.
+            </p>
+            <p className="text-sm text-slate-400">Didn't receive it? Check your spam folder.</p>
           </div>
         </div>
       </section>
