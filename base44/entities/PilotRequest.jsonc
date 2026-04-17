@@ -1,0 +1,91 @@
+{
+  "name": "PilotRequest",
+  "type": "object",
+  "properties": {
+    "first_name": {
+      "type": "string",
+      "description": "First name of the requester"
+    },
+    "last_name": {
+      "type": "string",
+      "description": "Last name of the requester"
+    },
+    "name": {
+      "type": "string",
+      "description": "Full name of the requester"
+    },
+    "email": {
+      "type": "string",
+      "format": "email",
+      "description": "Email address"
+    },
+    "phone": {
+      "type": "string",
+      "description": "Contact phone number"
+    },
+    "hotel_company": {
+      "type": "string",
+      "description": "Hotel or company name"
+    },
+    "brand": {
+      "type": "string",
+      "enum": [
+        "Marriott",
+        "Hilton",
+        "IHG",
+        "Choice",
+        "Wyndham",
+        "Independent",
+        "Other"
+      ],
+      "description": "The hotel brand"
+    },
+    "solution_goals": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "improve_guest_satisfaction",
+          "reward_recognize_performance",
+          "visibility_to_issues"
+        ]
+      },
+      "description": "What they want to achieve with the solution"
+    },
+    "urgency": {
+      "type": "string",
+      "enum": [
+        "immediate",
+        "within_month",
+        "within_quarter",
+        "exploring"
+      ],
+      "description": "How urgent is their interest"
+    },
+    "num_devices": {
+      "type": "number",
+      "description": "Number of devices"
+    }
+  },
+  "required": [
+    "first_name",
+    "last_name",
+    "email",
+    "hotel_company"
+  ],
+  "rls": {
+    "read": {
+      "$or": [
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        },
+        {
+          "created_by": "{{user.email}}"
+        }
+      ]
+    },
+    "write": true
+  }
+}

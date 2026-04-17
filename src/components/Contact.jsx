@@ -2,22 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Textarea } from '@/components/ui/textarea';
-import { Checkbox } from '@/components/ui/checkbox';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 import { Send } from 'lucide-react';
 import { base44 } from '@/api/base44Client';
 import PaymentStep from './PaymentStep';
 
-const solutionGoalOptions = [
-  { value: 'improve_guest_satisfaction', label: 'Improve Guest Satisfaction' },
-  { value: 'reward_recognize_performance', label: 'Reward & Recognize Associate Performance' },
-  { value: 'visibility_to_issues', label: 'Visibility to Issues' }
-];
-
 export default function Contact() {
-  const [formData, setFormData] = useState({ name: '', email: '', hotel_company: '', brand: '', solution_goals: [], urgency: '', message: '', num_devices: 1 });
+  const [formData, setFormData] = useState({ first_name: '', last_name: '', email: '', hotel_company: '', num_devices: 1 });
   const [countryCode, setCountryCode] = useState('+1');
   const [phoneNumber, setPhoneNumber] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -35,7 +27,11 @@ export default function Contact() {
 
   const validateForm = () => {
     const errors = {};
-    if (formData.email.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) errors.email = 'Please enter a valid email address';
+    if (!formData.first_name.trim()) errors.first_name = 'First name is required';
+    if (!formData.last_name.trim()) errors.last_name = 'Last name is required';
+    if (!formData.email.trim()) errors.email = 'Email is required';
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) errors.email = 'Please enter a valid email address';
+    if (!formData.hotel_company.trim()) errors.hotel_company = 'Company is required';
     setFieldErrors(errors);
     return Object.keys(errors).length === 0;
   };
@@ -51,7 +47,8 @@ export default function Contact() {
     setIsSubmitting(true);
     try {
       const fullPhoneNumber = phoneNumber.trim() ? `${countryCode} ${phoneNumber}` : '';
-      await base44.entities.PilotRequest.create({ ...formData, phone: fullPhoneNumber });
+      const name = `${formData.first_name} ${formData.last_name}`.trim();
+      await base44.entities.PilotRequest.create({ ...formData, name, phone: fullPhoneNumber });
       setIsSubmitted(true);
     } catch (error) {
       console.error('Error submitting form:', error);
@@ -63,13 +60,6 @@ export default function Contact() {
   const handleChange = (field, value) => {
     setFormData(prev => ({ ...prev, [field]: value }));
     if (fieldErrors[field]) setFieldErrors(prev => ({ ...prev, [field]: '' }));
-  };
-
-  const handleGoalToggle = (goalValue, checked) => {
-    setFormData(prev => ({
-      ...prev,
-      solution_goals: checked ? [...prev.solution_goals, goalValue] : prev.solution_goals.filter(g => g !== goalValue)
-    }));
   };
 
   const inputClass = "bg-white border-slate-200 text-slate-900 placeholder:text-slate-400 focus:border-teal-400 focus:ring-teal-400";
@@ -109,20 +99,25 @@ export default function Contact() {
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div className="grid md:grid-cols-2 gap-3">
                   <div className="space-y-1">
-                    <Label htmlFor="name" className="text-slate-700 font-medium text-sm">Name *</Label>
-                    <Input id="name" value={formData.name} onChange={(e) => handleChange('name', e.target.value)} className={`${inputClass} ${fieldErrors.name ? errorClass : ''}`} />
-                    {fieldErrors.name && <p className="text-xs text-red-500">{fieldErrors.name}</p>}
+                    <Label htmlFor="first_name" className="text-slate-700 font-medium text-sm">First Name *</Label>
+                    <Input id="first_name" value={formData.first_name} onChange={(e) => handleChange('first_name', e.target.value)} className={`${inputClass} ${fieldErrors.first_name ? errorClass : ''}`} />
+                    {fieldErrors.first_name && <p className="text-xs text-red-500">{fieldErrors.first_name}</p>}
                   </div>
                   <div className="space-y-1">
-                    <Label htmlFor="email" className="text-slate-700 font-medium text-sm">Email *</Label>
-                    <Input id="email" type="email" value={formData.email} onChange={(e) => handleChange('email', e.target.value)} className={`${inputClass} ${fieldErrors.email ? errorClass : ''}`} />
-                    {fieldErrors.email && <p className="text-xs text-red-500">{fieldErrors.email}</p>}
+                    <Label htmlFor="last_name" className="text-slate-700 font-medium text-sm">Last Name *</Label>
+                    <Input id="last_name" value={formData.last_name} onChange={(e) => handleChange('last_name', e.target.value)} className={`${inputClass} ${fieldErrors.last_name ? errorClass : ''}`} />
+                    {fieldErrors.last_name && <p className="text-xs text-red-500">{fieldErrors.last_name}</p>}
                   </div>
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-3">
                   <div className="space-y-1">
-                    <Label htmlFor="phone" className="text-slate-700 font-medium text-sm">Phone</Label>
+                    <Label htmlFor="email" className="text-slate-700 font-medium text-sm">Email Address *</Label>
+                    <Input id="email" type="email" value={formData.email} onChange={(e) => handleChange('email', e.target.value)} className={`${inputClass} ${fieldErrors.email ? errorClass : ''}`} />
+                    {fieldErrors.email && <p className="text-xs text-red-500">{fieldErrors.email}</p>}
+                  </div>
+                  <div className="space-y-1">
+                    <Label htmlFor="phone" className="text-slate-700 font-medium text-sm">Phone No</Label>
                     <div className="flex gap-2">
                       <Select value={countryCode} onValueChange={setCountryCode}>
                         <SelectTrigger className={`w-24 ${inputClass}`}><SelectValue /></SelectTrigger>
@@ -135,24 +130,19 @@ export default function Contact() {
                       <Input id="phone" type="tel" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} className={`flex-1 ${inputClass}`} placeholder="555 123 4567" />
                     </div>
                   </div>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-3">
                   <div className="space-y-1">
                     <Label htmlFor="hotel_company" className="text-slate-700 font-medium text-sm">Company *</Label>
                     <Input id="hotel_company" value={formData.hotel_company} onChange={(e) => handleChange('hotel_company', e.target.value)} className={`${inputClass} ${fieldErrors.hotel_company ? errorClass : ''}`} />
                     {fieldErrors.hotel_company && <p className="text-xs text-red-500">{fieldErrors.hotel_company}</p>}
                   </div>
+                  <div className="space-y-1">
+                    <Label htmlFor="num_devices" className="text-slate-700 font-medium text-sm">Number of Devices *</Label>
+                    <Input id="num_devices" type="number" min="1" value={formData.num_devices} onChange={(e) => handleChange('num_devices', Math.max(1, parseInt(e.target.value) || 1))} className={inputClass} />
+                  </div>
                 </div>
-
-
-
-                <div className="space-y-1">
-                   <Label htmlFor="num_devices" className="text-slate-700 font-medium text-sm">No of Devices *</Label>
-                   <Input id="num_devices" type="number" min="1" value={formData.num_devices} onChange={(e) => handleChange('num_devices', Math.max(1, parseInt(e.target.value) || 1))} className={inputClass} />
-                 </div>
-
-                <div className="space-y-1">
-                   <Label htmlFor="message" className="text-slate-700 font-medium text-sm">Message</Label>
-                   <Textarea id="message" rows={2} value={formData.message} onChange={(e) => handleChange('message', e.target.value)} placeholder="Tell us about your property..." className={inputClass} />
-                 </div>
 
                 <div className="flex items-end gap-3">
                   <div className="space-y-1 flex-1">
