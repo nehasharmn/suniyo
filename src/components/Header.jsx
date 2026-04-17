@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Menu, X } from 'lucide-react';
+import { ArrowRight, Menu, X, LogIn, LogOut } from 'lucide-react';
+import LoginModal from './LoginModal';
 
 const navLinks = [
   { href: createPageUrl('Home'), label: 'Home' },
@@ -16,7 +17,21 @@ const navLinks = [
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [showLogin, setShowLogin] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
+  const loggedInUser = JSON.parse(sessionStorage.getItem('suniyo_user') || 'null');
+
+  const handleLoginSuccess = (user) => {
+    sessionStorage.setItem('suniyo_user', JSON.stringify(user));
+    setShowLogin(false);
+    navigate('/Dashboard');
+  };
+
+  const handleLogout = () => {
+    sessionStorage.removeItem('suniyo_user');
+    navigate('/');
+  };
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 10);
@@ -27,6 +42,8 @@ export default function Header() {
   const isActive = (path) => location.pathname === path;
 
   return (
+    <>
+    {showLogin && <LoginModal onClose={() => setShowLogin(false)} onLoginSuccess={handleLoginSuccess} />}
     <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-sm border-b border-slate-100' : 'bg-white'}`}>
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-16 py-2">
@@ -57,6 +74,23 @@ export default function Header() {
           </nav>
 
           <div className="flex items-center gap-3">
+            {loggedInUser ? (
+              <button
+                onClick={handleLogout}
+                className="hidden md:flex items-center gap-1 px-4 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded-lg transition-all duration-200"
+              >
+                <LogOut className="w-4 h-4" />
+                Log Out
+              </button>
+            ) : (
+              <button
+                onClick={() => setShowLogin(true)}
+                className="hidden md:flex items-center gap-1 px-4 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded-lg transition-all duration-200"
+              >
+                <LogIn className="w-4 h-4" />
+                Login
+              </button>
+            )}
             <Link to="/Subscribe" className="hidden md:block">
               <Button className="px-5 py-2 text-sm font-semibold bg-blue-500 hover:bg-blue-600 text-white rounded-full shadow-sm border-0 transition-all duration-200">
                 Subscribe
@@ -98,5 +132,6 @@ export default function Header() {
         </div>
       )}
     </header>
+    </>
   );
 }

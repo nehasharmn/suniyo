@@ -18,6 +18,7 @@ import OurSolution from './pages/OurSolution';
 import TheOutcomes from './pages/TheOutcomes';
 import FAQ from './pages/FAQ';
 import SetupAccount from './pages/SetupAccount';
+import Dashboard from './pages/Dashboard';
 
 const { Pages, Layout, mainPage } = pagesConfig;
 const mainPageKey = mainPage ?? Object.keys(Pages)[0];
@@ -81,6 +82,7 @@ const AuthenticatedApp = () => {
       <Route path="/TheOutcomes" element={<LayoutWrapper currentPageName="TheOutcomes"><TheOutcomes /></LayoutWrapper>} />
       <Route path="/FAQ" element={<LayoutWrapper currentPageName="FAQ"><FAQ /></LayoutWrapper>} />
       <Route path="/SetupAccount" element={<LayoutWrapper currentPageName="SetupAccount"><SetupAccount /></LayoutWrapper>} />
+      <Route path="/Dashboard" element={<Dashboard />} />
       <Route path="*" element={<PageNotFound />} />
     </Routes>
   );
