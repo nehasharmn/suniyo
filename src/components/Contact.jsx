@@ -127,7 +127,11 @@ export default function Contact() {
                           <SelectItem value="+1 (CA)">+1 (CA)</SelectItem>
                         </SelectContent>
                       </Select>
-                      <Input id="phone" type="tel" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} className={`flex-1 ${inputClass}`} placeholder="555 123 4567" />
+                      <Input id="phone" type="tel" value={phoneNumber} onChange={(e) => {
+                        const digits = e.target.value.replace(/\D/g, '').slice(0, 10);
+                        const formatted = digits.length <= 3 ? digits : digits.length <= 6 ? `${digits.slice(0,3)}-${digits.slice(3)}` : `${digits.slice(0,3)}-${digits.slice(3,6)}-${digits.slice(6)}`;
+                        setPhoneNumber(formatted);
+                      }} className={`flex-1 ${inputClass}`} placeholder="111-111-1111" />
                     </div>
                   </div>
                 </div>
