@@ -50,9 +50,11 @@ export default function Contact() {
       const fullPhoneNumber = phoneNumber.trim() ? `${countryCode} ${phoneNumber}` : '';
       const name = `${formData.first_name} ${formData.last_name}`.trim();
       await base44.entities.PilotRequest.create({ ...formData, name, phone: fullPhoneNumber });
-      // Send authentication link email
+      // Send authentication link email (non-blocking)
       const appUrl = window.location.origin;
-      await sendAuthLink({ email: formData.email, first_name: formData.first_name, appUrl });
+      sendAuthLink({ email: formData.email, first_name: formData.first_name, appUrl }).catch(err => {
+        console.warn('Auth link email failed (non-blocking):', err);
+      });
       setIsSubmitted(true);
     } catch (error) {
       console.error('Error submitting form:', error);
