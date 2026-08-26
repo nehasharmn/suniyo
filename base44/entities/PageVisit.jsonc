@@ -1,0 +1,58 @@
+{
+  "name": "PageVisit",
+  "type": "object",
+  "properties": {
+    "page": {
+      "type": "string",
+      "description": "Page path visited"
+    },
+    "visitor_email": {
+      "type": "string",
+      "description": "Email if user is logged in"
+    },
+    "visitor_id": {
+      "type": "string",
+      "description": "Persistent cookie-based visitor ID"
+    },
+    "user_agent": {
+      "type": "string",
+      "description": "Browser/device info"
+    },
+    "referrer": {
+      "type": "string",
+      "description": "Where they came from"
+    },
+    "device": {
+      "type": "string",
+      "enum": [
+        "desktop",
+        "mobile",
+        "tablet"
+      ],
+      "description": "Device type"
+    },
+    "device_name": {
+      "type": "string",
+      "description": "OS and browser name"
+    },
+    "ip_address": {
+      "type": "string",
+      "description": "Visitor IP address"
+    },
+    "domain": {
+      "type": "string",
+      "description": "Hostname/domain of the app"
+    },
+    "city": {
+      "type": "string",
+      "description": "City from IP geolocation"
+    },
+    "country": {
+      "type": "string",
+      "description": "Country from IP geolocation"
+    }
+  },
+  "required": [
+    "page"
+  ]
+}
